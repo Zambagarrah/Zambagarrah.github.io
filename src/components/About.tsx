@@ -1,27 +1,27 @@
 const timeline = [
   {
+    year: '2025–2026',
+    role: 'Software Engineer & Educator',
+    org: 'Swahilipot Hub Foundation, Kenya',
+    desc: 'Teaching Python, JavaScript, and Data Structures & Algorithms while contributing to collaborative Django backend projects.',
+  },
+  {
+    year: '2024–Present',
+    role: 'Backend Developer & Data Engineer',
+    org: 'ByteForge Devs, Kenya',
+    desc: 'Building production Django APIs and Python data pipelines, with a focus on real error handling and PostgreSQL performance.',
+  },
+  {
     year: '2022–Present',
     role: 'Product Designer',
-    org: 'AFGT — Kenya',
+    org: 'AFGT, Kenya',
     desc: 'Designing product experiences and interfaces, working closely with engineering to ship features that balance usability with business goals.',
   },
   {
     year: '2022–Present',
-    role: 'UX Designer',
-    org: 'UpWork — Remote',
-    desc: 'Freelance UX design for international clients — research, wireframes, and high-fidelity prototypes across web and mobile products.',
-  },
-  {
-    year: '2023–2024',
-    role: 'Web Developer',
-    org: 'Designer Hub — Kenya',
-    desc: 'Built and maintained client websites using HTML, CSS, JavaScript, and React, translating designs into responsive, production-ready interfaces.',
-  },
-  {
-    year: '2022–Present',
-    role: 'Web Design & Development',
+    role: 'BSc. Mathematics & Computer Science',
     org: 'Technical University of Mombasa',
-    desc: 'Studying web design and development, with coursework spanning frontend fundamentals, databases, and software engineering practices.',
+    desc: 'Studying mathematics and computer science, with coursework spanning frontend fundamentals, databases, and software engineering practices.',
   },
 ]
 
@@ -67,12 +67,12 @@ export default function About() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <p style={{ fontSize: '0.97rem', lineHeight: 1.8, color: '#55635D' }}>
-                I'm Zablon Ombiri, a Data Analyst and Software Developer based in Mombasa, Kenya.
+                I'm Zablon Zambagarrah, a Data Analyst and Software Developer based in Mombasa, Kenya.
                 By day, I turn messy numbers into neat stories; by night, I craft Python, Django,
                 and React into apps so smooth they could butter your toast.
               </p>
               <p style={{ fontSize: '0.97rem', lineHeight: 1.8, color: '#55635D' }}>
-                I've specialized in Python, Django, React, Next.js, and SQL-based data analysis —
+                I've specialized in Python, Django, React, Next.js, and SQL-based data analysis,
                 focused on turning raw data into actionable insight and building secure, scalable,
                 user-friendly applications. With a strong foundation in cybersecurity and
                 performance optimization, I blend analytical thinking with technical expertise.

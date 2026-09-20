@@ -66,7 +66,7 @@ export default function Contact() {
             <p style={{ fontSize: '0.92rem', lineHeight: 1.8, color: '#55635D', marginBottom: '44px' }}>
               I'm open to freelance projects, junior developer roles, data analysis
               contracts, and collaborations. If you're looking for someone who can build
-              practical, well-crafted software — let's connect.
+              practical, well-crafted software, let's connect.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -87,7 +87,7 @@ export default function Contact() {
                   icon: '◉',
                   label: 'LinkedIn',
                   value: 'Connect on LinkedIn',
-                  href: 'https://www.linkedin.com/in/zablon-ombiri-6a7ab2254/',
+                  href: 'https://www.linkedin.com/in/zambagarrah/',
                 },
                 {
                   icon: '◎',

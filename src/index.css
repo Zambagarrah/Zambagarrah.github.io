@@ -193,7 +193,7 @@ section { position: relative; }
 /* Allow text selection everywhere */
 body { -webkit-user-select: text; user-select: text; }
 
-/* Selection highlight colour — matches emerald palette */
+/* Selection highlight colour: matches emerald palette */
 ::selection {
   background: rgba(15, 90, 71, 0.18);
   color: #15231E;

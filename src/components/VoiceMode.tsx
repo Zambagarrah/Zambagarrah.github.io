@@ -2,10 +2,10 @@ import { useState, useEffect, useRef } from 'react'
 import zablonPhoto from '@/imports/zablon_photo.jpg'
 
 const VOICE_RESPONSES = [
-  "Hello! I'm Zablon Ombiri's AI assistant. How can I help you today?",
-  "Zablon is a Data Analyst and Software Developer based in Mombasa, Kenya. He specializes in Python, Django, React, and SQL-based data analysis — turning raw data into insight and building secure, scalable web applications.",
-  "Zablon has built several real-world projects: a Django REST API for inventory management with JWT authentication, an interactive sales data dashboard using Pandas and Power BI, and a fullstack e-commerce storefront with React, Django, and MongoDB.",
-  "He's currently a Product Designer at AFGT, a freelance UX Designer on UpWork, and previously worked as a Web Developer at Designer Hub building client websites.",
+  "Hello! I'm Zablon Zambagarrah's AI assistant. How can I help you today?",
+  "Zablon is a Data Analyst and Software Developer based in Mombasa, Kenya. He specializes in Python, Django, React, and SQL-based data analysis, turning raw data into insight and building secure, scalable web applications.",
+  "Zablon has built real-world projects including ShieldPay Financials, a live fintech web application with a Django backend and PostgreSQL data layer, and an ETL Pipeline Analytics project processing 10,000+ records daily in Python.",
+  "He's currently a Backend Developer and Data Engineer at ByteForge Devs, a Software Engineer and Programming Educator at Swahilipot Hub Foundation, and a Product Designer at AFGT.",
   "Zablon is currently open to freelance projects, junior developer roles, and data analysis contracts. You can reach him at zablon ombiri zero zero one at gmail dot com, or on WhatsApp at plus two five four seven zero five nine five nine nine eight six.",
 ]
 

@@ -42,7 +42,7 @@ export default function Research() {
             </h2>
           </div>
           <p style={{ fontSize: '0.9rem', color: '#8A948F', maxWidth: '280px', lineHeight: 1.65 }}>
-            Areas of deep interest — where curiosity meets hands-on building.
+            Areas of deep interest, where curiosity meets hands-on building.
           </p>
         </div>
 
@@ -139,7 +139,7 @@ export default function Research() {
           ))}
         </div>
 
-        {/* Hackathons / competitions — populate once details are provided */}
+        {/* Hackathons / competitions: populate once details are provided */}
         {hackathons.length > 0 && (
         <div>
           <p className="section-eyebrow" style={{ marginBottom: '24px' }}>Hackathons & Competitions</p>

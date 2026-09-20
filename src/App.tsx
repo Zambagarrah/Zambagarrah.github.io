@@ -24,11 +24,11 @@ export default function App() {
       }
     }
 
-    document.title = 'Zablon Ombiri | Data Analyst & Software Developer'
-    setMeta('meta[name="description"]', 'Zablon Ombiri is a Data Analyst and Software Developer based in Mombasa, Kenya, turning raw data into insight and building secure, scalable web applications with Python, Django, and React.')
-    setMeta('meta[property="og:title"]', 'Zablon Ombiri | Data Analyst & Software Developer')
+    document.title = 'Zablon Zambagarrah | Data Analyst & Software Developer'
+    setMeta('meta[name="description"]', 'Zablon Zambagarrah is a Data Analyst and Software Developer based in Mombasa, Kenya, turning raw data into insight and building secure, scalable web applications with Python, Django, and React.')
+    setMeta('meta[property="og:title"]', 'Zablon Zambagarrah | Data Analyst & Software Developer')
     setMeta('meta[property="og:description"]', 'Data Analyst and Software Developer from Mombasa, Kenya building data-driven dashboards, Django backends, and full-stack web applications.')
-    setMeta('meta[name="twitter:title"]', 'Zablon Ombiri | Data Analyst & Software Developer')
+    setMeta('meta[name="twitter:title"]', 'Zablon Zambagarrah | Data Analyst & Software Developer')
     setMeta('meta[name="twitter:description"]', 'Data Analyst and Software Developer building practical data and web solutions from Kenya.')
   }, [])
 
@@ -96,14 +96,14 @@ export default function App() {
                 marginBottom: '4px',
               }}
             >
-              Zablon Ombiri.
+              Zablon Zambagarrah.
             </div>
             <div style={{ fontSize: '0.75rem', color: '#8A948F' }}>
               Data Analyst · Software Developer · Mombasa, Kenya
             </div>
           </div>
           <div style={{ fontSize: '0.75rem', color: '#8A948F', textAlign: 'right' }}>
-            <div>© {new Date().getFullYear()} Zablon Ombiri. All rights reserved.</div>
+            <div>© {new Date().getFullYear()} Zablon Zambagarrah. All rights reserved.</div>
             <div style={{ marginTop: '4px', fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}>
               Data that speaks & code that scales.
             </div>
@@ -133,7 +133,7 @@ export default function App() {
         `}</style>
       </footer>
 
-      {/* Global selection toolbar — rendered in page flow so absolute pos = page coords */}
+      {/* Global selection toolbar: rendered in page flow so absolute pos = page coords */}
       <SelectionToolbar onAskAI={handleAskAIFromSelection} />
 
       {/* Inline AI popover */}
@@ -197,7 +197,7 @@ export default function App() {
         )}
       </button>
 
-      {/* AI Chat — receives pending context message when triggered from selection */}
+      {/* AI Chat: receives pending context message when triggered from selection */}
       <AIAssistant
         open={assistantOpen}
         onClose={() => setAssistantOpen(false)}

@@ -3,75 +3,51 @@ import { useState } from 'react'
 const projects = [
   {
     id: 1,
-    title: 'Django REST API — Inventory Management System',
-    category: 'Backend · REST APIs · PostgreSQL',
+    title: 'ShieldPay Financials',
+    category: 'Fintech · Full-Stack · PostgreSQL',
     year: '2024',
-    status: 'Completed',
+    status: 'Live',
     description:
-      'A secure backend built with Django REST Framework featuring token authentication, role-based permissions, and a PostgreSQL data layer for tracking stock across an inventory system.',
+      'A live fintech web application handling user-facing financial flows end to end, built and deployed to production at shieldpayfinance.com.',
     problem:
-      'Small businesses often manage stock in spreadsheets, leading to stockouts, duplicate entries, and no audit trail of who changed what.',
+      'Users need a reliable, secure way to manage financial flows online, which means the backend, auth, and data layer all have to hold up under real usage, not just demo conditions.',
     architecture:
-      'Django REST Framework backend with JWT authentication and role-based permissions (admin, staff). PostgreSQL models for products, categories, and stock movements, with serializers and viewsets exposing a clean REST API consumed by a frontend client.',
+      'Django REST backend exposing the API, authentication system, and PostgreSQL data layer, connected to a frontend interface built for real users. Built with reliability and security in mind since the application is in production and publicly accessible.',
     metrics: [
-      { label: 'Framework', value: 'DRF' },
+      { label: 'Backend', value: 'Django' },
       { label: 'Database', value: 'PostgreSQL' },
-      { label: 'Auth', value: 'JWT' },
+      { label: 'Status', value: 'Live' },
       { label: 'API', value: 'REST' },
     ],
-    stack: ['Django', 'DRF', 'PostgreSQL', 'JWT', 'Python'],
+    stack: ['Python', 'Django', 'PostgreSQL', 'JavaScript', 'HTML/CSS', 'REST APIs'],
     color: '#0F5A47',
     accent: 'rgba(15,90,71,0.06)',
     gradient: 'linear-gradient(135deg, rgba(15,90,71,0.08) 0%, rgba(46,139,87,0.04) 100%)',
-    aiExplanation: 'The API separates concerns cleanly: models define the stock schema, serializers validate and shape data, and viewsets expose CRUD endpoints with role checks applied at the permission-class level. JWT tokens keep the API stateless, so it scales horizontally without shared session storage, while granular permissions ensure staff accounts can update stock without touching admin-only settings.',
+    aiExplanation: 'The backend separates concerns cleanly: models define the financial schema, serializers validate and shape data, and the authentication layer gates access before any financial flow executes. Because the app is publicly accessible, error handling and validation are treated as first-class concerns rather than an afterthought, and the PostgreSQL layer is designed for data integrity under concurrent use.',
   },
   {
     id: 2,
-    title: 'Sales Data Dashboard',
-    category: 'Data Analysis · Visualization · SQL',
+    title: 'ETL Pipeline Analytics',
+    category: 'Data Engineering · Python · PostgreSQL',
     year: '2024',
     status: 'Completed',
     description:
-      'An interactive analytics dashboard that cleans raw sales data with Pandas and visualizes trends and KPIs for stakeholders, turning spreadsheets into decision-ready reports.',
+      'Data pipelines and validation scripts built in Python that process 10,000+ records daily, owning data quality end to end from ingestion through to output.',
     problem:
-      'Sales teams collect data across multiple spreadsheets with inconsistent formatting, making it hard to spot trends or answer basic questions about performance quickly.',
+      'Raw data from multiple sources arrives inconsistent and unvalidated, and downstream dashboards and decisions are only as reliable as the pipeline feeding them.',
     architecture:
-      'Raw exports are ingested and cleaned with Pandas — deduplicating records, normalizing date formats, and handling missing values. Cleaned data is queried with SQL and visualized in Power BI dashboards covering revenue trends, top products, and regional performance.',
+      'Python scripts ingest raw records, validate and clean them, and load them into PostgreSQL with checks at each stage. Query and schema optimisation improved downstream dashboard performance by 30%, and the pipeline is built to surface errors rather than silently pass bad data through.',
     metrics: [
-      { label: 'Tooling', value: 'Pandas' },
-      { label: 'Storage', value: 'SQL' },
-      { label: 'Dashboards', value: 'Power BI' },
-      { label: 'Output', value: 'KPIs' },
+      { label: 'Volume', value: '10K+/day' },
+      { label: 'Language', value: 'Python' },
+      { label: 'Storage', value: 'PostgreSQL' },
+      { label: 'Perf gain', value: '30%' },
     ],
-    stack: ['Python', 'Pandas', 'Power BI', 'SQL'],
+    stack: ['Python', 'Pandas', 'PostgreSQL', 'SQL'],
     color: '#B86A4A',
     accent: 'rgba(184,106,74,0.06)',
     gradient: 'linear-gradient(135deg, rgba(184,106,74,0.08) 0%, rgba(197,154,90,0.04) 100%)',
-    aiExplanation: 'The cleaning pipeline standardizes messy inputs before any analysis happens — this is where most of the value is created, since garbage data produces garbage dashboards. Aggregation queries roll transactions up into daily/monthly summaries, which Power BI then renders as trend lines and KPI cards, letting stakeholders self-serve answers instead of waiting on ad-hoc spreadsheet requests.',
-  },
-  {
-    id: 3,
-    title: 'E-commerce Storefront',
-    category: 'Full-Stack · React · Django',
-    year: '2024',
-    status: 'Completed',
-    description:
-      'A fullstack e-commerce app with a React frontend, Django backend, MongoDB product catalog, and EmailJS-powered order notifications.',
-    problem:
-      'Small merchants need an online storefront but off-the-shelf platforms are often too rigid or expensive for a lean product catalog and simple checkout flow.',
-    architecture:
-      'React frontend for browsing, cart, and checkout, talking to a Django backend that exposes REST endpoints. Product data is stored in MongoDB for flexible catalog schemas, and EmailJS sends order confirmation emails directly from the client without a dedicated mail server.',
-    metrics: [
-      { label: 'Frontend', value: 'React' },
-      { label: 'Backend', value: 'Django' },
-      { label: 'Catalog', value: 'MongoDB' },
-      { label: 'Notify', value: 'EmailJS' },
-    ],
-    stack: ['React', 'Django', 'MongoDB', 'REST API', 'EmailJS'],
-    color: '#C59A5A',
-    accent: 'rgba(197,154,90,0.06)',
-    gradient: 'linear-gradient(135deg, rgba(197,154,90,0.08) 0%, rgba(184,106,74,0.04) 100%)',
-    aiExplanation: 'Using MongoDB for the product catalog allows each product to carry a different set of attributes (size, color, variant) without rigid schema migrations, while the Django backend still enforces business rules like stock checks before checkout. EmailJS offloads transactional email delivery to a managed service, keeping the app lightweight while still confirming orders reliably.',
+    aiExplanation: 'The pipeline standardizes messy inputs before any analysis happens, since garbage data produces garbage dashboards. Validation runs at ingestion so failures are caught early, and query and schema optimisation on PostgreSQL removed bottlenecks that were previously slowing dashboard load times.',
   },
 ]
 
@@ -106,7 +82,7 @@ export default function Projects() {
             </h2>
           </div>
           <p style={{ fontSize: '0.9rem', color: '#8A948F', maxWidth: '280px', lineHeight: 1.65 }}>
-            Each project solves a genuine problem — from inventory tracking to sales insight to full storefronts.
+            Each project solves a genuine problem, from live financial systems to reliable data pipelines.
           </p>
         </div>
 

@@ -111,7 +111,7 @@ export default function Hero() {
               marginBottom: '24px',
             }}
           >
-            Zablon Ombiri
+            Zablon Zambagarrah
             <br />
             <em style={{ fontStyle: 'italic', color: '#0F5A47' }}>Data Analyst</em> & Software
             <br />
@@ -159,10 +159,10 @@ export default function Hero() {
               maxWidth: '520px',
             }}
           >
-            Zablon Ombiri is a Data Analyst and Software Developer based in Mombasa,
+            Zablon Zambagarrah is a Data Analyst and Software Developer based in Mombasa,
             Kenya, turning messy datasets into clear insight and building secure, scalable
             web applications with Python, Django, and React. He focuses on practical
-            technology — from data dashboards to production-ready APIs — that actually
+            technology, from data dashboards to production-ready APIs, that actually
             solves problems for people and businesses.
           </p>
 
@@ -298,7 +298,7 @@ export default function Hero() {
 
             <img
               src={zablonPhoto}
-              alt="Zablon Ombiri — Data Analyst & Software Developer"
+              alt="Zablon Zambagarrah, Data Analyst & Software Developer"
               style={{
                 width: '340px',
                 height: '440px',

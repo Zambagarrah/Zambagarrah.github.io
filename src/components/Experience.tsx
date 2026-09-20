@@ -1,6 +1,20 @@
 const experiences = [
   {
-    period: 'Jan 2024 — Present',
+    period: 'May 2025 – May 2026',
+    title: 'Software Engineer & Programming Educator',
+    company: 'Swahilipot Hub Foundation',
+    location: 'Mombasa, Kenya',
+    type: 'On-site',
+    highlights: [
+      'Designed and delivered structured curricula in Python, JavaScript, and Data Structures & Algorithms to 30+ learners.',
+      'Ran one-to-one debugging sessions and code reviews, building a habit of reading unfamiliar code and making sense of it before suggesting changes.',
+      'Contributed to collaborative backend projects with Django and Python, maintaining version control discipline with Git and GitHub across a team.',
+    ],
+    technologies: ['Python', 'JavaScript', 'Data Structures & Algorithms', 'Django', 'Git'],
+    current: true,
+  },
+  {
+    period: 'Jan 2024 – Present',
     title: 'Backend Developer & Data Engineer',
     company: 'ByteForge Devs',
     location: 'Nakuru, Kenya',
@@ -17,32 +31,18 @@ const experiences = [
     current: true,
   },
   {
-    period: 'May 2025 — May 2026',
-    title: 'Software Engineer & Programming Educator',
-    company: 'Swahilipot Hub Foundation',
+    period: '2022 – Present',
+    title: 'Product Designer',
+    company: 'AFGT',
     location: 'Mombasa, Kenya',
-    type: 'On-site',
+    type: 'Part-time',
     highlights: [
-      'Designed and delivered structured curricula in Python, JavaScript, and Data Structures & Algorithms to 30+ learners.',
-      'Ran one-to-one debugging sessions and code reviews, building a habit of reading unfamiliar code and making sense of it before suggesting changes.',
-      'Contributed to collaborative backend projects with Django and Python, maintaining version control discipline with Git and GitHub across a team.',
+      'Designed product experiences and interfaces for internal and client-facing tools.',
+      'Collaborated closely with engineering to translate research and wireframes into shipped features.',
+      'Ran usability reviews and iterated on flows based on user feedback and analytics.',
+      'Maintained a consistent design system across web and mobile touchpoints.',
     ],
-    technologies: ['Python', 'JavaScript', 'Data Structures & Algorithms', 'Django', 'Git'],
-    current: true,
-  },
-  {
-    period: 'Sep 2022 — 2026',
-    title: 'BSc. Mathematics & Computer Science',
-    company: 'Technical University of Mombasa',
-    location: 'Mombasa, Kenya',
-    type: 'Education',
-    highlights: [
-      'Final exams completed; awaiting graduation.',
-      'Active member of the African Programmers Society.',
-      'Complemented coursework with an Associate\u2019s Degree in Data Analysis from DataCamp (Oct 2025 \u2014 Jan 2026).',
-      'Certifications: Scientific Computing with Python and JavaScript Algorithms & Data Structures (freeCodeCamp), Exploratory Data Analysis in Python (DataCamp).',
-    ],
-    technologies: ['Python', 'SQL', 'JavaScript', 'PostgreSQL', 'Data Analysis'],
+    technologies: ['Figma', 'UI/UX', 'Design Systems', 'Prototyping', 'User Research'],
     current: true,
   },
 ]
@@ -162,7 +162,7 @@ export default function Experience() {
                         <ul style={{ paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
                           {exp.highlights.map((h, j) => (
                             <li key={j} style={{ display: 'flex', gap: '10px', fontSize: '0.84rem', lineHeight: 1.65, color: '#55635D' }}>
-                              <span style={{ color: '#0F5A47', flexShrink: 0, marginTop: '1px' }}>—</span>
+                              <span style={{ color: '#0F5A47', flexShrink: 0, marginTop: '1px' }}>•</span>
                               {h}
                             </li>
                           ))}
@@ -193,7 +193,7 @@ export default function Experience() {
                         <ul style={{ paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
                           {exp.highlights.map((h, j) => (
                             <li key={j} style={{ display: 'flex', gap: '10px', fontSize: '0.84rem', lineHeight: 1.65, color: '#55635D' }}>
-                              <span style={{ color: '#0F5A47', flexShrink: 0, marginTop: '1px' }}>—</span>
+                              <span style={{ color: '#0F5A47', flexShrink: 0, marginTop: '1px' }}>•</span>
                               {h}
                             </li>
                           ))}

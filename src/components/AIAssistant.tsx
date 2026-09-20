@@ -12,37 +12,34 @@ const SUGGESTED = [
 ]
 
 const KNOWLEDGE: Record<string, string> = {
-  default: "I'm Zablon Ombiri's AI assistant. Ask me anything about his projects, work experience, skills, or how to get in touch.",
+  default: "I'm Zablon Zambagarrah's AI assistant. Ask me anything about his projects, work experience, skills, or how to get in touch.",
 
-  about: "Zablon Ombiri is a Data Analyst and Software Developer based in Mombasa, Kenya. He specializes in Python, Django, React, and SQL-based data analysis — turning raw data into actionable insight and building secure, scalable, user-friendly applications.",
+  about: "Zablon Zambagarrah is a Data Analyst and Software Developer based in Mombasa, Kenya. He specializes in Python, Django, React, and SQL-based data analysis, turning raw data into actionable insight and building secure, scalable, user-friendly applications.",
 
-  projects: "Zablon has built several real-world projects: a Django REST API for inventory management with JWT authentication, an interactive sales data dashboard using Pandas and Power BI, and a fullstack e-commerce storefront with React, Django, and MongoDB.",
+  projects: "Zablon has built several real-world projects: ShieldPay Financials, a live fintech web application with a Django backend, authentication system, and PostgreSQL data layer, and an ETL Pipeline Analytics project processing 10,000+ records daily with Python and PostgreSQL.",
 
-  inventory: "The Inventory Management System is a secure backend built with Django REST Framework — featuring JWT authentication, role-based permissions, and a PostgreSQL data layer for tracking products, categories, and stock movements through a clean REST API.",
+  shieldpay: "ShieldPay Financials is a live fintech web application handling user-facing financial flows end to end, built and deployed to production. It features a Django REST backend, an authentication system, and a PostgreSQL data layer connected to a real frontend.",
 
-  dashboard: "The Sales Data Dashboard cleans raw sales exports with Pandas — deduplicating records, normalizing dates, and handling missing values — then visualizes trends and KPIs in Power BI so stakeholders can self-serve answers instead of digging through spreadsheets.",
+  etl: "The ETL Pipeline Analytics project processes 10,000+ records daily with Python data pipelines and validation scripts, owning data quality end to end from ingestion through to output, and improving downstream dashboard performance by 30% through PostgreSQL query and schema optimisation.",
 
-  ecommerce: "The E-commerce Storefront pairs a React frontend with a Django backend and a MongoDB product catalog. EmailJS handles order confirmation emails directly from the client, keeping the stack lightweight while still confirming orders reliably.",
+  skills: "Zablon's technical stack: Python (strong), JavaScript (strong), TypeScript, SQL and PostgreSQL (advanced), Django, Flask, Node.js, React and Next.js, MySQL, Git/GitHub/GitLab, CI/CD, Docker, Kubernetes, AWS, and Azure Data Factory. He also integrates AI tools like GitHub Copilot and Claude into his daily engineering workflow.",
 
-  skills: "Zablon's technical stack: Django (advanced), Python, React JS, JavaScript, CSS3, PostgreSQL, MySQL, MongoDB, SQL, Pandas, NumPy, Power BI, Excel, Bootstrap, Git, and Next.js. He works across backend APIs, frontend interfaces, and data analysis.",
+  experience: "Zablon is a Backend Developer & Data Engineer at ByteForge Devs (Jan 2024–Present), a Software Engineer & Programming Educator at Swahilipot Hub Foundation (May 2025–May 2026), and a Product Designer at AFGT (2022–Present).",
 
-  experience: "Zablon is currently a Product Designer at AFGT (2022–Present) and a freelance UX Designer on UpWork (2022–Present). From 2023–2024 he worked as a Web Developer at Designer Hub, building and maintaining client websites with HTML, CSS, JavaScript, and React.",
+  contact: "You can reach Zablon at: Email, zablonombiri001@gmail.com. WhatsApp, +254 705 959 986. Location, Mombasa, Kenya (remote friendly). He's open to freelance projects, junior developer roles, and data analysis contracts.",
 
-  contact: "You can reach Zablon at: Email — zablonombiri001@gmail.com | WhatsApp — +254 705 959 986 | Location — Mombasa, Kenya (remote friendly). He's open to freelance projects, junior developer roles, and data analysis contracts.",
-
-  education: "Zablon is studying Web Design and Development at the Technical University of Mombasa (TUM), with coursework spanning frontend fundamentals, databases, and software engineering practices.",
+  education: "Zablon is pursuing a BSc. in Mathematics & Computer Science at the Technical University of Mombasa (TUM), with final exams completed and graduation pending. He also holds an Associate's Degree in Data Analysis from DataCamp.",
 
   opportunities: "Yes! Zablon is actively open to freelance projects, junior software/data roles, and collaborations. He's based in Mombasa but works remotely with clients worldwide. Contact him at zablonombiri001@gmail.com.",
 }
 
 function getResponse(input: string): string {
   const lower = input.toLowerCase()
-  if (lower.includes('inventory') || lower.includes('django rest') || lower.includes('stock')) return KNOWLEDGE.inventory
-  if (lower.includes('dashboard') || lower.includes('sales data') || lower.includes('power bi') || lower.includes('pandas')) return KNOWLEDGE.dashboard
-  if (lower.includes('e-commerce') || lower.includes('ecommerce') || lower.includes('storefront') || lower.includes('mongodb')) return KNOWLEDGE.ecommerce
+  if (lower.includes('shieldpay') || lower.includes('fintech') || lower.includes('financial')) return KNOWLEDGE.shieldpay
+  if (lower.includes('etl') || lower.includes('pipeline') || lower.includes('data engineer')) return KNOWLEDGE.etl
   if (lower.includes('project') || lower.includes('build') || lower.includes('work') || lower.includes('portfolio')) return KNOWLEDGE.projects
   if (lower.includes('skill') || lower.includes('tech') || lower.includes('python') || lower.includes('django') || lower.includes('stack')) return KNOWLEDGE.skills
-  if (lower.includes('experience') || lower.includes('designer') || lower.includes('upwork') || lower.includes('afgt')) return KNOWLEDGE.experience
+  if (lower.includes('experience') || lower.includes('designer') || lower.includes('byteforge') || lower.includes('swahilipot') || lower.includes('afgt')) return KNOWLEDGE.experience
   if (lower.includes('contact') || lower.includes('email') || lower.includes('phone') || lower.includes('whatsapp') || lower.includes('reach')) return KNOWLEDGE.contact
   if (lower.includes('education') || lower.includes('university') || lower.includes('degree') || lower.includes('study') || lower.includes('course')) return KNOWLEDGE.education
   if (lower.includes('hire') || lower.includes('job') || lower.includes('role') || lower.includes('open') || lower.includes('opportunity') || lower.includes('available') || lower.includes('freelance')) return KNOWLEDGE.opportunities
@@ -84,7 +81,7 @@ export default function AIAssistant({
     consumedRef.current = true
     const { question, context } = pendingMessage
     const preview = context.length > 80 ? context.slice(0, 80) + '…' : context
-    const userText = `"${preview}" — ${question}`
+    const userText = `"${preview}": ${question}`
     const userMsg: Message = { role: 'user', text: userText }
     setMessages((m) => [...m, userMsg])
     setTyping(true)
@@ -149,7 +146,7 @@ export default function AIAssistant({
         <div style={{ position: 'relative', flexShrink: 0 }}>
           <img
             src={zablonPhoto}
-            alt="Zablon Ombiri"
+            alt="Zablon Zambagarrah"
             style={{
               width: '40px',
               height: '40px',
