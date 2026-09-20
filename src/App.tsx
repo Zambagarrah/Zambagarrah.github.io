@@ -24,12 +24,12 @@ export default function App() {
       }
     }
 
-    document.title = 'Emmanuel Cherutich | AI Engineer & ML Developer'
-    setMeta('meta[name="description"]', 'Emmanuel Cherutich is an AI Engineer and ML Developer based in Mombasa, Kenya, building intelligent software, AI systems, and digital products that solve real-world problems.')
-    setMeta('meta[property="og:title"]', 'Emmanuel Cherutich | AI Engineer & ML Developer')
-    setMeta('meta[property="og:description"]', 'AI Engineer and ML Developer from Mombasa, Kenya building practical AI products, automation, and research-driven software solutions.')
-    setMeta('meta[name="twitter:title"]', 'Emmanuel Cherutich | AI Engineer & ML Developer')
-    setMeta('meta[name="twitter:description"]', 'AI Engineer and ML Developer building practical AI systems and software solutions in Kenya.')
+    document.title = 'Zablon Ombiri | Data Analyst & Software Developer'
+    setMeta('meta[name="description"]', 'Zablon Ombiri is a Data Analyst and Software Developer based in Mombasa, Kenya, turning raw data into insight and building secure, scalable web applications with Python, Django, and React.')
+    setMeta('meta[property="og:title"]', 'Zablon Ombiri | Data Analyst & Software Developer')
+    setMeta('meta[property="og:description"]', 'Data Analyst and Software Developer from Mombasa, Kenya building data-driven dashboards, Django backends, and full-stack web applications.')
+    setMeta('meta[name="twitter:title"]', 'Zablon Ombiri | Data Analyst & Software Developer')
+    setMeta('meta[name="twitter:description"]', 'Data Analyst and Software Developer building practical data and web solutions from Kenya.')
   }, [])
 
   // Selection AI state
@@ -96,16 +96,16 @@ export default function App() {
                 marginBottom: '4px',
               }}
             >
-              Emmanuel Cherutich.
+              Zablon Ombiri.
             </div>
             <div style={{ fontSize: '0.75rem', color: '#8A948F' }}>
-              AI Engineer · ML Developer · Technical Mentor · Mombasa, Kenya
+              Data Analyst · Software Developer · Mombasa, Kenya
             </div>
           </div>
           <div style={{ fontSize: '0.75rem', color: '#8A948F', textAlign: 'right' }}>
-            <div>© {new Date().getFullYear()} Emmanuel Cherutich. All rights reserved.</div>
+            <div>© {new Date().getFullYear()} Zablon Ombiri. All rights reserved.</div>
             <div style={{ marginTop: '4px', fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}>
-              Built with precision & intelligence.
+              Data that speaks & code that scales.
             </div>
           </div>
         </div>

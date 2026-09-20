@@ -1,62 +1,62 @@
 const experiences = [
   {
-    period: '2024 — Present',
-    title: 'Technical Mentor',
-    company: 'Technical University of Mombasa',
+    period: '2022 — Present',
+    title: 'Product Designer',
+    company: 'AFGT',
     location: 'Mombasa, Kenya',
     type: 'Part-time',
     highlights: [
-      'Mentored students in AI, machine learning, Python development, and Linux systems administration.',
-      'Led regular study groups and AI workshops, helping students understand concepts from fundamentals to deployment.',
-      'Supported hackathon teams with project ideation, model building, debugging, and final presentations.',
-      'Helped students build, debug, and deploy real applications — including web apps, ML models, and automation tools.',
+      'Designed product experiences and interfaces for internal and client-facing tools.',
+      'Collaborated closely with engineering to translate research and wireframes into shipped features.',
+      'Ran usability reviews and iterated on flows based on user feedback and analytics.',
+      'Maintained a consistent design system across web and mobile touchpoints.',
     ],
-    technologies: ['Python', 'TensorFlow', 'Linux', 'Git', 'Flask', 'Machine Learning'],
+    technologies: ['Figma', 'UI/UX', 'Design Systems', 'Prototyping', 'User Research'],
     current: true,
   },
   {
-    period: '2025',
-    title: 'Software Development Intern',
-    company: 'Swahilipot Hub Foundation',
-    location: 'Mombasa, Kenya',
-    type: 'Internship',
+    period: '2022 — Present',
+    title: 'UX Designer',
+    company: 'UpWork',
+    location: 'Remote',
+    type: 'Freelance',
     highlights: [
-      'Worked on web and backend development tasks as part of a collaborative agile team.',
-      'Built and documented RESTful APIs for internal community digital projects.',
-      'Improved database schema design and query efficiency for production applications.',
-      'Contributed to open digital infrastructure serving the Mombasa tech community.',
+      'Delivered UX research, wireframes, and high-fidelity prototypes for international clients.',
+      'Ran discovery sessions to translate client requirements into clear product flows.',
+      'Iterated designs quickly based on client feedback across multiple concurrent contracts.',
+      'Built a track record of repeat clients through reliable, on-time delivery.',
     ],
-    technologies: ['Python', 'JavaScript', 'REST APIs', 'MySQL', 'Git', 'Agile'],
+    technologies: ['Figma', 'Adobe XD', 'Wireframing', 'User Testing', 'Client Communication'],
     current: false,
   },
   {
-    period: '2025',
-    title: 'Frontend Technical Trainer',
-    company: 'Swahilipot Hub',
+    period: '2023 — 2024',
+    title: 'Web Developer',
+    company: 'Designer Hub',
     location: 'Mombasa, Kenya',
-    type: 'Trainer',
+    type: 'Contract',
     highlights: [
-      'Trained youth in HTML, CSS, JavaScript, and UI/UX design fundamentals through structured weekly sessions.',
-      'Designed practical projects and hands-on exercises tailored to absolute beginners and intermediate learners.',
-      'Facilitated mentorship programs to grow tech talent in underserved communities around Mombasa.',
-      'Created curriculum materials, exercises, and project briefs used by multiple cohorts of students.',
+      'Built and maintained client websites using HTML, CSS, JavaScript, and React.',
+      'Translated Figma designs into responsive, production-ready interfaces.',
+      'Integrated backend APIs and third-party services into frontend applications.',
+      'Optimized page performance and cross-browser compatibility for client sites.',
     ],
     technologies: ['HTML', 'CSS', 'JavaScript', 'UI/UX', 'Responsive Design', 'Git'],
     current: false,
   },
   {
-    period: '2021 — Present',
-    title: 'BSc Computer Science Student',
+    period: '2022 — Present',
+    title: 'Web Design & Development Student',
     company: 'Technical University of Mombasa',
     location: 'Mombasa, Kenya',
     type: 'Education',
     highlights: [
-      'Pursuing a Bachelor of Science in Computer Science with focus on AI, ML, and software engineering.',
-      'Core coursework: Machine Learning, Data Structures, Algorithms, Cybersecurity, Web Development, Distributed Systems.',
-      'Applied classroom knowledge to real-world projects — speech transcription, chatbots, financial systems, and automation tools.',
-      'Active participant in university hackathons, coding competitions, and local tech challenge events.',
+      'Studying web design and development, covering frontend fundamentals, databases, and software engineering.',
+      'Core coursework: Data Structures, Algorithms, Databases, Web Development, Cybersecurity fundamentals.',
+      'Applied classroom knowledge to real-world projects — inventory APIs, sales dashboards, and e-commerce apps.',
+      'Active participant in coding challenges and campus tech events.',
     ],
-    technologies: ['Python', 'C++', 'SQL', 'Data Structures', 'Algorithms', 'Cybersecurity'],
+    technologies: ['Python', 'SQL', 'JavaScript', 'HTML/CSS', 'Django', 'Git'],
     current: true,
   },
 ]
@@ -82,9 +82,9 @@ export default function Experience() {
               color: '#15231E',
             }}
           >
-            Building, teaching, and
+            Designing, building, and
             <br />
-            <em style={{ fontStyle: 'italic', color: '#0F5A47' }}>giving back.</em>
+            <em style={{ fontStyle: 'italic', color: '#0F5A47' }}>shipping products.</em>
           </h2>
         </div>
 

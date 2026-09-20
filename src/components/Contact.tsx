@@ -64,9 +64,9 @@ export default function Contact() {
             </h2>
 
             <p style={{ fontSize: '0.92rem', lineHeight: 1.8, color: '#55635D', marginBottom: '44px' }}>
-              I'm open to internships, junior engineering roles, AI project collaborations,
-              and freelance work. If you're looking for someone who can build intelligent,
-              practical systems — let's connect.
+              I'm open to freelance projects, junior developer roles, data analysis
+              contracts, and collaborations. If you're looking for someone who can build
+              practical, well-crafted software — let's connect.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -74,26 +74,26 @@ export default function Contact() {
                 {
                   icon: '✉',
                   label: 'Email',
-                  value: 'cherutichemmanuel87@gmail.com',
-                  href: 'mailto:cherutichemmanuel87@gmail.com',
+                  value: 'zablonombiri001@gmail.com',
+                  href: 'mailto:zablonombiri001@gmail.com',
                 },
                 {
                   icon: '◈',
-                  label: 'Phone',
-                  value: '+254 727 683 579',
-                  href: 'tel:+254727683579',
+                  label: 'WhatsApp',
+                  value: '+254 705 959 986',
+                  href: 'https://api.whatsapp.com/send?phone=254705959986',
                 },
                 {
                   icon: '◉',
                   label: 'LinkedIn',
                   value: 'Connect on LinkedIn',
-                  href: 'https://www.linkedin.com/in/emmanuel-cherutich/',
+                  href: 'https://www.linkedin.com/in/zablon-ombiri-6a7ab2254/',
                 },
                 {
                   icon: '◎',
                   label: 'GitHub',
                   value: 'View my repositories',
-                  href: 'https://github.com/mantel254',
+                  href: 'https://github.com/Zambagarrah',
                 },
                 {
                   icon: '△',
@@ -189,7 +189,7 @@ export default function Contact() {
                   Message received.
                 </h3>
                 <p style={{ fontSize: '0.9rem', color: '#55635D', lineHeight: 1.7 }}>
-                  Thank you for reaching out. Emmanuel will get back to you as soon as possible.
+                  Thank you for reaching out. Zablon will get back to you as soon as possible.
                 </p>
               </div>
             ) : (

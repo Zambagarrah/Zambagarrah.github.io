@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://emmanuelcherutich.com/sitemap.xml
+Sitemap: https://zambagarrah.github.io/sitemap.xml

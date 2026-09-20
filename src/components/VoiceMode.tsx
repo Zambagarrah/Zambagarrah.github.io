@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from 'react'
-import emmanuelPhoto from '@/imports/Gemini_Generated_Image_b5i3oeb5i3oeb5i3.png'
+import zablonPhoto from '@/imports/zablon_photo.jpg'
 
 const VOICE_RESPONSES = [
-  "Hello! I'm Emmanuel Cherutich's AI assistant. How can I help you today?",
-  "Emmanuel is a Computer Science student at the Technical University of Mombasa, Kenya. He specializes in AI, machine learning, automation, and software engineering — building systems that solve real problems for communities across Africa.",
-  "Emmanuel has built several production AI systems: a speech transcription model for the Ewe language, a PDF-powered RAG chatbot, an AI WhatsApp automation bot using Twilio, and a full financial management system with M-Pesa STK Push integration.",
-  "He's also a technical mentor and trainer — he mentors students in AI and Python at his university, and runs frontend development training sessions at Swahilipot Hub in Mombasa for youth learners.",
-  "Emmanuel is currently open to internships, junior engineering roles, freelance AI projects, and research collaborations. You can reach him at cherutichemmanuel87 at gmail dot com, or call plus two five four seven two seven six eight three five seven nine.",
+  "Hello! I'm Zablon Ombiri's AI assistant. How can I help you today?",
+  "Zablon is a Data Analyst and Software Developer based in Mombasa, Kenya. He specializes in Python, Django, React, and SQL-based data analysis — turning raw data into insight and building secure, scalable web applications.",
+  "Zablon has built several real-world projects: a Django REST API for inventory management with JWT authentication, an interactive sales data dashboard using Pandas and Power BI, and a fullstack e-commerce storefront with React, Django, and MongoDB.",
+  "He's currently a Product Designer at AFGT, a freelance UX Designer on UpWork, and previously worked as a Web Developer at Designer Hub building client websites.",
+  "Zablon is currently open to freelance projects, junior developer roles, and data analysis contracts. You can reach him at zablon ombiri zero zero one at gmail dot com, or on WhatsApp at plus two five four seven zero five nine five nine nine eight six.",
 ]
 
 export default function VoiceMode({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -121,7 +121,7 @@ export default function VoiceMode({ open, onClose }: { open: boolean; onClose: (
             </span>
           </div>
           <div style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.4)', fontFamily: 'var(--font-mono)' }}>
-            Emmanuel's AI · Conversational Interface
+            Zablon's AI · Conversational Interface
           </div>
         </div>
 
@@ -177,8 +177,8 @@ export default function VoiceMode({ open, onClose }: { open: boolean; onClose: (
             }}
           >
             <img
-              src={emmanuelPhoto}
-              alt="Emmanuel AI Avatar"
+              src={zablonPhoto}
+              alt="Zablon AI Avatar"
               style={{
                 width: '100%',
                 height: '100%',

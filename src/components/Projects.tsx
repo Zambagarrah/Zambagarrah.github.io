@@ -3,99 +3,75 @@ import { useState } from 'react'
 const projects = [
   {
     id: 1,
-    title: 'Ewe Language Speech Transcription Model',
-    category: 'Deep Learning · NLP · Low-Resource Languages',
+    title: 'Django REST API — Inventory Management System',
+    category: 'Backend · REST APIs · PostgreSQL',
     year: '2024',
     status: 'Completed',
     description:
-      'A custom speech-to-text model for transcribing the Ewe language — a West African language severely underrepresented in AI datasets. Addresses the critical gap in low-resource language AI using deep learning and audio preprocessing pipelines.',
+      'A secure backend built with Django REST Framework featuring token authentication, role-based permissions, and a PostgreSQL data layer for tracking stock across an inventory system.',
     problem:
-      'Most speech recognition systems are built for English and a handful of high-resource languages, leaving millions of Ewe speakers without voice-AI tools in their native tongue.',
+      'Small businesses often manage stock in spreadsheets, leading to stockouts, duplicate entries, and no audit trail of who changed what.',
     architecture:
-      'Character-level NLP pipeline with custom audio preprocessing (librosa, MFCC feature extraction). Trained on curated Ewe speech datasets. Deep learning model built with TensorFlow/Keras, validated on held-out transcription benchmarks.',
+      'Django REST Framework backend with JWT authentication and role-based permissions (admin, staff). PostgreSQL models for products, categories, and stock movements, with serializers and viewsets exposing a clean REST API consumed by a frontend client.',
     metrics: [
-      { label: 'Language', value: 'Ewe' },
-      { label: 'Model Type', value: 'Seq2Seq' },
-      { label: 'Framework', value: 'TensorFlow' },
-      { label: 'Task', value: 'ASR' },
+      { label: 'Framework', value: 'DRF' },
+      { label: 'Database', value: 'PostgreSQL' },
+      { label: 'Auth', value: 'JWT' },
+      { label: 'API', value: 'REST' },
     ],
-    stack: ['Python', 'TensorFlow', 'Keras', 'librosa', 'NLTK', 'NumPy'],
+    stack: ['Django', 'DRF', 'PostgreSQL', 'JWT', 'Python'],
     color: '#0F5A47',
     accent: 'rgba(15,90,71,0.06)',
     gradient: 'linear-gradient(135deg, rgba(15,90,71,0.08) 0%, rgba(46,139,87,0.04) 100%)',
-    aiExplanation: 'The model uses a character-level approach rather than word-level to handle Ewe\'s tonal structure and morphology. Audio input is converted to MFCC (Mel-Frequency Cepstral Coefficients) feature vectors, fed into an encoder-decoder architecture. Training on low-resource data required careful data augmentation, noise injection, and speed perturbation to prevent overfitting. This architecture generalizes better to unseen speakers and natural speech variation.',
+    aiExplanation: 'The API separates concerns cleanly: models define the stock schema, serializers validate and shape data, and viewsets expose CRUD endpoints with role checks applied at the permission-class level. JWT tokens keep the API stateless, so it scales horizontally without shared session storage, while granular permissions ensure staff accounts can update stock without touching admin-only settings.',
   },
   {
     id: 2,
-    title: 'Website AI Chatbot — PDF-Powered RAG System',
-    category: 'LLMs · RAG · Conversational AI',
+    title: 'Sales Data Dashboard',
+    category: 'Data Analysis · Visualization · SQL',
     year: '2024',
-    status: 'Production',
+    status: 'Completed',
     description:
-      'An intelligent chatbot deployed on an organization\'s website that answers user queries by retrieving and reasoning over internal PDF documents. Enables accurate, automated customer support without manual FAQ maintenance.',
+      'An interactive analytics dashboard that cleans raw sales data with Pandas and visualizes trends and KPIs for stakeholders, turning spreadsheets into decision-ready reports.',
     problem:
-      'Organizations spend hours manually updating FAQs while users still can\'t find answers buried in policy documents, reports, or manuals. Static chatbots fail when documents change.',
+      'Sales teams collect data across multiple spreadsheets with inconsistent formatting, making it hard to spot trends or answer basic questions about performance quickly.',
     architecture:
-      'Retrieval-Augmented Generation pipeline: PDFs parsed and chunked into semantic passages, embedded with sentence transformers, stored in a vector index. At query time, top-k passages are retrieved and passed as context to an LLM for grounded answer generation. Built with Python, FastAPI backend.',
+      'Raw exports are ingested and cleaned with Pandas — deduplicating records, normalizing date formats, and handling missing values. Cleaned data is queried with SQL and visualized in Power BI dashboards covering revenue trends, top products, and regional performance.',
     metrics: [
-      { label: 'Approach', value: 'RAG' },
-      { label: 'Data Source', value: 'PDFs' },
-      { label: 'Backend', value: 'FastAPI' },
-      { label: 'Interface', value: 'Web Chat' },
+      { label: 'Tooling', value: 'Pandas' },
+      { label: 'Storage', value: 'SQL' },
+      { label: 'Dashboards', value: 'Power BI' },
+      { label: 'Output', value: 'KPIs' },
     ],
-    stack: ['Python', 'FastAPI', 'Hugging Face', 'FAISS', 'LangChain', 'JavaScript'],
+    stack: ['Python', 'Pandas', 'Power BI', 'SQL'],
     color: '#B86A4A',
     accent: 'rgba(184,106,74,0.06)',
     gradient: 'linear-gradient(135deg, rgba(184,106,74,0.08) 0%, rgba(197,154,90,0.04) 100%)',
-    aiExplanation: 'RAG (Retrieval-Augmented Generation) grounds the LLM\'s responses in real document content, preventing hallucination. PDF documents are split into overlapping chunks to preserve context across page boundaries. TF-IDF and cosine similarity are used for lightweight retrieval, while sentence transformer embeddings handle semantic matching. The LLM only sees retrieved context — never the full document corpus — keeping inference fast and responses accurate.',
+    aiExplanation: 'The cleaning pipeline standardizes messy inputs before any analysis happens — this is where most of the value is created, since garbage data produces garbage dashboards. Aggregation queries roll transactions up into daily/monthly summaries, which Power BI then renders as trend lines and KPI cards, letting stakeholders self-serve answers instead of waiting on ad-hoc spreadsheet requests.',
   },
   {
     id: 3,
-    title: 'AI-Powered WhatsApp Automation Bot',
-    category: 'Automation · WhatsApp API · AI',
+    title: 'E-commerce Storefront',
+    category: 'Full-Stack · React · Django',
     year: '2024',
-    status: 'Production',
+    status: 'Completed',
     description:
-      'A fully automated WhatsApp bot that responds intelligently to user messages, processes text with AI models, and handles multi-turn conversations — deployed safely without joining group chats to maintain relevance and safety.',
+      'A fullstack e-commerce app with a React frontend, Django backend, MongoDB product catalog, and EmailJS-powered order notifications.',
     problem:
-      'Businesses in Kenya rely heavily on WhatsApp for customer support, but manual responses are slow, inconsistent, and don\'t scale. Most bots are keyword-only and fail to understand natural language.',
+      'Small merchants need an online storefront but off-the-shelf platforms are often too rigid or expensive for a lean product catalog and simple checkout flow.',
     architecture:
-      'WhatsApp Business API (Twilio) integration with Python backend. NLP layer for intent detection and entity extraction. AI response generation pipeline. Message routing logic that handles individual chats while deliberately excluding group contexts for privacy and relevance.',
+      'React frontend for browsing, cart, and checkout, talking to a Django backend that exposes REST endpoints. Product data is stored in MongoDB for flexible catalog schemas, and EmailJS sends order confirmation emails directly from the client without a dedicated mail server.',
     metrics: [
-      { label: 'Platform', value: 'WhatsApp' },
-      { label: 'API', value: 'Twilio' },
-      { label: 'NLP', value: 'Custom' },
-      { label: 'Deployment', value: 'Live' },
+      { label: 'Frontend', value: 'React' },
+      { label: 'Backend', value: 'Django' },
+      { label: 'Catalog', value: 'MongoDB' },
+      { label: 'Notify', value: 'EmailJS' },
     ],
-    stack: ['Python', 'Flask', 'Twilio API', 'WhatsApp Business API', 'NLTK', 'ngrok'],
-    color: '#0F5A47',
-    accent: 'rgba(15,90,71,0.06)',
-    gradient: 'linear-gradient(135deg, rgba(15,90,71,0.08) 0%, rgba(15,90,71,0.03) 100%)',
-    aiExplanation: 'The bot uses a layered NLP pipeline: keyword extraction handles structured commands, while a trained classifier handles ambiguous natural language. Intent confidence thresholds determine whether to respond directly, ask a clarifying question, or escalate to a human. The deliberate exclusion of group chats is a safety design choice — group dynamics create noise and potential for misuse, so the bot only operates in 1-on-1 conversations where context is clear.',
-  },
-  {
-    id: 4,
-    title: 'Investment Group Finance Management System',
-    category: 'FinTech · Full-Stack · M-Pesa',
-    year: '2024',
-    status: 'Production',
-    description:
-      'A complete end-to-end financial management platform for an investment group in Kenya. Handles member accounts, monthly contributions, automated statements, withdrawals, admin analytics, and referral-based M-Pesa payments with STK Push.',
-    problem:
-      'Investment chamas in Kenya track finances manually using spreadsheets or WhatsApp groups — leading to errors, disputes, and a lack of transparency that erodes member trust.',
-    architecture:
-      'Python/Flask backend with MySQL database. M-Pesa Daraja API for STK Push payment initiation and callback handling. Referral system with instant reward logic after confirmed transactions. Authenticated admin dashboard with real-time contribution tracking, withdrawal requests, and automated monthly statements.',
-    metrics: [
-      { label: 'Payment', value: 'M-Pesa' },
-      { label: 'Database', value: 'MySQL' },
-      { label: 'Auth', value: 'Session' },
-      { label: 'Statements', value: 'Auto' },
-    ],
-    stack: ['Python', 'Flask', 'MySQL', 'M-Pesa API', 'HTML/CSS', 'JavaScript', 'PayPal'],
+    stack: ['React', 'Django', 'MongoDB', 'REST API', 'EmailJS'],
     color: '#C59A5A',
     accent: 'rgba(197,154,90,0.06)',
     gradient: 'linear-gradient(135deg, rgba(197,154,90,0.08) 0%, rgba(184,106,74,0.04) 100%)',
-    aiExplanation: 'The M-Pesa STK Push integration initiates payment prompts directly on users\' phones — no manual paybill entry needed. The system listens for Daraja API callbacks to confirm payment completion before crediting member accounts, preventing fraud from unconfirmed transactions. The referral reward logic is atomic: it only executes after the payment callback status is "Success", ensuring rewards are never paid for failed payments.',
+    aiExplanation: 'Using MongoDB for the product catalog allows each product to carry a different set of attributes (size, color, variant) without rigid schema migrations, while the Django backend still enforces business rules like stock checks before checkout. EmailJS offloads transactional email delivery to a managed service, keeping the app lightweight while still confirming orders reliably.',
   },
 ]
 
@@ -130,7 +106,7 @@ export default function Projects() {
             </h2>
           </div>
           <p style={{ fontSize: '0.9rem', color: '#8A948F', maxWidth: '280px', lineHeight: 1.65 }}>
-            Each project solves a genuine problem faced by communities, businesses, and individuals across Kenya and Africa.
+            Each project solves a genuine problem — from inventory tracking to sales insight to full storefronts.
           </p>
         </div>
 

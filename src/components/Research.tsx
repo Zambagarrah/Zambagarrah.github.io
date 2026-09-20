@@ -1,55 +1,18 @@
 const techInterests = [
   {
-    title: 'Low-Resource Language AI',
-    area: 'NLP · Speech Recognition · Africa',
+    title: 'Research details coming soon',
+    area: 'Placeholder · To Be Updated',
     description:
-      'Building speech and text AI systems for African languages that are severely underrepresented in global datasets. Starting with Ewe, with plans to expand to Swahili and coastal Kenya dialects.',
-    tags: ['ASR', 'Character-level NLP', 'MFCC', 'African Languages'],
+      'This section is reserved for Zablon\'s research interests and deep-dive write-ups. Details will be added once provided.',
+    tags: ['Coming Soon'],
     icon: '◎',
     color: '#0F5A47',
     bg: 'rgba(15,90,71,0.05)',
-    status: 'Active',
-  },
-  {
-    title: 'AI for Financial Inclusion',
-    area: 'FinTech · M-Pesa · Automation',
-    description:
-      'Automating financial workflows for informal investment groups, chamas, and small businesses in Kenya using M-Pesa APIs and intelligent payment processing — bringing fintech to underbanked communities.',
-    tags: ['M-Pesa', 'STK Push', 'Referral Systems', 'Flask'],
-    icon: '◇',
-    color: '#C59A5A',
-    bg: 'rgba(197,154,90,0.05)',
-    status: 'Production',
-  },
-  {
-    title: 'Conversational AI & RAG',
-    area: 'LLMs · Chatbots · Knowledge Retrieval',
-    description:
-      'Exploring retrieval-augmented generation as a practical tool for organizations that need accurate, document-grounded AI answers without maintaining large infrastructure — deployed via lightweight APIs.',
-    tags: ['RAG', 'PDF Ingestion', 'Vector Search', 'LLMs'],
-    icon: '△',
-    color: '#B86A4A',
-    bg: 'rgba(184,106,74,0.05)',
-    status: 'Active',
-  },
-  {
-    title: 'Community Tech Education',
-    area: 'AI Education · Youth Mentorship · Kenya',
-    description:
-      'Designing accessible AI and programming curricula for youth in Mombasa through Swahilipot Hub and university workshops — making advanced technical skills reachable for those without access to expensive programs.',
-    tags: ['AI Workshops', 'Python', 'Hackathons', 'Curriculum Design'],
-    icon: '⬡',
-    color: '#0F5A47',
-    bg: 'rgba(15,90,71,0.05)',
-    status: 'Ongoing',
+    status: 'Draft',
   },
 ]
 
-const hackathons = [
-  { name: 'Local Hackathon Finalist', org: 'Technical University of Mombasa', year: '2024', outcome: 'Finalist' },
-  { name: 'AI Innovation Challenge', org: 'Swahilipot Hub', year: '2025', outcome: 'Participant' },
-  { name: 'Tech for Good Competition', org: 'Mombasa Tech Community', year: '2024', outcome: 'Finalist' },
-]
+const hackathons: { name: string; org: string; year: string; outcome: string }[] = []
 
 export default function Research() {
   return (
@@ -84,7 +47,7 @@ export default function Research() {
         </div>
 
         {/* Interest cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '64px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '24px', marginBottom: '64px' }}>
           {techInterests.map((item, i) => (
             <div
               key={i}
@@ -176,7 +139,8 @@ export default function Research() {
           ))}
         </div>
 
-        {/* Hackathons / competitions */}
+        {/* Hackathons / competitions — populate once details are provided */}
+        {hackathons.length > 0 && (
         <div>
           <p className="section-eyebrow" style={{ marginBottom: '24px' }}>Hackathons & Competitions</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -221,6 +185,7 @@ export default function Research() {
             ))}
           </div>
         </div>
+        )}
       </div>
 
       <style>{`

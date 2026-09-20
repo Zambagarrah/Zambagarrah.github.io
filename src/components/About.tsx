@@ -1,27 +1,27 @@
 const timeline = [
   {
-    year: '2024–Present',
-    role: 'Technical Mentor',
+    year: '2022–Present',
+    role: 'Product Designer',
+    org: 'AFGT — Kenya',
+    desc: 'Designing product experiences and interfaces, working closely with engineering to ship features that balance usability with business goals.',
+  },
+  {
+    year: '2022–Present',
+    role: 'UX Designer',
+    org: 'UpWork — Remote',
+    desc: 'Freelance UX design for international clients — research, wireframes, and high-fidelity prototypes across web and mobile products.',
+  },
+  {
+    year: '2023–2024',
+    role: 'Web Developer',
+    org: 'Designer Hub — Kenya',
+    desc: 'Built and maintained client websites using HTML, CSS, JavaScript, and React, translating designs into responsive, production-ready interfaces.',
+  },
+  {
+    year: '2022–Present',
+    role: 'Web Design & Development',
     org: 'Technical University of Mombasa',
-    desc: 'Mentoring students in AI, ML, Python development, and Linux systems. Leading study groups, AI workshops, and supporting hackathon teams.',
-  },
-  {
-    year: '2025',
-    role: 'Software Development Intern',
-    org: 'Swahilipot Hub Foundation',
-    desc: 'Building APIs, improving database structures, and contributing to digital community projects in an agile team environment.',
-  },
-  {
-    year: '2025',
-    role: 'Frontend Technical Trainer',
-    org: 'Swahilipot Hub',
-    desc: 'Training youth in HTML, CSS, JavaScript, and UI/UX fundamentals through practical projects, weekly classes, and mentorship programs.',
-  },
-  {
-    year: '2021–Present',
-    role: 'BSc Computer Science',
-    org: 'Technical University of Mombasa',
-    desc: 'Coursework: Machine Learning, Data Structures, Algorithms, Cybersecurity, Web Development, Distributed Systems.',
+    desc: 'Studying web design and development, with coursework spanning frontend fundamentals, databases, and software engineering practices.',
   },
 ]
 
@@ -60,36 +60,36 @@ export default function About() {
                 marginBottom: '32px',
               }}
             >
-              Engineering solutions
+              Turning data and code
               <br />
-              <em style={{ fontStyle: 'italic', color: '#0F5A47' }}>for real communities.</em>
+              <em style={{ fontStyle: 'italic', color: '#0F5A47' }}>into real solutions.</em>
             </h2>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <p style={{ fontSize: '0.97rem', lineHeight: 1.8, color: '#55635D' }}>
-                I'm Emmanuel Cherutich, a Computer Science student at the Technical University of
-                Mombasa with a deep passion for AI, machine learning, and building software that
-                solves real problems for real people — especially in underserved communities across Africa.
+                I'm Zablon Ombiri, a Data Analyst and Software Developer based in Mombasa, Kenya.
+                By day, I turn messy numbers into neat stories; by night, I craft Python, Django,
+                and React into apps so smooth they could butter your toast.
               </p>
               <p style={{ fontSize: '0.97rem', lineHeight: 1.8, color: '#55635D' }}>
-                I've built end-to-end AI systems from scratch: speech transcription for low-resource
-                languages, RAG-powered chatbots, WhatsApp automation tools, and complete financial
-                management platforms with M-Pesa integration. I care deeply about systems that
-                actually work in the field, not just in demos.
+                I've specialized in Python, Django, React, Next.js, and SQL-based data analysis —
+                focused on turning raw data into actionable insight and building secure, scalable,
+                user-friendly applications. With a strong foundation in cybersecurity and
+                performance optimization, I blend analytical thinking with technical expertise.
               </p>
               <p style={{ fontSize: '0.97rem', lineHeight: 1.8, color: '#55635D' }}>
-                Beyond building, I mentor and train the next generation of developers through
-                Swahilipot Hub and at the university, running AI workshops, study groups, and
-                hands-on coding sessions for youth across Mombasa.
+                Whether I'm querying and visualizing data, building Django REST APIs, refining
+                UI animations, or developing solutions in e-commerce and smart education, I'm
+                driven by problem-solving and continuous learning.
               </p>
             </div>
 
             {/* Philosophy cards */}
             <div style={{ marginTop: '44px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
               {[
-                { icon: '⬡', label: 'Local Impact', desc: 'Technology that solves African problems first.' },
-                { icon: '◎', label: 'Community First', desc: 'Empowering developers and learners around me.' },
-                { icon: '△', label: 'End-to-End Builder', desc: 'From model to deployment, I own the full stack.' },
+                { icon: '⬡', label: 'Data-Driven', desc: 'Decisions backed by clean, well-structured data.' },
+                { icon: '◎', label: 'Full-Stack Builder', desc: 'From database schema to polished frontend.' },
+                { icon: '△', label: 'Security-Minded', desc: 'Applying cybersecurity best practices throughout.' },
                 { icon: '◇', label: 'Open to Learn', desc: 'Curious, self-driven, and always improving.' },
               ].map((p) => (
                 <div
@@ -199,12 +199,12 @@ export default function About() {
               <p className="section-eyebrow" style={{ marginBottom: '16px' }}>Interests</p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                 {[
-                  'AI & Cybersecurity',
-                  'Robotics & Automation',
-                  'Time Series Forecasting',
-                  'Community Tech Education',
-                  'Entrepreneurship in Tech',
-                  'Low-Resource NLP',
+                  'Data Visualization',
+                  'Backend API Design',
+                  'Cybersecurity',
+                  'E-commerce Systems',
+                  'UI/UX & Animation',
+                  'Smart Education Tech',
                 ].map((interest) => (
                   <span
                     key={interest}

@@ -1,14 +1,14 @@
-import emmanuelPhoto from '@/imports/Gemini_Generated_Image_b5i3oeb5i3oeb5i3.png'
+import zablonPhoto from '@/imports/zablon_photo.jpg'
 
 const techBadges = [
   { label: 'Python', delay: '0s', x: '-160px', y: '60px' },
-  { label: 'TensorFlow', delay: '0.4s', x: '-155px', y: '200px' },
-  { label: 'RAG Systems', delay: '0.8s', x: '-175px', y: '340px' },
-  { label: 'FastAPI', delay: '1.2s', x: '118px', y: '80px' },
-  { label: 'WhatsApp API', delay: '0.6s', x: '108px', y: '220px' },
-  { label: 'M-Pesa', delay: '1.0s', x: '98px', y: '360px' },
-  { label: 'Flask', delay: '0.2s', x: '-148px', y: '470px' },
-  { label: 'Hugging Face', delay: '1.4s', x: '112px', y: '480px' },
+  { label: 'Django', delay: '0.4s', x: '-155px', y: '200px' },
+  { label: 'React', delay: '0.8s', x: '-175px', y: '340px' },
+  { label: 'Pandas', delay: '1.2s', x: '118px', y: '80px' },
+  { label: 'PostgreSQL', delay: '0.6s', x: '108px', y: '220px' },
+  { label: 'Power BI', delay: '1.0s', x: '98px', y: '360px' },
+  { label: 'REST APIs', delay: '0.2s', x: '-148px', y: '470px' },
+  { label: 'MongoDB', delay: '1.4s', x: '112px', y: '480px' },
 ]
 
 export default function Hero() {
@@ -111,11 +111,11 @@ export default function Hero() {
               marginBottom: '24px',
             }}
           >
-            Emmanuel Cherutich
+            Zablon Ombiri
             <br />
-            <em style={{ fontStyle: 'italic', color: '#0F5A47' }}>AI Engineer</em> & ML
+            <em style={{ fontStyle: 'italic', color: '#0F5A47' }}>Data Analyst</em> & Software
             <br />
-            Developer Building Better Tools.
+            Developer Building Practical Tools.
           </h1>
 
           {/* Role tags */}
@@ -128,7 +128,7 @@ export default function Hero() {
               marginBottom: '28px',
             }}
           >
-            {['AI Engineer', 'ML Developer', 'Software Engineer', 'Technical Trainer'].map((role) => (
+            {['Data Analyst', 'Software Developer', 'Django Specialist', 'Frontend Developer'].map((role) => (
               <span
                 key={role}
                 style={{
@@ -159,10 +159,11 @@ export default function Hero() {
               maxWidth: '520px',
             }}
           >
-            Emmanuel Cherutich is a computer science student and AI engineer based in Mombasa,
-            Kenya, building AI-powered chatbots, WhatsApp automation, financial systems, and
-            low-resource language models. He focuses on practical technology that solves local
-            problems and creates measurable impact for communities and businesses.
+            Zablon Ombiri is a Data Analyst and Software Developer based in Mombasa,
+            Kenya, turning messy datasets into clear insight and building secure, scalable
+            web applications with Python, Django, and React. He focuses on practical
+            technology — from data dashboards to production-ready APIs — that actually
+            solves problems for people and businesses.
           </p>
 
           {/* CTA buttons */}
@@ -200,7 +201,7 @@ export default function Hero() {
               View Projects
             </a>
             <a
-              href="mailto:cherutichemmanuel87@gmail.com"
+              href="mailto:zablonombiri001@gmail.com"
               style={{
                 padding: '13px 28px',
                 borderRadius: '100px',
@@ -242,9 +243,9 @@ export default function Hero() {
             }}
           >
             {[
-              { value: '10+', label: 'AI Projects Built' },
-              { value: '30+', label: 'Students Mentored' },
-              { value: '5+', label: 'Live Deployments' },
+              { value: '3+', label: 'Years Experience' },
+              { value: '15+', label: 'Projects Completed' },
+              { value: '24/7', label: 'Online Support' },
             ].map((stat) => (
               <div key={stat.label}>
                 <div
@@ -296,8 +297,8 @@ export default function Hero() {
             />
 
             <img
-              src={emmanuelPhoto}
-              alt="Emmanuel Cherutich — AI & Software Engineer"
+              src={zablonPhoto}
+              alt="Zablon Ombiri — Data Analyst & Software Developer"
               style={{
                 width: '340px',
                 height: '440px',

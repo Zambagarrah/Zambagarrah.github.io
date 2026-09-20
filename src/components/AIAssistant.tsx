@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from 'react'
-import emmanuelPhoto from '@/imports/Gemini_Generated_Image_b5i3oeb5i3oeb5i3.png'
+import zablonPhoto from '@/imports/zablon_photo.jpg'
 
 type Message = { role: 'assistant' | 'user'; text: string }
 
 const SUGGESTED = [
-  'Tell me about Emmanuel',
+  'Tell me about Zablon',
   'Explain a project',
   'What are his skills?',
   'How to contact him?',
@@ -12,45 +12,42 @@ const SUGGESTED = [
 ]
 
 const KNOWLEDGE: Record<string, string> = {
-  default: "I'm Emmanuel Cherutich's AI assistant. Ask me anything about his projects, engineering experience, skills, or how to get in touch.",
+  default: "I'm Zablon Ombiri's AI assistant. Ask me anything about his projects, work experience, skills, or how to get in touch.",
 
-  about: "Emmanuel Cherutich is a Computer Science student at the Technical University of Mombasa, Kenya. He specializes in AI, machine learning, software engineering, and automation — building systems that solve real problems for communities across Africa. He's also a technical mentor and trainer.",
+  about: "Zablon Ombiri is a Data Analyst and Software Developer based in Mombasa, Kenya. He specializes in Python, Django, React, and SQL-based data analysis — turning raw data into actionable insight and building secure, scalable, user-friendly applications.",
 
-  projects: "Emmanuel has built several production AI systems: an Ewe language speech transcription model for low-resource ASR, a PDF-powered RAG chatbot for organizational websites, an AI WhatsApp automation bot using Twilio, a full finance management system with M-Pesa STK Push integration, and a referral-based payment system. Each project solves a real problem in the Kenyan/African context.",
+  projects: "Zablon has built several real-world projects: a Django REST API for inventory management with JWT authentication, an interactive sales data dashboard using Pandas and Power BI, and a fullstack e-commerce storefront with React, Django, and MongoDB.",
 
-  ewe: "The Ewe Language Speech Transcription Model is Emmanuel's most research-oriented project. He built a custom ASR system for Ewe — a West African language with very few AI resources. The model uses MFCC audio features, deep learning with TensorFlow/Keras, and character-level NLP to transcribe speech. It directly addresses the severe underrepresentation of African languages in global AI systems.",
+  inventory: "The Inventory Management System is a secure backend built with Django REST Framework — featuring JWT authentication, role-based permissions, and a PostgreSQL data layer for tracking products, categories, and stock movements through a clean REST API.",
 
-  rag: "Emmanuel built a RAG (Retrieval-Augmented Generation) chatbot for an organization's website. It ingests internal PDF documents, chunks them, embeds with sentence transformers, indexes them in a vector store, and uses LLM-generated answers grounded in retrieved content — providing accurate automated support without hallucination.",
+  dashboard: "The Sales Data Dashboard cleans raw sales exports with Pandas — deduplicating records, normalizing dates, and handling missing values — then visualizes trends and KPIs in Power BI so stakeholders can self-serve answers instead of digging through spreadsheets.",
 
-  whatsapp: "The WhatsApp AI Bot uses the Twilio WhatsApp Business API with a Python/Flask backend. It handles NLP-powered intent detection to respond intelligently to user messages in 1-on-1 chats. It deliberately avoids group chats for safety. This enables Kenyan businesses to automate customer communication on their most-used messaging platform.",
+  ecommerce: "The E-commerce Storefront pairs a React frontend with a Django backend and a MongoDB product catalog. EmailJS handles order confirmation emails directly from the client, keeping the stack lightweight while still confirming orders reliably.",
 
-  finance: "Emmanuel built a complete finance management system for an investment group — member accounts, monthly contributions, automated statements, withdrawal requests, admin analytics, and M-Pesa STK Push for direct phone payments. It also includes a referral system that rewards users after confirmed transactions. The system brings transparency and automation to Kenya's informal chama culture.",
+  skills: "Zablon's technical stack: Django (advanced), Python, React JS, JavaScript, CSS3, PostgreSQL, MySQL, MongoDB, SQL, Pandas, NumPy, Power BI, Excel, Bootstrap, Git, and Next.js. He works across backend APIs, frontend interfaces, and data analysis.",
 
-  skills: "Emmanuel's technical stack: Python (primary), Flask, FastAPI, TensorFlow, Keras, Pandas, NLTK, Hugging Face Transformers, Kivy, JavaScript, SQL, HTML/CSS. Tools: Ubuntu Linux, Anaconda, Git, VS Code, MySQL. Integrations: WhatsApp Business API, Twilio, M-Pesa Daraja API, PayPal. AI methods: LSTM, ARIMA, TF-IDF, cosine similarity, RAG, speech transcription.",
+  experience: "Zablon is currently a Product Designer at AFGT (2022–Present) and a freelance UX Designer on UpWork (2022–Present). From 2023–2024 he worked as a Web Developer at Designer Hub, building and maintaining client websites with HTML, CSS, JavaScript, and React.",
 
-  experience: "Emmanuel is currently a Technical Mentor at the Technical University of Mombasa (2024–Present), where he mentors students in AI, ML, Python, and Linux. In 2025 he interned at Swahilipot Hub Foundation as a Software Development Intern and also served as a Frontend Technical Trainer there, teaching HTML, CSS, JavaScript, and UI/UX to youth cohorts.",
+  contact: "You can reach Zablon at: Email — zablonombiri001@gmail.com | WhatsApp — +254 705 959 986 | Location — Mombasa, Kenya (remote friendly). He's open to freelance projects, junior developer roles, and data analysis contracts.",
 
-  contact: "You can reach Emmanuel at: Email — cherutichemmanuel87@gmail.com | Phone — +254 727 683 579 | Location — Mombasa, Kenya (remote friendly). He's open to internships, junior AI/software engineering roles, freelance projects, and collaboration.",
+  education: "Zablon is studying Web Design and Development at the Technical University of Mombasa (TUM), with coursework spanning frontend fundamentals, databases, and software engineering practices.",
 
-  education: "Emmanuel is studying for a Bachelor of Science in Computer Science at the Technical University of Mombasa. Key coursework includes Machine Learning, Data Structures, Algorithms, Cybersecurity, Web Development, and Distributed Systems.",
-
-  opportunities: "Yes! Emmanuel is actively open to internships, junior software/AI engineering roles, freelance AI projects, research collaborations, and community tech initiatives. He's based in Mombasa but is comfortable working remotely. Contact him at cherutichemmanuel87@gmail.com.",
+  opportunities: "Yes! Zablon is actively open to freelance projects, junior software/data roles, and collaborations. He's based in Mombasa but works remotely with clients worldwide. Contact him at zablonombiri001@gmail.com.",
 }
 
 function getResponse(input: string): string {
   const lower = input.toLowerCase()
-  if (lower.includes('ewe') || lower.includes('speech') || lower.includes('transcri') || lower.includes('language model')) return KNOWLEDGE.ewe
-  if (lower.includes('rag') || lower.includes('pdf') || lower.includes('chatbot') || lower.includes('retrieval')) return KNOWLEDGE.rag
-  if (lower.includes('whatsapp') || lower.includes('twilio') || lower.includes('automation bot')) return KNOWLEDGE.whatsapp
-  if (lower.includes('finance') || lower.includes('mpesa') || lower.includes('m-pesa') || lower.includes('investment') || lower.includes('chama') || lower.includes('payment')) return KNOWLEDGE.finance
+  if (lower.includes('inventory') || lower.includes('django rest') || lower.includes('stock')) return KNOWLEDGE.inventory
+  if (lower.includes('dashboard') || lower.includes('sales data') || lower.includes('power bi') || lower.includes('pandas')) return KNOWLEDGE.dashboard
+  if (lower.includes('e-commerce') || lower.includes('ecommerce') || lower.includes('storefront') || lower.includes('mongodb')) return KNOWLEDGE.ecommerce
   if (lower.includes('project') || lower.includes('build') || lower.includes('work') || lower.includes('portfolio')) return KNOWLEDGE.projects
-  if (lower.includes('skill') || lower.includes('tech') || lower.includes('python') || lower.includes('tensorflow') || lower.includes('stack')) return KNOWLEDGE.skills
-  if (lower.includes('experience') || lower.includes('mentor') || lower.includes('swahili') || lower.includes('trainer') || lower.includes('intern')) return KNOWLEDGE.experience
-  if (lower.includes('contact') || lower.includes('email') || lower.includes('phone') || lower.includes('reach')) return KNOWLEDGE.contact
+  if (lower.includes('skill') || lower.includes('tech') || lower.includes('python') || lower.includes('django') || lower.includes('stack')) return KNOWLEDGE.skills
+  if (lower.includes('experience') || lower.includes('designer') || lower.includes('upwork') || lower.includes('afgt')) return KNOWLEDGE.experience
+  if (lower.includes('contact') || lower.includes('email') || lower.includes('phone') || lower.includes('whatsapp') || lower.includes('reach')) return KNOWLEDGE.contact
   if (lower.includes('education') || lower.includes('university') || lower.includes('degree') || lower.includes('study') || lower.includes('course')) return KNOWLEDGE.education
   if (lower.includes('hire') || lower.includes('job') || lower.includes('role') || lower.includes('open') || lower.includes('opportunity') || lower.includes('available') || lower.includes('freelance')) return KNOWLEDGE.opportunities
-  if (lower.includes('who') || lower.includes('about') || lower.includes('emmanuel') || lower.includes('background') || lower.includes('tell me')) return KNOWLEDGE.about
-  return "That's a good question! For the most accurate answer, you can reach Emmanuel directly at cherutichemmanuel87@gmail.com or +254 727 683 579. He's always happy to discuss AI, his projects, or potential collaborations."
+  if (lower.includes('who') || lower.includes('about') || lower.includes('zablon') || lower.includes('background') || lower.includes('tell me')) return KNOWLEDGE.about
+  return "That's a good question! For the most accurate answer, you can reach Zablon directly at zablonombiri001@gmail.com or +254 705 959 986. He's always happy to discuss projects, data, or potential collaborations."
 }
 
 export default function AIAssistant({
@@ -69,7 +66,7 @@ export default function AIAssistant({
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      text: "Hello. I'm Emmanuel's AI Assistant. I can answer questions about his projects, engineering experience, technical skills, and how to get in touch with him.",
+      text: "Hello. I'm Zablon's AI Assistant. I can answer questions about his projects, work experience, technical skills, and how to get in touch with him.",
     },
   ])
   const [input, setInput] = useState('')
@@ -151,8 +148,8 @@ export default function AIAssistant({
       >
         <div style={{ position: 'relative', flexShrink: 0 }}>
           <img
-            src={emmanuelPhoto}
-            alt="Emmanuel Cherutich"
+            src={zablonPhoto}
+            alt="Zablon Ombiri"
             style={{
               width: '40px',
               height: '40px',
@@ -176,7 +173,7 @@ export default function AIAssistant({
           />
         </div>
         <div style={{ flex: 1 }}>
-          <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#15231E' }}>Emmanuel's AI</div>
+          <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#15231E' }}>Zablon's AI</div>
           <div style={{ fontSize: '0.7rem', color: '#2E8B57', fontWeight: 500 }}>● Online · Typically instant</div>
         </div>
         <div style={{ display: 'flex', gap: '8px' }}>
@@ -373,7 +370,7 @@ export default function AIAssistant({
       >
         <input
           type="text"
-          placeholder="Ask anything about Emmanuel..."
+          placeholder="Ask anything about Zablon..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => { if (e.key === 'Enter') send(input) }}

@@ -64,7 +64,7 @@ export default function Navigation({ onOpenAssistant }: { onOpenAssistant: () =>
           }}
           onClick={() => handleNav('#home')}
         >
-          Cherutich.
+          Ombiri.
         </a>
 
         {/* Desktop links */}
