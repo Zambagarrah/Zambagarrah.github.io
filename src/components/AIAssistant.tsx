@@ -122,7 +122,7 @@ export default function AIAssistant({
         width: '380px',
         maxHeight: '580px',
         borderRadius: '24px',
-        background: '#FFFFFF',
+        background: 'var(--color-surface)',
         border: '1px solid rgba(15,90,71,0.1)',
         boxShadow: '0 24px 80px rgba(15,90,71,0.18), 0 8px 24px rgba(0,0,0,0.08)',
         display: 'flex',
@@ -140,7 +140,7 @@ export default function AIAssistant({
           display: 'flex',
           alignItems: 'center',
           gap: '12px',
-          background: 'rgba(248,248,244,0.8)',
+          background: 'rgba(var(--color-bg-rgb),0.8)',
         }}
       >
         <div style={{ position: 'relative', flexShrink: 0 }}>
@@ -170,7 +170,7 @@ export default function AIAssistant({
           />
         </div>
         <div style={{ flex: 1 }}>
-          <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#15231E' }}>Zablon's AI</div>
+          <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>Zablon's AI</div>
           <div style={{ fontSize: '0.7rem', color: '#2E8B57', fontWeight: 500 }}>● Online · Typically instant</div>
         </div>
         <div style={{ display: 'flex', gap: '8px' }}>
@@ -208,7 +208,7 @@ export default function AIAssistant({
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              color: '#55635D',
+              color: 'var(--color-text-secondary)',
               fontSize: '1rem',
               transition: 'all 0.2s ease',
             }}
@@ -266,8 +266,8 @@ export default function AIAssistant({
                 maxWidth: '80%',
                 padding: '12px 16px',
                 borderRadius: msg.role === 'user' ? '16px 16px 4px 16px' : '4px 16px 16px 16px',
-                background: msg.role === 'user' ? '#0F5A47' : '#F8F8F4',
-                color: msg.role === 'user' ? '#fff' : '#15231E',
+                background: msg.role === 'user' ? '#0F5A47' : 'var(--color-bg)',
+                color: msg.role === 'user' ? '#fff' : 'var(--color-text-primary)',
                 fontSize: '0.84rem',
                 lineHeight: 1.65,
                 border: msg.role === 'assistant' ? '1px solid rgba(15,90,71,0.08)' : 'none',
@@ -301,7 +301,7 @@ export default function AIAssistant({
               style={{
                 padding: '12px 16px',
                 borderRadius: '4px 16px 16px 16px',
-                background: '#F8F8F4',
+                background: 'var(--color-bg)',
                 border: '1px solid rgba(15,90,71,0.08)',
                 display: 'flex',
                 gap: '4px',
@@ -315,7 +315,7 @@ export default function AIAssistant({
                     width: '6px',
                     height: '6px',
                     borderRadius: '50%',
-                    background: '#8A948F',
+                    background: 'var(--color-text-muted)',
                     animation: 'speak-wave 0.9s ease-in-out infinite',
                     animationDelay: `${i * 0.15}s`,
                   }}
@@ -376,9 +376,9 @@ export default function AIAssistant({
             padding: '10px 14px',
             borderRadius: '10px',
             border: '1.5px solid rgba(15,90,71,0.12)',
-            background: '#F8F8F4',
+            background: 'var(--color-bg)',
             fontSize: '0.84rem',
-            color: '#15231E',
+            color: 'var(--color-text-primary)',
             fontFamily: 'var(--font-sans)',
             outline: 'none',
           }}
@@ -398,7 +398,7 @@ export default function AIAssistant({
             alignItems: 'center',
             justifyContent: 'center',
             transition: 'all 0.2s ease',
-            color: input.trim() ? '#fff' : '#8A948F',
+            color: input.trim() ? '#fff' : 'var(--color-text-muted)',
             fontSize: '0.9rem',
             flexShrink: 0,
           }}

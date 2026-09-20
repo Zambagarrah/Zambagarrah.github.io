@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useTheme } from '../hooks/useTheme'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -13,6 +14,7 @@ export default function Navigation({ onOpenAssistant }: { onOpenAssistant: () =>
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [active, setActive] = useState('#home')
+  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -35,7 +37,7 @@ export default function Navigation({ onOpenAssistant }: { onOpenAssistant: () =>
         zIndex: 100,
         transition: 'all 0.4s ease',
         borderBottom: scrolled ? '1px solid rgba(15,90,71,0.08)' : '1px solid transparent',
-        background: scrolled ? 'rgba(248,248,244,0.88)' : 'transparent',
+        background: scrolled ? 'rgba(var(--color-bg-rgb),0.88)' : 'transparent',
         backdropFilter: scrolled ? 'blur(24px)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(24px)' : 'none',
       }}
@@ -78,13 +80,13 @@ export default function Navigation({ onOpenAssistant }: { onOpenAssistant: () =>
                 fontSize: '0.82rem',
                 fontWeight: 500,
                 letterSpacing: '0.01em',
-                color: active === link.href ? '#0F5A47' : '#55635D',
+                color: active === link.href ? '#0F5A47' : 'var(--color-text-secondary)',
                 textDecoration: 'none',
                 transition: 'color 0.2s ease',
                 position: 'relative',
               }}
               onMouseEnter={(e) => { if (active !== link.href) (e.target as HTMLElement).style.color = '#0F5A47' }}
-              onMouseLeave={(e) => { if (active !== link.href) (e.target as HTMLElement).style.color = '#55635D' }}
+              onMouseLeave={(e) => { if (active !== link.href) (e.target as HTMLElement).style.color = 'var(--color-text-secondary)' }}
             >
               {link.label}
               {active === link.href && (
@@ -106,6 +108,35 @@ export default function Navigation({ onOpenAssistant }: { onOpenAssistant: () =>
 
         {/* Right actions */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle dark mode"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '34px',
+              height: '34px',
+              borderRadius: '50%',
+              background: 'rgba(15,90,71,0.06)',
+              border: '1px solid rgba(15,90,71,0.1)',
+              cursor: 'pointer',
+              color: 'var(--color-text-primary)',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            {theme === 'dark' ? (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+              </svg>
+            ) : (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            )}
+          </button>
+
           <button
             onClick={onOpenAssistant}
             className="hidden-mobile"
@@ -153,7 +184,7 @@ export default function Navigation({ onOpenAssistant }: { onOpenAssistant: () =>
                   display: 'block',
                   width: '22px',
                   height: '1.5px',
-                  background: '#15231E',
+                  background: 'var(--color-text-primary)',
                   borderRadius: '1px',
                   transition: 'all 0.3s ease',
                   transform: menuOpen
@@ -174,7 +205,7 @@ export default function Navigation({ onOpenAssistant }: { onOpenAssistant: () =>
             top: '64px',
             left: 0,
             right: 0,
-            background: 'rgba(248,248,244,0.97)',
+            background: 'rgba(var(--color-bg-rgb),0.97)',
             backdropFilter: 'blur(24px)',
             borderBottom: '1px solid rgba(15,90,71,0.08)',
             padding: '20px 32px 28px',
@@ -190,7 +221,7 @@ export default function Navigation({ onOpenAssistant }: { onOpenAssistant: () =>
                 padding: '12px 0',
                 fontSize: '1rem',
                 fontWeight: 500,
-                color: active === link.href ? '#0F5A47' : '#15231E',
+                color: active === link.href ? '#0F5A47' : 'var(--color-text-primary)',
                 textDecoration: 'none',
                 borderBottom: '1px solid rgba(15,90,71,0.06)',
               }}
@@ -199,9 +230,26 @@ export default function Navigation({ onOpenAssistant }: { onOpenAssistant: () =>
             </a>
           ))}
           <button
-            onClick={() => { onOpenAssistant(); setMenuOpen(false) }}
+            onClick={toggleTheme}
             style={{
               marginTop: '20px',
+              width: '100%',
+              padding: '12px',
+              borderRadius: '12px',
+              background: 'rgba(15,90,71,0.06)',
+              color: 'var(--color-text-primary)',
+              fontSize: '0.9rem',
+              fontWeight: 500,
+              border: '1px solid rgba(15,90,71,0.1)',
+              cursor: 'pointer',
+            }}
+          >
+            {theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          </button>
+          <button
+            onClick={() => { onOpenAssistant(); setMenuOpen(false) }}
+            style={{
+              marginTop: '10px',
               width: '100%',
               padding: '12px',
               borderRadius: '12px',

@@ -11,7 +11,7 @@ const experiences = [
       'Contributed to collaborative backend projects with Django and Python, maintaining version control discipline with Git and GitHub across a team.',
     ],
     technologies: ['Python', 'JavaScript', 'Data Structures & Algorithms', 'Django', 'Git'],
-    current: true,
+    current: false,
   },
   {
     period: 'Jan 2024 – Present',
@@ -43,7 +43,7 @@ const experiences = [
       'Maintained a consistent design system across web and mobile touchpoints.',
     ],
     technologies: ['Figma', 'UI/UX', 'Design Systems', 'Prototyping', 'User Research'],
-    current: true,
+    current: false,
   },
 ]
 
@@ -51,7 +51,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      style={{ padding: '120px 0', background: '#F8F8F4', position: 'relative' }}
+      style={{ padding: '120px 0', background: 'var(--color-bg)', position: 'relative' }}
     >
       <div className="bg-grid" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
 
@@ -65,7 +65,7 @@ export default function Experience() {
               fontWeight: 600,
               lineHeight: 1.15,
               letterSpacing: '-0.02em',
-              color: '#15231E',
+              color: 'var(--color-text-primary)',
             }}
           >
             Designing, building, and
@@ -105,9 +105,9 @@ export default function Experience() {
                       <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: '#0F5A47', letterSpacing: '0.08em', fontWeight: 500, marginBottom: '6px' }}>
                         {exp.period}
                       </div>
-                      <div style={{ fontSize: '1rem', fontWeight: 700, color: '#15231E', marginBottom: '2px' }}>{exp.title}</div>
+                      <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: '2px' }}>{exp.title}</div>
                       <div style={{ fontSize: '0.82rem', color: '#0F5A47', fontWeight: 600 }}>{exp.company}</div>
-                      <div style={{ fontSize: '0.72rem', color: '#8A948F', marginTop: '2px' }}>{exp.location}</div>
+                      <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', marginTop: '2px' }}>{exp.location}</div>
                       <div
                         style={{
                           display: 'inline-block',
@@ -132,7 +132,7 @@ export default function Experience() {
                           width: '18px',
                           height: '18px',
                           borderRadius: '50%',
-                          background: exp.current ? '#0F5A47' : '#FFFFFF',
+                          background: exp.current ? '#0F5A47' : 'var(--color-surface)',
                           border: `2px solid ${exp.current ? '#0F5A47' : 'rgba(15,90,71,0.25)'}`,
                           boxShadow: exp.current ? '0 0 0 4px rgba(15,90,71,0.15)' : 'none',
                           position: 'relative',
@@ -148,7 +148,7 @@ export default function Experience() {
                         style={{
                           padding: '28px 32px',
                           borderRadius: '20px',
-                          background: '#FFFFFF',
+                          background: 'var(--color-surface)',
                           border: '1px solid rgba(15,90,71,0.08)',
                           boxShadow: '0 4px 20px rgba(15,90,71,0.05)',
                         }}
@@ -161,7 +161,7 @@ export default function Experience() {
                         )}
                         <ul style={{ paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
                           {exp.highlights.map((h, j) => (
-                            <li key={j} style={{ display: 'flex', gap: '10px', fontSize: '0.84rem', lineHeight: 1.65, color: '#55635D' }}>
+                            <li key={j} style={{ display: 'flex', gap: '10px', fontSize: '0.84rem', lineHeight: 1.65, color: 'var(--color-text-secondary)' }}>
                               <span style={{ color: '#0F5A47', flexShrink: 0, marginTop: '1px' }}>•</span>
                               {h}
                             </li>
@@ -169,7 +169,7 @@ export default function Experience() {
                         </ul>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', paddingTop: '16px', borderTop: '1px solid rgba(15,90,71,0.06)' }}>
                           {exp.technologies.map((t) => (
-                            <span key={t} style={{ padding: '3px 10px', borderRadius: '5px', background: 'rgba(15,90,71,0.05)', border: '1px solid rgba(15,90,71,0.1)', fontSize: '0.68rem', color: '#55635D', fontFamily: 'var(--font-mono)', fontWeight: 500 }}>
+                            <span key={t} style={{ padding: '3px 10px', borderRadius: '5px', background: 'rgba(15,90,71,0.05)', border: '1px solid rgba(15,90,71,0.1)', fontSize: '0.68rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)', fontWeight: 500 }}>
                               {t}
                             </span>
                           ))}
@@ -185,14 +185,14 @@ export default function Experience() {
                         style={{
                           padding: '28px 32px',
                           borderRadius: '20px',
-                          background: '#FFFFFF',
+                          background: 'var(--color-surface)',
                           border: '1px solid rgba(15,90,71,0.08)',
                           boxShadow: '0 4px 20px rgba(15,90,71,0.05)',
                         }}
                       >
                         <ul style={{ paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
                           {exp.highlights.map((h, j) => (
-                            <li key={j} style={{ display: 'flex', gap: '10px', fontSize: '0.84rem', lineHeight: 1.65, color: '#55635D' }}>
+                            <li key={j} style={{ display: 'flex', gap: '10px', fontSize: '0.84rem', lineHeight: 1.65, color: 'var(--color-text-secondary)' }}>
                               <span style={{ color: '#0F5A47', flexShrink: 0, marginTop: '1px' }}>•</span>
                               {h}
                             </li>
@@ -200,7 +200,7 @@ export default function Experience() {
                         </ul>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', paddingTop: '16px', borderTop: '1px solid rgba(15,90,71,0.06)' }}>
                           {exp.technologies.map((t) => (
-                            <span key={t} style={{ padding: '3px 10px', borderRadius: '5px', background: 'rgba(15,90,71,0.05)', border: '1px solid rgba(15,90,71,0.1)', fontSize: '0.68rem', color: '#55635D', fontFamily: 'var(--font-mono)', fontWeight: 500 }}>
+                            <span key={t} style={{ padding: '3px 10px', borderRadius: '5px', background: 'rgba(15,90,71,0.05)', border: '1px solid rgba(15,90,71,0.1)', fontSize: '0.68rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)', fontWeight: 500 }}>
                               {t}
                             </span>
                           ))}
@@ -214,7 +214,7 @@ export default function Experience() {
                           width: '18px',
                           height: '18px',
                           borderRadius: '50%',
-                          background: exp.current ? '#0F5A47' : '#FFFFFF',
+                          background: exp.current ? '#0F5A47' : 'var(--color-surface)',
                           border: `2px solid ${exp.current ? '#0F5A47' : 'rgba(15,90,71,0.25)'}`,
                           boxShadow: exp.current ? '0 0 0 4px rgba(15,90,71,0.15)' : 'none',
                           position: 'relative',
@@ -228,9 +228,9 @@ export default function Experience() {
                       <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: '#0F5A47', letterSpacing: '0.08em', fontWeight: 500, marginBottom: '6px' }}>
                         {exp.period}
                       </div>
-                      <div style={{ fontSize: '1rem', fontWeight: 700, color: '#15231E', marginBottom: '2px' }}>{exp.title}</div>
+                      <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: '2px' }}>{exp.title}</div>
                       <div style={{ fontSize: '0.82rem', color: '#0F5A47', fontWeight: 600 }}>{exp.company}</div>
-                      <div style={{ fontSize: '0.72rem', color: '#8A948F', marginTop: '2px' }}>{exp.location}</div>
+                      <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', marginTop: '2px' }}>{exp.location}</div>
                       <div
                         style={{
                           display: 'inline-block',

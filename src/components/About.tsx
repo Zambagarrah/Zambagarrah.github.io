@@ -31,7 +31,7 @@ export default function About() {
       id="about"
       style={{
         padding: '120px 0',
-        background: '#F8F8F4',
+        background: 'var(--color-bg)',
         position: 'relative',
       }}
     >
@@ -56,7 +56,7 @@ export default function About() {
                 fontWeight: 600,
                 lineHeight: 1.15,
                 letterSpacing: '-0.02em',
-                color: '#15231E',
+                color: 'var(--color-text-primary)',
                 marginBottom: '32px',
               }}
             >
@@ -66,18 +66,18 @@ export default function About() {
             </h2>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <p style={{ fontSize: '0.97rem', lineHeight: 1.8, color: '#55635D' }}>
+              <p style={{ fontSize: '0.97rem', lineHeight: 1.8, color: 'var(--color-text-secondary)' }}>
                 I'm Zablon Zambagarrah, a Data Analyst and Software Developer based in Mombasa, Kenya.
                 By day, I turn messy numbers into neat stories; by night, I craft Python, Django,
                 and React into apps so smooth they could butter your toast.
               </p>
-              <p style={{ fontSize: '0.97rem', lineHeight: 1.8, color: '#55635D' }}>
+              <p style={{ fontSize: '0.97rem', lineHeight: 1.8, color: 'var(--color-text-secondary)' }}>
                 I've specialized in Python, Django, React, Next.js, and SQL-based data analysis,
                 focused on turning raw data into actionable insight and building secure, scalable,
                 user-friendly applications. With a strong foundation in cybersecurity and
                 performance optimization, I blend analytical thinking with technical expertise.
               </p>
-              <p style={{ fontSize: '0.97rem', lineHeight: 1.8, color: '#55635D' }}>
+              <p style={{ fontSize: '0.97rem', lineHeight: 1.8, color: 'var(--color-text-secondary)' }}>
                 Whether I'm querying and visualizing data, building Django REST APIs, refining
                 UI animations, or developing solutions in e-commerce and smart education, I'm
                 driven by problem-solving and continuous learning.
@@ -98,14 +98,14 @@ export default function About() {
                   style={{
                     padding: '20px',
                     borderRadius: '16px',
-                    background: '#FFFFFF',
+                    background: 'var(--color-surface)',
                     border: '1px solid rgba(15,90,71,0.08)',
                     boxShadow: '0 2px 12px rgba(15,90,71,0.04)',
                   }}
                 >
                   <div style={{ fontSize: '1.1rem', marginBottom: '8px', color: '#0F5A47' }}>{p.icon}</div>
-                  <div style={{ fontSize: '0.82rem', fontWeight: 700, color: '#15231E', marginBottom: '4px' }}>{p.label}</div>
-                  <div style={{ fontSize: '0.75rem', color: '#8A948F', lineHeight: 1.5 }}>{p.desc}</div>
+                  <div style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: '4px' }}>{p.label}</div>
+                  <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>{p.desc}</div>
                 </div>
               ))}
             </div>
@@ -143,7 +143,7 @@ export default function About() {
                           width: '22px',
                           height: '22px',
                           borderRadius: '50%',
-                          background: i === 0 ? '#0F5A47' : '#FFFFFF',
+                          background: i === 0 ? '#0F5A47' : 'var(--color-surface)',
                           border: `2px solid ${i === 0 ? '#0F5A47' : 'rgba(15,90,71,0.2)'}`,
                           display: 'flex',
                           alignItems: 'center',
@@ -171,13 +171,13 @@ export default function About() {
                       >
                         {item.year}
                       </div>
-                      <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#15231E', marginBottom: '2px' }}>
+                      <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: '2px' }}>
                         {item.role}
                       </div>
                       <div style={{ fontSize: '0.78rem', color: '#0F5A47', fontWeight: 600, marginBottom: '8px' }}>
                         {item.org}
                       </div>
-                      <p style={{ fontSize: '0.82rem', color: '#55635D', lineHeight: 1.65 }}>
+                      <p style={{ fontSize: '0.82rem', color: 'var(--color-text-secondary)', lineHeight: 1.65 }}>
                         {item.desc}
                       </p>
                     </div>
@@ -192,7 +192,7 @@ export default function About() {
                 marginTop: '44px',
                 padding: '28px',
                 borderRadius: '20px',
-                background: '#FFFFFF',
+                background: 'var(--color-surface)',
                 border: '1px solid rgba(15,90,71,0.08)',
               }}
             >

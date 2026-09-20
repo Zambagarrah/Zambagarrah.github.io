@@ -8,7 +8,7 @@ const techBadges = [
   { label: 'PostgreSQL', delay: '0.6s', x: '108px', y: '220px' },
   { label: 'Power BI', delay: '1.0s', x: '98px', y: '360px' },
   { label: 'REST APIs', delay: '0.2s', x: '-148px', y: '470px' },
-  { label: 'MongoDB', delay: '1.4s', x: '112px', y: '480px' },
+  { label: 'SQL', delay: '1.4s', x: '112px', y: '480px' },
 ]
 
 export default function Hero() {
@@ -21,7 +21,7 @@ export default function Hero() {
         alignItems: 'center',
         position: 'relative',
         overflow: 'hidden',
-        background: '#F8F8F4',
+        background: 'var(--color-bg)',
         paddingTop: '80px',
       }}
     >
@@ -94,7 +94,7 @@ export default function Hero() {
               }}
             />
             <span className="section-eyebrow" style={{ letterSpacing: '0.14em' }}>
-              Based in Mombasa, Kenya · Open to opportunities
+              Based in Mombasa, Kenya
             </span>
           </div>
 
@@ -107,7 +107,7 @@ export default function Hero() {
               fontWeight: 600,
               lineHeight: 1.1,
               letterSpacing: '-0.02em',
-              color: '#15231E',
+              color: 'var(--color-text-primary)',
               marginBottom: '24px',
             }}
           >
@@ -136,7 +136,7 @@ export default function Hero() {
                   borderRadius: '4px',
                   background: 'transparent',
                   border: '1px solid rgba(15,90,71,0.2)',
-                  color: '#55635D',
+                  color: 'var(--color-text-secondary)',
                   fontSize: '0.78rem',
                   fontWeight: 500,
                   letterSpacing: '0.02em',
@@ -154,7 +154,7 @@ export default function Hero() {
             style={{
               fontSize: '1.05rem',
               lineHeight: 1.75,
-              color: '#55635D',
+              color: 'var(--color-text-secondary)',
               marginBottom: '44px',
               maxWidth: '520px',
             }}
@@ -206,7 +206,7 @@ export default function Hero() {
                 padding: '13px 28px',
                 borderRadius: '100px',
                 background: 'transparent',
-                color: '#15231E',
+                color: 'var(--color-text-primary)',
                 fontSize: '0.88rem',
                 fontWeight: 600,
                 textDecoration: 'none',
@@ -224,7 +224,7 @@ export default function Hero() {
               onMouseLeave={(e) => {
                 const el = e.currentTarget
                 el.style.borderColor = 'rgba(15,90,71,0.2)'
-                el.style.color = '#15231E'
+                el.style.color = 'var(--color-text-primary)'
                 el.style.transform = 'none'
               }}
             >
@@ -260,7 +260,7 @@ export default function Hero() {
                 >
                   {stat.value}
                 </div>
-                <div style={{ fontSize: '0.75rem', color: '#8A948F', fontWeight: 500, letterSpacing: '0.04em' }}>
+                <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', fontWeight: 500, letterSpacing: '0.04em' }}>
                   {stat.label}
                 </div>
               </div>
@@ -311,41 +311,6 @@ export default function Hero() {
                 boxShadow: '0 32px 80px rgba(15,90,71,0.18), 0 8px 24px rgba(0,0,0,0.08)',
               }}
             />
-
-            {/* Status badge */}
-            <div
-              style={{
-                position: 'absolute',
-                bottom: '20px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                zIndex: 3,
-                background: 'rgba(255,255,255,0.95)',
-                backdropFilter: 'blur(12px)',
-                borderRadius: '100px',
-                padding: '8px 18px',
-                boxShadow: '0 4px 20px rgba(15,90,71,0.12)',
-                border: '1px solid rgba(15,90,71,0.1)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              <span
-                style={{
-                  width: '7px',
-                  height: '7px',
-                  borderRadius: '50%',
-                  background: '#2E8B57',
-                  display: 'inline-block',
-                  boxShadow: '0 0 0 3px rgba(46,139,87,0.2)',
-                }}
-              />
-              <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#15231E' }}>
-                Open to opportunities
-              </span>
-            </div>
           </div>
 
           {/* Floating tech badges */}
@@ -398,7 +363,7 @@ export default function Hero() {
           gap: '8px',
         }}
       >
-        <span style={{ fontSize: '0.65rem', letterSpacing: '0.2em', color: '#8A948F', fontWeight: 500, textTransform: 'uppercase' }}>
+        <span style={{ fontSize: '0.65rem', letterSpacing: '0.2em', color: 'var(--color-text-muted)', fontWeight: 500, textTransform: 'uppercase' }}>
           Scroll
         </span>
         <div

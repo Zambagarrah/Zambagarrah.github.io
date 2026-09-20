@@ -57,7 +57,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      style={{ padding: '120px 0', background: '#FFFFFF', position: 'relative' }}
+      style={{ padding: '120px 0', background: 'var(--color-surface)', position: 'relative' }}
     >
       <div className="bg-diagonal" style={{ position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.5 }} />
 
@@ -73,7 +73,7 @@ export default function Projects() {
                 fontWeight: 600,
                 lineHeight: 1.15,
                 letterSpacing: '-0.02em',
-                color: '#15231E',
+                color: 'var(--color-text-primary)',
               }}
             >
               Projects built for
@@ -81,7 +81,7 @@ export default function Projects() {
               <em style={{ fontStyle: 'italic', color: '#0F5A47' }}>real-world impact.</em>
             </h2>
           </div>
-          <p style={{ fontSize: '0.9rem', color: '#8A948F', maxWidth: '280px', lineHeight: 1.65 }}>
+          <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', maxWidth: '280px', lineHeight: 1.65 }}>
             Each project solves a genuine problem, from live financial systems to reliable data pipelines.
           </p>
         </div>
@@ -94,7 +94,7 @@ export default function Projects() {
               className="card-hover"
               style={{
                 borderRadius: '24px',
-                background: '#FFFFFF',
+                background: 'var(--color-surface)',
                 border: '1px solid rgba(15,90,71,0.08)',
                 overflow: 'hidden',
                 boxShadow: '0 4px 24px rgba(15,90,71,0.05)',
@@ -150,7 +150,7 @@ export default function Projects() {
                       fontSize: '1.6rem',
                       fontWeight: 600,
                       lineHeight: 1.2,
-                      color: '#15231E',
+                      color: 'var(--color-text-primary)',
                       marginBottom: '16px',
                       letterSpacing: '-0.01em',
                     }}
@@ -158,7 +158,7 @@ export default function Projects() {
                     {project.title}
                   </h3>
 
-                  <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: '#55635D', maxWidth: '560px' }}>
+                  <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'var(--color-text-secondary)', maxWidth: '560px' }}>
                     {project.description}
                   </p>
                 </div>
@@ -181,21 +181,21 @@ export default function Projects() {
               {/* Body */}
               <div style={{ padding: '36px 48px 40px', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '48px' }}>
                 <div>
-                  <h4 style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#8A948F', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '12px' }}>
+                  <h4 style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-muted)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '12px' }}>
                     Problem
                   </h4>
-                  <p style={{ fontSize: '0.84rem', lineHeight: 1.7, color: '#55635D' }}>{project.problem}</p>
+                  <p style={{ fontSize: '0.84rem', lineHeight: 1.7, color: 'var(--color-text-secondary)' }}>{project.problem}</p>
                 </div>
 
                 <div>
-                  <h4 style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#8A948F', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '12px' }}>
+                  <h4 style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-muted)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '12px' }}>
                     How It Works
                   </h4>
-                  <p style={{ fontSize: '0.84rem', lineHeight: 1.7, color: '#55635D' }}>{project.architecture}</p>
+                  <p style={{ fontSize: '0.84rem', lineHeight: 1.7, color: 'var(--color-text-secondary)' }}>{project.architecture}</p>
                 </div>
 
                 <div>
-                  <h4 style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#8A948F', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '12px' }}>
+                  <h4 style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-muted)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '12px' }}>
                     Key Details
                   </h4>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
@@ -212,7 +212,7 @@ export default function Projects() {
                         <div style={{ fontSize: '0.82rem', fontWeight: 700, color: project.color, fontFamily: 'var(--font-mono)', lineHeight: 1.2, marginBottom: '2px' }}>
                           {m.value}
                         </div>
-                        <div style={{ fontSize: '0.62rem', color: '#8A948F', fontWeight: 500 }}>{m.label}</div>
+                        <div style={{ fontSize: '0.62rem', color: 'var(--color-text-muted)', fontWeight: 500 }}>{m.label}</div>
                       </div>
                     ))}
                   </div>
@@ -243,7 +243,7 @@ export default function Projects() {
                         border: '1px solid rgba(15,90,71,0.1)',
                         fontSize: '0.72rem',
                         fontWeight: 600,
-                        color: '#55635D',
+                        color: 'var(--color-text-secondary)',
                         fontFamily: 'var(--font-mono)',
                         cursor: 'default',
                       }}
@@ -306,7 +306,7 @@ export default function Projects() {
                       <p style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)', color: '#0F5A47', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '8px' }}>
                         Technical Deep Dive
                       </p>
-                      <p style={{ fontSize: '0.9rem', lineHeight: 1.8, color: '#55635D' }}>
+                      <p style={{ fontSize: '0.9rem', lineHeight: 1.8, color: 'var(--color-text-secondary)' }}>
                         {project.aiExplanation}
                       </p>
                     </div>

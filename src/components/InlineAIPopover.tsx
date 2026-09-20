@@ -99,7 +99,7 @@ export default function InlineAIPopover({ selectedText, anchorPos, onSend, onClo
         ref={popoverRef}
         style={{
           borderRadius: '20px',
-          background: '#FFFFFF',
+          background: 'var(--color-surface)',
           border: '1px solid rgba(15,90,71,0.12)',
           boxShadow: '0 20px 60px rgba(15,90,71,0.16), 0 4px 16px rgba(0,0,0,0.08)',
           overflow: 'hidden',
@@ -139,7 +139,7 @@ export default function InlineAIPopover({ selectedText, anchorPos, onSend, onClo
               style={{
                 fontSize: '0.75rem',
                 fontWeight: 700,
-                color: '#15231E',
+                color: 'var(--color-text-primary)',
                 letterSpacing: '0.01em',
               }}
             >
@@ -154,7 +154,7 @@ export default function InlineAIPopover({ selectedText, anchorPos, onSend, onClo
               borderRadius: '7px',
               border: 'none',
               background: 'transparent',
-              color: '#8A948F',
+              color: 'var(--color-text-muted)',
               fontSize: '1rem',
               cursor: 'pointer',
               display: 'flex',
@@ -194,7 +194,7 @@ export default function InlineAIPopover({ selectedText, anchorPos, onSend, onClo
           <p
             style={{
               fontSize: '0.78rem',
-              color: '#55635D',
+              color: 'var(--color-text-secondary)',
               lineHeight: 1.55,
               fontStyle: 'italic',
               margin: 0,
@@ -218,7 +218,7 @@ export default function InlineAIPopover({ selectedText, anchorPos, onSend, onClo
                 borderRadius: '100px',
                 background: 'transparent',
                 border: '1px solid rgba(15,90,71,0.15)',
-                color: '#55635D',
+                color: 'var(--color-text-secondary)',
                 fontSize: '0.7rem',
                 fontWeight: 600,
                 cursor: 'pointer',
@@ -234,7 +234,7 @@ export default function InlineAIPopover({ selectedText, anchorPos, onSend, onClo
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLElement
                 el.style.background = 'transparent'
-                el.style.color = '#55635D'
+                el.style.color = 'var(--color-text-secondary)'
                 el.style.borderColor = 'rgba(15,90,71,0.15)'
               }}
             >
@@ -267,9 +267,9 @@ export default function InlineAIPopover({ selectedText, anchorPos, onSend, onClo
               padding: '10px 14px',
               borderRadius: '10px',
               border: '1.5px solid rgba(15,90,71,0.15)',
-              background: '#F8F8F4',
+              background: 'var(--color-bg)',
               fontSize: '0.84rem',
-              color: '#15231E',
+              color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-sans)',
               outline: 'none',
               minWidth: 0,
@@ -286,7 +286,7 @@ export default function InlineAIPopover({ selectedText, anchorPos, onSend, onClo
               borderRadius: '10px',
               background: input.trim() ? '#0F5A47' : 'rgba(15,90,71,0.1)',
               border: 'none',
-              color: input.trim() ? '#fff' : '#8A948F',
+              color: input.trim() ? '#fff' : 'var(--color-text-muted)',
               fontSize: '1rem',
               cursor: input.trim() ? 'pointer' : 'default',
               display: 'flex',

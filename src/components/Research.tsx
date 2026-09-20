@@ -18,7 +18,7 @@ export default function Research() {
   return (
     <section
       id="research"
-      style={{ padding: '120px 0', background: '#F8F8F4', position: 'relative' }}
+      style={{ padding: '120px 0', background: 'var(--color-bg)', position: 'relative' }}
     >
       <div className="bg-diagonal" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
 
@@ -33,7 +33,7 @@ export default function Research() {
                 fontWeight: 600,
                 lineHeight: 1.15,
                 letterSpacing: '-0.02em',
-                color: '#15231E',
+                color: 'var(--color-text-primary)',
               }}
             >
               What I'm exploring
@@ -41,7 +41,7 @@ export default function Research() {
               <em style={{ fontStyle: 'italic', color: '#0F5A47' }}>and building next.</em>
             </h2>
           </div>
-          <p style={{ fontSize: '0.9rem', color: '#8A948F', maxWidth: '280px', lineHeight: 1.65 }}>
+          <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', maxWidth: '280px', lineHeight: 1.65 }}>
             Areas of deep interest, where curiosity meets hands-on building.
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function Research() {
               style={{
                 padding: '36px 40px',
                 borderRadius: '20px',
-                background: '#FFFFFF',
+                background: 'var(--color-surface)',
                 border: '1px solid rgba(15,90,71,0.08)',
                 boxShadow: '0 4px 20px rgba(15,90,71,0.04)',
               }}
@@ -103,7 +103,7 @@ export default function Research() {
                   fontFamily: 'var(--font-serif)',
                   fontSize: '1.2rem',
                   fontWeight: 600,
-                  color: '#15231E',
+                  color: 'var(--color-text-primary)',
                   lineHeight: 1.3,
                   marginBottom: '14px',
                   letterSpacing: '-0.01em',
@@ -112,7 +112,7 @@ export default function Research() {
                 {item.title}
               </h3>
 
-              <p style={{ fontSize: '0.85rem', lineHeight: 1.75, color: '#55635D', marginBottom: '20px' }}>
+              <p style={{ fontSize: '0.85rem', lineHeight: 1.75, color: 'var(--color-text-secondary)', marginBottom: '20px' }}>
                 {item.description}
               </p>
 
@@ -150,7 +150,7 @@ export default function Research() {
                 style={{
                   padding: '20px 28px',
                   borderRadius: '14px',
-                  background: '#FFFFFF',
+                  background: 'var(--color-surface)',
                   border: '1px solid rgba(15,90,71,0.08)',
                   display: 'flex',
                   alignItems: 'center',
@@ -162,8 +162,8 @@ export default function Research() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                   <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#0F5A47', flexShrink: 0 }} />
                   <div>
-                    <div style={{ fontSize: '0.88rem', fontWeight: 700, color: '#15231E' }}>{h.name}</div>
-                    <div style={{ fontSize: '0.75rem', color: '#8A948F', fontFamily: 'var(--font-mono)', marginTop: '2px' }}>{h.org} · {h.year}</div>
+                    <div style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>{h.name}</div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', fontFamily: 'var(--font-mono)', marginTop: '2px' }}>{h.org} · {h.year}</div>
                   </div>
                 </div>
                 <span

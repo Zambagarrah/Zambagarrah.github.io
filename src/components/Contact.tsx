@@ -19,9 +19,9 @@ export default function Contact() {
     padding: '14px 18px',
     borderRadius: '12px',
     border: '1.5px solid rgba(15,90,71,0.12)',
-    background: '#F8F8F4',
+    background: 'var(--color-bg)',
     fontSize: '0.88rem',
-    color: '#15231E',
+    color: 'var(--color-text-primary)',
     fontFamily: 'var(--font-sans)',
     outline: 'none',
     transition: 'border-color 0.2s ease',
@@ -31,7 +31,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      style={{ padding: '120px 0', background: '#F8F8F4', position: 'relative' }}
+      style={{ padding: '120px 0', background: 'var(--color-bg)', position: 'relative' }}
     >
       <div className="bg-grid" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
 
@@ -54,7 +54,7 @@ export default function Contact() {
                 fontWeight: 600,
                 lineHeight: 1.15,
                 letterSpacing: '-0.02em',
-                color: '#15231E',
+                color: 'var(--color-text-primary)',
                 marginBottom: '24px',
               }}
             >
@@ -63,7 +63,7 @@ export default function Contact() {
               <em style={{ fontStyle: 'italic', color: '#0F5A47' }}>something remarkable?</em>
             </h2>
 
-            <p style={{ fontSize: '0.92rem', lineHeight: 1.8, color: '#55635D', marginBottom: '44px' }}>
+            <p style={{ fontSize: '0.92rem', lineHeight: 1.8, color: 'var(--color-text-secondary)', marginBottom: '44px' }}>
               I'm open to freelance projects, junior developer roles, data analysis
               contracts, and collaborations. If you're looking for someone who can build
               practical, well-crafted software, let's connect.
@@ -110,7 +110,7 @@ export default function Contact() {
                     gap: '16px',
                     padding: '16px 20px',
                     borderRadius: '12px',
-                    background: '#FFFFFF',
+                    background: 'var(--color-surface)',
                     border: '1px solid rgba(15,90,71,0.08)',
                     textDecoration: 'none',
                     cursor: contact.href ? 'pointer' : 'default',
@@ -147,10 +147,10 @@ export default function Contact() {
                     {contact.icon}
                   </div>
                   <div>
-                    <div style={{ fontSize: '0.7rem', color: '#8A948F', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)', marginBottom: '2px' }}>
+                    <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)', marginBottom: '2px' }}>
                       {contact.label}
                     </div>
-                    <div style={{ fontSize: '0.84rem', color: '#15231E', fontWeight: 500 }}>{contact.value}</div>
+                    <div style={{ fontSize: '0.84rem', color: 'var(--color-text-primary)', fontWeight: 500 }}>{contact.value}</div>
                   </div>
                 </div>
               ))}
@@ -164,7 +164,7 @@ export default function Contact() {
                 style={{
                   padding: '60px 40px',
                   borderRadius: '24px',
-                  background: '#FFFFFF',
+                  background: 'var(--color-surface)',
                   border: '1px solid rgba(15,90,71,0.08)',
                   textAlign: 'center',
                 }}
@@ -185,10 +185,10 @@ export default function Contact() {
                 >
                   ✓
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', fontWeight: 600, color: '#15231E', marginBottom: '12px' }}>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '12px' }}>
                   Message received.
                 </h3>
-                <p style={{ fontSize: '0.9rem', color: '#55635D', lineHeight: 1.7 }}>
+                <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', lineHeight: 1.7 }}>
                   Thank you for reaching out. Zablon will get back to you as soon as possible.
                 </p>
               </div>
@@ -198,7 +198,7 @@ export default function Contact() {
                 style={{
                   padding: '40px',
                   borderRadius: '24px',
-                  background: '#FFFFFF',
+                  background: 'var(--color-surface)',
                   border: '1px solid rgba(15,90,71,0.08)',
                   boxShadow: '0 8px 40px rgba(15,90,71,0.06)',
                   display: 'flex',
@@ -206,13 +206,13 @@ export default function Contact() {
                   gap: '20px',
                 }}
               >
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem', fontWeight: 600, color: '#15231E', marginBottom: '4px' }}>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '4px' }}>
                   Send a message
                 </h3>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.72rem', fontWeight: 600, color: '#55635D', marginBottom: '6px', letterSpacing: '0.04em' }}>
+                    <label style={{ display: 'block', fontSize: '0.72rem', fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: '6px', letterSpacing: '0.04em' }}>
                       Name
                     </label>
                     <input
@@ -227,7 +227,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.72rem', fontWeight: 600, color: '#55635D', marginBottom: '6px', letterSpacing: '0.04em' }}>
+                    <label style={{ display: 'block', fontSize: '0.72rem', fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: '6px', letterSpacing: '0.04em' }}>
                       Email
                     </label>
                     <input
@@ -244,7 +244,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.72rem', fontWeight: 600, color: '#55635D', marginBottom: '6px', letterSpacing: '0.04em' }}>
+                  <label style={{ display: 'block', fontSize: '0.72rem', fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: '6px', letterSpacing: '0.04em' }}>
                     Organization (optional)
                   </label>
                   <input
@@ -259,7 +259,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.72rem', fontWeight: 600, color: '#55635D', marginBottom: '6px', letterSpacing: '0.04em' }}>
+                  <label style={{ display: 'block', fontSize: '0.72rem', fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: '6px', letterSpacing: '0.04em' }}>
                     Message
                   </label>
                   <textarea

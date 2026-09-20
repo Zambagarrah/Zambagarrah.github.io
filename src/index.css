@@ -21,6 +21,22 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
+:root {
+  --color-bg-rgb: 248, 248, 244;
+  --color-surface-rgb: 255, 255, 255;
+}
+
+[data-theme='dark'] {
+  --color-bg: #0E1512;
+  --color-surface: #16211D;
+  --color-muted-surface: #1C2A25;
+  --color-text-primary: #F1F4F1;
+  --color-text-secondary: #AEBAB3;
+  --color-text-muted: #7C8B84;
+  --color-bg-rgb: 14, 21, 18;
+  --color-surface-rgb: 22, 33, 29;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -31,11 +47,12 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: #F8F8F4;
-  color: #15231E;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Scrollbar */
@@ -71,7 +88,7 @@ section { position: relative; }
 
 /* Glass effect */
 .glass {
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(var(--color-surface-rgb), 0.72);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(15, 90, 71, 0.1);
@@ -79,7 +96,7 @@ section { position: relative; }
 
 /* Nav blur */
 .nav-blur {
-  background: rgba(248, 248, 244, 0.85);
+  background: rgba(var(--color-bg-rgb), 0.85);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
 }
@@ -196,11 +213,11 @@ body { -webkit-user-select: text; user-select: text; }
 /* Selection highlight colour: matches emerald palette */
 ::selection {
   background: rgba(15, 90, 71, 0.18);
-  color: #15231E;
+  color: var(--color-text-primary);
 }
 ::-moz-selection {
   background: rgba(15, 90, 71, 0.18);
-  color: #15231E;
+  color: var(--color-text-primary);
 }
 
 /* Mobile AI chat: full-width panel */

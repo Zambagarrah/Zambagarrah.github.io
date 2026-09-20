@@ -56,7 +56,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      style={{ padding: '120px 0', background: '#FFFFFF', position: 'relative' }}
+      style={{ padding: '120px 0', background: 'var(--color-surface)', position: 'relative' }}
     >
       <div className="bg-diagonal" style={{ position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.4 }} />
 
@@ -70,7 +70,7 @@ export default function Skills() {
               fontWeight: 600,
               lineHeight: 1.15,
               letterSpacing: '-0.02em',
-              color: '#15231E',
+              color: 'var(--color-text-primary)',
             }}
           >
             Skills built through
@@ -95,7 +95,7 @@ export default function Skills() {
               style={{
                 padding: '36px 32px',
                 borderRadius: '24px',
-                background: '#FFFFFF',
+                background: 'var(--color-surface)',
                 border: '1px solid rgba(15,90,71,0.08)',
                 boxShadow: '0 4px 24px rgba(15,90,71,0.05)',
               }}
@@ -117,7 +117,7 @@ export default function Skills() {
                 >
                   {group.icon}
                 </div>
-                <h3 style={{ fontSize: '0.85rem', fontWeight: 700, color: '#15231E', lineHeight: 1.3 }}>
+                <h3 style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-text-primary)', lineHeight: 1.3 }}>
                   {group.category}
                 </h3>
               </div>
@@ -127,8 +127,8 @@ export default function Skills() {
                   <div key={skill.name}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '6px' }}>
                       <div>
-                        <div style={{ fontSize: '0.82rem', fontWeight: 600, color: '#15231E' }}>{skill.name}</div>
-                        <div style={{ fontSize: '0.65rem', color: '#8A948F', fontFamily: 'var(--font-mono)', marginTop: '1px' }}>{skill.note}</div>
+                        <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--color-text-primary)' }}>{skill.name}</div>
+                        <div style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', fontFamily: 'var(--font-mono)', marginTop: '1px' }}>{skill.note}</div>
                       </div>
                       <span style={{ fontSize: '0.68rem', fontWeight: 700, color: group.color, fontFamily: 'var(--font-mono)' }}>
                         {skill.level}%
@@ -163,7 +163,7 @@ export default function Skills() {
                 style={{
                   padding: '24px 28px',
                   borderRadius: '16px',
-                  background: '#F8F8F4',
+                  background: 'var(--color-bg)',
                   border: '1px solid rgba(15,90,71,0.08)',
                   display: 'flex',
                   alignItems: 'flex-start',
@@ -188,10 +188,10 @@ export default function Skills() {
                   {h.icon}
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.82rem', fontWeight: 700, color: '#15231E', lineHeight: 1.3, marginBottom: '4px' }}>
+                  <div style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--color-text-primary)', lineHeight: 1.3, marginBottom: '4px' }}>
                     {h.label}
                   </div>
-                  <div style={{ fontSize: '0.75rem', color: '#8A948F', lineHeight: 1.55 }}>
+                  <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', lineHeight: 1.55 }}>
                     {h.desc}
                   </div>
                 </div>

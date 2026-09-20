@@ -54,7 +54,7 @@ export default function App() {
 
   return (
     // Relative so absolute-positioned toolbar can anchor to page coords
-    <div style={{ position: 'relative', minHeight: '100vh', background: '#F8F8F4', fontFamily: 'var(--font-sans)' }}>
+    <div style={{ position: 'relative', minHeight: '100vh', background: 'var(--color-bg)', fontFamily: 'var(--font-sans)' }}>
       <Navigation onOpenAssistant={() => setAssistantOpen(true)} />
 
       <main>
@@ -72,7 +72,7 @@ export default function App() {
         style={{
           padding: '48px 32px',
           borderTop: '1px solid rgba(15,90,71,0.08)',
-          background: '#F8F8F4',
+          background: 'var(--color-bg)',
         }}
       >
         <div
@@ -98,11 +98,11 @@ export default function App() {
             >
               Zablon Zambagarrah.
             </div>
-            <div style={{ fontSize: '0.75rem', color: '#8A948F' }}>
+            <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>
               Data Analyst · Software Developer · Mombasa, Kenya
             </div>
           </div>
-          <div style={{ fontSize: '0.75rem', color: '#8A948F', textAlign: 'right' }}>
+          <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textAlign: 'right' }}>
             <div>© {new Date().getFullYear()} Zablon Zambagarrah. All rights reserved.</div>
             <div style={{ marginTop: '4px', fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}>
               Data that speaks & code that scales.
