@@ -1,10 +1,22 @@
+import { useState, type MouseEvent } from 'react'
 import zablonPhoto from '@/imports/zablon_photo.png'
-import { LinkedInIcon, GithubIcon, MailIcon, ChevronDownIcon } from './icons'
+import { LinkedInIcon, GithubIcon, MailIcon, XIcon, WhatsAppIcon, DiscordIcon, RedditIcon, ChevronDownIcon } from './icons'
 import Globe from './Globe'
 
-const socialLinks = [
+type SocialLink = {
+  label: string
+  Icon: typeof LinkedInIcon
+  href?: string
+  copyValue?: string
+}
+
+const socialLinks: SocialLink[] = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/zambagarrah/', Icon: LinkedInIcon },
   { label: 'GitHub', href: 'https://github.com/Zambagarrah', Icon: GithubIcon },
+  { label: 'X', href: 'https://x.com/zambagarrah', Icon: XIcon },
+  { label: 'WhatsApp', href: 'https://wa.me/254705959986', Icon: WhatsAppIcon },
+  { label: 'Discord', copyValue: 'z_abby.', Icon: DiscordIcon },
+  { label: 'Reddit', href: 'https://www.reddit.com/user/Killshot_360/', Icon: RedditIcon },
   { label: 'Email', href: 'mailto:zablonombiri001@gmail.com', Icon: MailIcon },
 ]
 
@@ -20,6 +32,14 @@ const techBadges = [
 ]
 
 export default function Hero() {
+  const [copiedLabel, setCopiedLabel] = useState<string | null>(null)
+
+  const handleCopy = (label: string, value: string) => {
+    navigator.clipboard?.writeText(value).catch(() => {})
+    setCopiedLabel(label)
+    setTimeout(() => setCopiedLabel((current) => (current === label ? null : current)), 1800)
+  }
+
   return (
     <section
       id="home"
@@ -79,24 +99,53 @@ export default function Hero() {
         {/* Left: Social rail + text content */}
         <div className="hero-left-row" style={{ display: 'flex', gap: '28px', alignItems: 'flex-start' }}>
           <div className="hero-social-rail" style={{ display: 'flex', flexDirection: 'column', gap: '18px', paddingTop: '8px' }}>
-            {socialLinks.map(({ label, href, Icon }) => (
-              <a
-                key={label}
-                href={href}
-                target={href.startsWith('mailto') ? undefined : '_blank'}
-                rel={href.startsWith('mailto') ? undefined : 'noreferrer'}
-                aria-label={label}
-                style={{
-                  color: 'var(--color-text-secondary)',
-                  display: 'flex',
-                  transition: 'color 0.2s ease, transform 0.2s ease',
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = '#0F5A47'; e.currentTarget.style.transform = 'translateY(-2px)' }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--color-text-secondary)'; e.currentTarget.style.transform = 'none' }}
-              >
-                <Icon size={19} />
-              </a>
-            ))}
+            {socialLinks.map(({ label, href, copyValue, Icon }) => {
+              const iconStyle = {
+                color: 'var(--color-text-secondary)',
+                display: 'flex',
+                transition: 'color 0.2s ease, transform 0.2s ease',
+              } as const
+              const handleEnter = (e: MouseEvent<HTMLElement>) => {
+                e.currentTarget.style.color = '#0F5A47'
+                e.currentTarget.style.transform = 'translateY(-2px)'
+              }
+              const handleLeave = (e: MouseEvent<HTMLElement>) => {
+                e.currentTarget.style.color = 'var(--color-text-secondary)'
+                e.currentTarget.style.transform = 'none'
+              }
+
+              if (copyValue) {
+                return (
+                  <button
+                    key={label}
+                    type="button"
+                    onClick={() => handleCopy(label, copyValue)}
+                    aria-label={`${label}: ${copyValue} (click to copy)`}
+                    title={copiedLabel === label ? 'Copied!' : `Copy ${label} username`}
+                    style={{ ...iconStyle, background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+                    onMouseEnter={handleEnter}
+                    onMouseLeave={handleLeave}
+                  >
+                    <Icon size={19} />
+                  </button>
+                )
+              }
+
+              return (
+                <a
+                  key={label}
+                  href={href}
+                  target={href?.startsWith('mailto') ? undefined : '_blank'}
+                  rel={href?.startsWith('mailto') ? undefined : 'noreferrer'}
+                  aria-label={label}
+                  style={iconStyle}
+                  onMouseEnter={handleEnter}
+                  onMouseLeave={handleLeave}
+                >
+                  <Icon size={19} />
+                </a>
+              )
+            })}
             <span className="hero-social-line" style={{ width: '1px', flex: 1, minHeight: '32px', background: 'rgba(15,90,71,0.15)', margin: '4px auto 0' }} />
           </div>
 
@@ -458,6 +507,8 @@ export default function Hero() {
           .hero-left-row { flex-direction: column-reverse !important; gap: 16px !important; }
           .hero-social-rail {
             flex-direction: row !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
             padding-top: 0 !important;
           }
           .hero-social-rail .hero-social-line { display: none !important; }
