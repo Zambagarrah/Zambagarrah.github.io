@@ -81,6 +81,7 @@ export default function Skills() {
 
         {/* Skill groups */}
         <div
+          className="skills-groups-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
@@ -155,7 +156,7 @@ export default function Skills() {
         {/* Achievements / highlights */}
         <div>
           <p className="section-eyebrow" style={{ marginBottom: '32px' }}>Achievements</p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+          <div className="skills-achievements-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
             {highlights.map((h) => (
               <div
                 key={h.label}
@@ -203,51 +204,51 @@ export default function Skills() {
 
       <style>{`
         @media (max-width: 1024px) {
-          #skills > div > div:nth-child(2) { 
+          .skills-groups-grid { 
             grid-template-columns: repeat(2, 1fr) !important; 
           }
         }
         
         @media (max-width: 900px) {
-          #skills > div > div:nth-child(2) { 
+          .skills-groups-grid { 
             grid-template-columns: 1fr !important; 
           }
-          #skills > div > div:nth-child(4) { 
+          .skills-achievements-grid { 
             grid-template-columns: 1fr 1fr !important; 
           }
         }
         
         @media (max-width: 768px) {
-          #skills > div > div:nth-child(2) {
+          .skills-groups-grid {
             gap: 20px !important;
           }
-          #skills > div > div:nth-child(2) > div {
+          .skills-groups-grid > div {
             padding: 28px 24px !important;
           }
-          #skills > div > div:nth-child(4) {
+          .skills-achievements-grid {
             gap: 12px !important;
             grid-template-columns: 1fr !important;
           }
-          #skills > div > div:nth-child(4) > div {
+          .skills-achievements-grid > div {
             padding: 20px 24px !important;
             gap: 12px !important;
           }
         }
         
         @media (max-width: 640px) {
-          #skills > div > div:nth-child(2) > div {
+          .skills-groups-grid > div {
             padding: 24px 20px !important;
           }
-          #skills > div > div:nth-child(2) > div > div:nth-child(1) {
+          .skills-groups-grid > div > div:nth-child(1) {
             margin-bottom: 20px !important;
           }
-          #skills > div > div:nth-child(2) > div > div:nth-child(2) {
+          .skills-groups-grid > div > div:nth-child(2) {
             gap: 16px !important;
           }
-          #skills > div > div:nth-child(4) > div {
+          .skills-achievements-grid > div {
             padding: 16px 20px !important;
           }
-          #skills > div > div:nth-child(4) > div > div:nth-child(1) {
+          .skills-achievements-grid > div > div:nth-child(1) {
             width: 30px !important;
             height: 30px !important;
             font-size: 0.75rem !important;

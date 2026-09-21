@@ -77,6 +77,7 @@ export default function Experience() {
         <div style={{ position: 'relative' }}>
           {/* Central timeline line */}
           <div
+            className="timeline-line-vertical"
             style={{
               position: 'absolute',
               left: '50%',
@@ -89,222 +90,157 @@ export default function Experience() {
           />
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
-            {experiences.map((exp, i) => (
-              <div
-                key={i}
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: '1fr 40px 1fr',
-                  gap: '0',
-                  alignItems: 'start',
-                }}
-              >
-                {i % 2 === 0 ? (
-                  <>
-                    <div style={{ paddingRight: '40px', textAlign: 'right', paddingTop: '4px' }}>
-                      <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: '#0F5A47', letterSpacing: '0.08em', fontWeight: 500, marginBottom: '6px' }}>
-                        {exp.period}
-                      </div>
-                      <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: '2px' }}>{exp.title}</div>
-                      <div style={{ fontSize: '0.82rem', color: '#0F5A47', fontWeight: 600 }}>{exp.company}</div>
-                      <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', marginTop: '2px' }}>{exp.location}</div>
-                      <div
-                        style={{
-                          display: 'inline-block',
-                          marginTop: '6px',
-                          padding: '2px 8px',
-                          borderRadius: '4px',
-                          background: 'rgba(15,90,71,0.07)',
-                          fontSize: '0.62rem',
-                          color: '#0F5A47',
-                          fontWeight: 600,
-                          fontFamily: 'var(--font-mono)',
-                          letterSpacing: '0.06em',
-                        }}
-                      >
-                        {exp.type}
-                      </div>
+            {experiences.map((exp, i) => {
+              const infoFirst = i % 2 === 0
+              return (
+                <div
+                  key={i}
+                  className="timeline-row"
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 40px 1fr',
+                    gap: '0',
+                    alignItems: 'start',
+                  }}
+                >
+                  <div
+                    className="timeline-info"
+                    style={{
+                      order: infoFirst ? 0 : 2,
+                      textAlign: infoFirst ? 'right' : 'left',
+                      paddingRight: infoFirst ? '40px' : 0,
+                      paddingLeft: infoFirst ? 0 : '40px',
+                      paddingTop: '4px',
+                    }}
+                  >
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: '#0F5A47', letterSpacing: '0.08em', fontWeight: 500, marginBottom: '6px' }}>
+                      {exp.period}
                     </div>
-
-                    <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '6px' }}>
-                      <div
-                        style={{
-                          width: '18px',
-                          height: '18px',
-                          borderRadius: '50%',
-                          background: exp.current ? '#0F5A47' : 'var(--color-surface)',
-                          border: `2px solid ${exp.current ? '#0F5A47' : 'rgba(15,90,71,0.25)'}`,
-                          boxShadow: exp.current ? '0 0 0 4px rgba(15,90,71,0.15)' : 'none',
-                          position: 'relative',
-                          zIndex: 1,
-                          flexShrink: 0,
-                        }}
-                      />
+                    <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: '2px' }}>{exp.title}</div>
+                    <div style={{ fontSize: '0.82rem', color: '#0F5A47', fontWeight: 600 }}>{exp.company}</div>
+                    <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', marginTop: '2px' }}>{exp.location}</div>
+                    <div
+                      style={{
+                        display: 'inline-block',
+                        marginTop: '6px',
+                        padding: '2px 8px',
+                        borderRadius: '4px',
+                        background: 'rgba(15,90,71,0.07)',
+                        fontSize: '0.62rem',
+                        color: '#0F5A47',
+                        fontWeight: 600,
+                        fontFamily: 'var(--font-mono)',
+                        letterSpacing: '0.06em',
+                      }}
+                    >
+                      {exp.type}
                     </div>
+                  </div>
 
-                    <div style={{ paddingLeft: '40px' }}>
-                      <div
-                        className="card-hover"
-                        style={{
-                          padding: '28px 32px',
-                          borderRadius: '20px',
-                          background: 'var(--color-surface)',
-                          border: '1px solid rgba(15,90,71,0.08)',
-                          boxShadow: '0 4px 20px rgba(15,90,71,0.05)',
-                        }}
-                      >
-                        {exp.current && (
-                          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', padding: '3px 10px', borderRadius: '100px', background: 'rgba(46,139,87,0.1)', marginBottom: '16px' }}>
-                            <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#2E8B57', display: 'inline-block' }} />
-                            <span style={{ fontSize: '0.65rem', fontWeight: 700, color: '#2E8B57', letterSpacing: '0.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>Current</span>
-                          </div>
-                        )}
-                        <ul style={{ paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
-                          {exp.highlights.map((h, j) => (
-                            <li key={j} style={{ display: 'flex', gap: '10px', fontSize: '0.84rem', lineHeight: 1.65, color: 'var(--color-text-secondary)' }}>
-                              <span style={{ color: '#0F5A47', flexShrink: 0, marginTop: '1px' }}>•</span>
-                              {h}
-                            </li>
-                          ))}
-                        </ul>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', paddingTop: '16px', borderTop: '1px solid rgba(15,90,71,0.06)' }}>
-                          {exp.technologies.map((t) => (
-                            <span key={t} style={{ padding: '3px 10px', borderRadius: '5px', background: 'rgba(15,90,71,0.05)', border: '1px solid rgba(15,90,71,0.1)', fontSize: '0.68rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)', fontWeight: 500 }}>
-                              {t}
-                            </span>
-                          ))}
+                  <div className="timeline-dot-wrap" style={{ order: 1, display: 'flex', justifyContent: 'center', paddingTop: '6px' }}>
+                    <div
+                      style={{
+                        width: '18px',
+                        height: '18px',
+                        borderRadius: '50%',
+                        background: exp.current ? '#0F5A47' : 'var(--color-surface)',
+                        border: `2px solid ${exp.current ? '#0F5A47' : 'rgba(15,90,71,0.25)'}`,
+                        boxShadow: exp.current ? '0 0 0 4px rgba(15,90,71,0.15)' : 'none',
+                        position: 'relative',
+                        zIndex: 1,
+                        flexShrink: 0,
+                      }}
+                    />
+                  </div>
+
+                  <div
+                    className="timeline-card-wrap"
+                    style={{
+                      order: infoFirst ? 2 : 0,
+                      paddingLeft: infoFirst ? '40px' : 0,
+                      paddingRight: infoFirst ? 0 : '40px',
+                    }}
+                  >
+                    <div
+                      className="card-hover"
+                      style={{
+                        padding: '28px 32px',
+                        borderRadius: '20px',
+                        background: 'var(--color-surface)',
+                        border: '1px solid rgba(15,90,71,0.08)',
+                        boxShadow: '0 4px 20px rgba(15,90,71,0.05)',
+                      }}
+                    >
+                      {exp.current && (
+                        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', padding: '3px 10px', borderRadius: '100px', background: 'rgba(46,139,87,0.1)', marginBottom: '16px' }}>
+                          <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#2E8B57', display: 'inline-block' }} />
+                          <span style={{ fontSize: '0.65rem', fontWeight: 700, color: '#2E8B57', letterSpacing: '0.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>Current</span>
                         </div>
+                      )}
+                      <ul style={{ paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
+                        {exp.highlights.map((h, j) => (
+                          <li key={j} style={{ display: 'flex', gap: '10px', fontSize: '0.84rem', lineHeight: 1.65, color: 'var(--color-text-secondary)' }}>
+                            <span style={{ color: '#0F5A47', flexShrink: 0, marginTop: '1px' }}>•</span>
+                            {h}
+                          </li>
+                        ))}
+                      </ul>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', paddingTop: '16px', borderTop: '1px solid rgba(15,90,71,0.06)' }}>
+                        {exp.technologies.map((t) => (
+                          <span key={t} style={{ padding: '3px 10px', borderRadius: '5px', background: 'rgba(15,90,71,0.05)', border: '1px solid rgba(15,90,71,0.1)', fontSize: '0.68rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)', fontWeight: 500 }}>
+                            {t}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                  </>
-                ) : (
-                  <>
-                    <div style={{ paddingRight: '40px' }}>
-                      <div
-                        className="card-hover"
-                        style={{
-                          padding: '28px 32px',
-                          borderRadius: '20px',
-                          background: 'var(--color-surface)',
-                          border: '1px solid rgba(15,90,71,0.08)',
-                          boxShadow: '0 4px 20px rgba(15,90,71,0.05)',
-                        }}
-                      >
-                        <ul style={{ paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
-                          {exp.highlights.map((h, j) => (
-                            <li key={j} style={{ display: 'flex', gap: '10px', fontSize: '0.84rem', lineHeight: 1.65, color: 'var(--color-text-secondary)' }}>
-                              <span style={{ color: '#0F5A47', flexShrink: 0, marginTop: '1px' }}>•</span>
-                              {h}
-                            </li>
-                          ))}
-                        </ul>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', paddingTop: '16px', borderTop: '1px solid rgba(15,90,71,0.06)' }}>
-                          {exp.technologies.map((t) => (
-                            <span key={t} style={{ padding: '3px 10px', borderRadius: '5px', background: 'rgba(15,90,71,0.05)', border: '1px solid rgba(15,90,71,0.1)', fontSize: '0.68rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)', fontWeight: 500 }}>
-                              {t}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '6px' }}>
-                      <div
-                        style={{
-                          width: '18px',
-                          height: '18px',
-                          borderRadius: '50%',
-                          background: exp.current ? '#0F5A47' : 'var(--color-surface)',
-                          border: `2px solid ${exp.current ? '#0F5A47' : 'rgba(15,90,71,0.25)'}`,
-                          boxShadow: exp.current ? '0 0 0 4px rgba(15,90,71,0.15)' : 'none',
-                          position: 'relative',
-                          zIndex: 1,
-                          flexShrink: 0,
-                        }}
-                      />
-                    </div>
-
-                    <div style={{ paddingLeft: '40px', paddingTop: '4px' }}>
-                      <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: '#0F5A47', letterSpacing: '0.08em', fontWeight: 500, marginBottom: '6px' }}>
-                        {exp.period}
-                      </div>
-                      <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: '2px' }}>{exp.title}</div>
-                      <div style={{ fontSize: '0.82rem', color: '#0F5A47', fontWeight: 600 }}>{exp.company}</div>
-                      <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', marginTop: '2px' }}>{exp.location}</div>
-                      <div
-                        style={{
-                          display: 'inline-block',
-                          marginTop: '6px',
-                          padding: '2px 8px',
-                          borderRadius: '4px',
-                          background: 'rgba(15,90,71,0.07)',
-                          fontSize: '0.62rem',
-                          color: '#0F5A47',
-                          fontWeight: 600,
-                          fontFamily: 'var(--font-mono)',
-                          letterSpacing: '0.06em',
-                        }}
-                      >
-                        {exp.type}
-                      </div>
-                    </div>
-                  </>
-                )}
-              </div>
-            ))}
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
 
       <style>{`
         @media (max-width: 900px) {
-          #experience > div > div:last-child > div {
-            grid-template-columns: 24px 1fr !important;
-          }
-          #experience > div > div:last-child > div > div:nth-child(1) {
+          .timeline-line-vertical {
             display: none !important;
           }
-          #experience > div > div:last-child > div > div:nth-child(2) {
-            left: 12px !important;
+          .timeline-row {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
           }
-          #experience > div > div:last-child > div > div:nth-child(3) {
-            padding-left: 40px !important;
-          }
-        }
-        
-        @media (max-width: 768px) {
-          #experience > div > div:nth-child(1) > div:nth-child(2) {
+          .timeline-dot-wrap {
             display: none !important;
           }
-          #experience > div > div:nth-child(1) {
-            flex-direction: column !important;
-            gap: 32px !important;
+          .timeline-info {
+            order: 0 !important;
+            text-align: left !important;
+            padding: 0 !important;
+          }
+          .timeline-card-wrap {
+            order: 1 !important;
+            padding: 0 !important;
           }
         }
-        
+
         @media (max-width: 640px) {
-          #experience > div > div:last-child {
-            gap: 32px !important;
+          .timeline-row {
+            gap: 12px !important;
           }
-          #experience > div > div:last-child > div {
-            gap: 0 !important;
-          }
-          #experience > div > div:last-child > div > div:nth-child(3) {
-            padding-left: 36px !important;
-          }
-          #experience > div > div:last-child > div > div:nth-child(3) .card-hover {
+          .timeline-card-wrap .card-hover {
             padding: 20px 24px !important;
           }
-          #experience > div > div:last-child > div > div:nth-child(3) .card-hover ul {
+          .timeline-card-wrap .card-hover ul {
             gap: 8px !important;
           }
-          #experience > div > div:last-child > div > div:nth-child(3) .card-hover li {
+          .timeline-card-wrap .card-hover li {
             font-size: 0.78rem !important;
           }
-          #experience > div > div:last-child > div > div:nth-child(3) .card-hover > div:last-child {
+          .timeline-card-wrap .card-hover > div:last-child {
             gap: 4px !important;
           }
-          #experience > div > div:last-child > div > div:nth-child(3) .card-hover > div:last-child span {
+          .timeline-card-wrap .card-hover > div:last-child span {
             padding: 2px 8px !important;
             font-size: 0.65rem !important;
           }
