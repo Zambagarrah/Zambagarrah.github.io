@@ -1,5 +1,6 @@
 import zablonPhoto from '@/imports/zablon_photo.png'
 import { LinkedInIcon, GithubIcon, MailIcon, ChevronDownIcon } from './icons'
+import Globe from './Globe'
 
 const socialLinks = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/zambagarrah/', Icon: LinkedInIcon },
@@ -100,35 +101,6 @@ export default function Hero() {
           </div>
 
         <div className="hero-text-col" style={{ maxWidth: '620px' }}>
-          {/* Eyebrow */}
-          <div
-            className="animate-fade-up"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '6px 14px',
-              borderRadius: '100px',
-              background: 'rgba(15,90,71,0.06)',
-              border: '1px solid rgba(15,90,71,0.12)',
-              marginBottom: '32px',
-            }}
-          >
-            <span
-              style={{
-                width: '6px',
-                height: '6px',
-                borderRadius: '50%',
-                background: '#0F5A47',
-                boxShadow: '0 0 0 0 rgba(15,90,71,0.4)',
-                animation: 'pulse-dot 2s ease-out infinite',
-              }}
-            />
-            <span className="section-eyebrow" style={{ letterSpacing: '0.14em' }}>
-              Based in Mombasa, Kenya
-            </span>
-          </div>
-
           {/* Headline */}
           <h1
             className="animate-fade-up delay-100"
@@ -305,6 +277,10 @@ export default function Hero() {
           className="animate-fade-in delay-200 hero-portrait-col"
           style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}
         >
+          <div className="hero-globe-wrap" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 0, pointerEvents: 'none' }}>
+            <Globe />
+          </div>
+
           <div style={{ position: 'relative', zIndex: 2 }}>
             {/* Decorative frame */}
             <div
@@ -430,6 +406,11 @@ export default function Hero() {
           animation: blob-morph 8s ease-in-out infinite;
         }
 
+        .hero-globe-wrap {
+          width: 560px;
+          height: 560px;
+        }
+
         @media (max-width: 1024px) {
           .hero-columns { grid-template-columns: 1fr !important; gap: 60px !important; }
           .hero-portrait-col {
@@ -444,6 +425,10 @@ export default function Hero() {
           .hero-portrait-col .animate-badge-float {
             display: none !important;
           }
+          .hero-globe-wrap {
+            width: 460px;
+            height: 460px;
+          }
         }
         
         @media (max-width: 768px) {
@@ -452,6 +437,10 @@ export default function Hero() {
             height: 310px !important;
           }
           #home { padding-top: 60px !important; }
+          .hero-globe-wrap {
+            width: 380px;
+            height: 380px;
+          }
         }
         
         @media (max-width: 640px) {
@@ -461,6 +450,10 @@ export default function Hero() {
           .hero-portrait-col img {
             width: 200px !important;
             height: 260px !important;
+          }
+          .hero-globe-wrap {
+            width: 300px;
+            height: 300px;
           }
           .hero-left-row { flex-direction: column-reverse !important; gap: 16px !important; }
           .hero-social-rail {
