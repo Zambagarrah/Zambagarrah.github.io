@@ -83,6 +83,20 @@ export default function About() {
                 UI animations, or developing solutions in e-commerce and smart education, I'm
                 driven by problem-solving and continuous learning.
               </p>
+              <p style={{ fontSize: '0.97rem', lineHeight: 1.8, color: 'var(--color-text-secondary)' }}>
+                I'm also a firm believer in open source. I like reading through real production
+                codebases and contributing back where I can, my most recent contribution being to{' '}
+                <a
+                  href="https://github.com/Dokploy/dokploy"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: '#0F5A47', fontWeight: 600, textDecoration: 'none', borderBottom: '1px solid rgba(15,90,71,0.3)' }}
+                >
+                  Dokploy
+                </a>
+                , a self-hostable deployment platform. It keeps me sharp on real-world code and
+                collaborative workflows outside of my own projects.
+              </p>
             </div>
 
             {/* Philosophy cards */}
@@ -91,7 +105,7 @@ export default function About() {
                 { icon: '⬡', label: 'Data-Driven', desc: 'Decisions backed by clean, well-structured data.' },
                 { icon: '◎', label: 'Full-Stack Builder', desc: 'From database schema to polished frontend.' },
                 { icon: '△', label: 'Security-Minded', desc: 'Applying cybersecurity best practices throughout.' },
-                { icon: '◇', label: 'Open to Learn', desc: 'Curious, self-driven, and always improving.' },
+                { icon: '◇', label: 'Open Source', desc: 'Contributing to real projects, most recently Dokploy.' },
               ].map((p) => (
                 <div
                   key={p.label}
@@ -207,6 +221,7 @@ export default function About() {
                   'E-commerce Systems',
                   'UI/UX & Animation',
                   'Smart Education Tech',
+                  'Open Source Contributions',
                 ].map((interest) => (
                   <span
                     key={interest}
