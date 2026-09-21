@@ -282,6 +282,39 @@ export default function Hero() {
             >
               Get in Touch
             </a>
+            <a
+              href="/Zablon_Zambagarrah_CV.pdf"
+              download
+              style={{
+                padding: '13px 28px',
+                borderRadius: '100px',
+                background: 'transparent',
+                color: 'var(--color-text-primary)',
+                fontSize: '0.88rem',
+                fontWeight: 600,
+                textDecoration: 'none',
+                letterSpacing: '0.01em',
+                border: '1.5px solid rgba(15,90,71,0.2)',
+                transition: 'all 0.25s ease',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget
+                el.style.borderColor = '#0F5A47'
+                el.style.color = '#0F5A47'
+                el.style.transform = 'translateY(-2px)'
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget
+                el.style.borderColor = 'rgba(15,90,71,0.2)'
+                el.style.color = 'var(--color-text-primary)'
+                el.style.transform = 'none'
+              }}
+            >
+              Download CV
+            </a>
           </div>
 
           {/* Stats row */}
@@ -357,6 +390,9 @@ export default function Hero() {
               src={zablonPhoto}
               alt="Zablon Zambagarrah, Data Analyst & Software Developer"
               className="hero-portrait-blob"
+              width={340}
+              height={440}
+              fetchPriority="high"
               style={{
                 width: '340px',
                 height: '440px',

@@ -148,8 +148,8 @@ export default function InlineAIPopover({ selectedText, anchorPos, onSend, onClo
           </div>
           <button
             onClick={onClose}
+            aria-label="Close AI popover"
             style={{
-              width: '26px',
               height: '26px',
               borderRadius: '7px',
               border: 'none',
@@ -280,6 +280,7 @@ export default function InlineAIPopover({ selectedText, anchorPos, onSend, onClo
           />
           <button
             onClick={handleSend}
+            aria-label="Send message"
             style={{
               width: '38px',
               height: '38px',

@@ -81,6 +81,7 @@ export default function VoiceMode({ open, onClose }: { open: boolean; onClose: (
         {/* Close */}
         <button
           onClick={onClose}
+          aria-label="Close voice mode"
           style={{
             position: 'absolute',
             top: '20px',
@@ -179,6 +180,9 @@ export default function VoiceMode({ open, onClose }: { open: boolean; onClose: (
             <img
               src={zablonPhoto}
               alt="Zablon AI Avatar"
+              width={140}
+              height={140}
+              loading="lazy"
               style={{
                 width: '100%',
                 height: '100%',
@@ -267,6 +271,7 @@ export default function VoiceMode({ open, onClose }: { open: boolean; onClose: (
         {/* Microphone button */}
         <button
           onClick={handleMic}
+          aria-label={state === 'listening' ? 'Stop listening' : 'Start voice input'}
           style={{
             width: '72px',
             height: '72px',

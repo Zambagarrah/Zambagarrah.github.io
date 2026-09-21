@@ -202,6 +202,7 @@ export default function SelectionToolbar({ onAskAI }: Props) {
           WebkitTapHighlightColor: 'transparent',
         }}
         title="Copy"
+        aria-label="Copy selected text"
         onMouseEnter={(e) => {
           const el = e.currentTarget as HTMLElement
           el.style.background = 'rgba(255,255,255,0.1)'

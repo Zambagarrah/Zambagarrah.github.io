@@ -153,6 +153,9 @@ export default function AIAssistant({
           <img
             src={zablonPhoto}
             alt="Zablon Zambagarrah"
+            width={40}
+            height={40}
+            loading="lazy"
             style={{
               width: '40px',
               height: '40px',
@@ -183,6 +186,7 @@ export default function AIAssistant({
           <button
             onClick={onVoiceMode}
             title="Voice Mode"
+            aria-label="Open voice mode"
             style={{
               width: '32px',
               height: '32px',
@@ -204,17 +208,8 @@ export default function AIAssistant({
           </button>
           <button
             onClick={onClose}
+            aria-label="Close AI assistant"
             style={{
-              width: '32px',
-              height: '32px',
-              borderRadius: '10px',
-              border: '1px solid rgba(15,90,71,0.12)',
-              background: 'rgba(15,90,71,0.05)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              color: 'var(--color-text-secondary)',
               fontSize: '1rem',
               transition: 'all 0.2s ease',
             }}
@@ -393,6 +388,7 @@ export default function AIAssistant({
         />
         <button
           onClick={() => send(input)}
+          aria-label="Send message"
           style={{
             width: '36px',
             height: '36px',

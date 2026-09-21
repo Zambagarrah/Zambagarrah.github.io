@@ -1,3 +1,5 @@
+import { useTheme } from '../hooks/useTheme'
+
 const timeline = [
   {
     year: '2025–2026',
@@ -26,6 +28,9 @@ const timeline = [
 ]
 
 export default function About() {
+  const { theme } = useTheme()
+  const statsTextColor = theme === 'dark' ? 'e5e5e5' : '3d3d3d'
+
   return (
     <section
       id="about"
@@ -123,6 +128,31 @@ export default function About() {
                   <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>{p.desc}</div>
                 </div>
               ))}
+            </div>
+
+            {/* GitHub activity */}
+            <div style={{ marginTop: '32px' }}>
+              <p style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-muted)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '14px' }}>
+                GitHub Activity
+              </p>
+              <div className="about-github-stats" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                <img
+                  src={`https://github-readme-streak-stats.herokuapp.com/?user=Zambagarrah&theme=transparent&hide_border=true&ring=0F5A47&fire=0F5A47&currStreakLabel=0F5A47&text_color=${statsTextColor}&background=00000000`}
+                  alt="Zablon Zambagarrah's GitHub streak stats"
+                  loading="lazy"
+                  width={400}
+                  height={195}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+                <img
+                  src={`https://ghchart.rshah.org/0F5A47/Zambagarrah`}
+                  alt="Zablon Zambagarrah's GitHub contribution chart"
+                  loading="lazy"
+                  width={400}
+                  height={195}
+                  style={{ width: '100%', height: 'auto', alignSelf: 'center' }}
+                />
+              </div>
             </div>
           </div>
 
@@ -264,6 +294,9 @@ export default function About() {
         
         @media (max-width: 640px) {
           .about-philosophy-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .about-github-stats {
             grid-template-columns: 1fr !important;
           }
           .about-timeline-list > div {

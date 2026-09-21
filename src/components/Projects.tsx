@@ -24,6 +24,7 @@ const projects = [
     accent: 'rgba(15,90,71,0.06)',
     gradient: 'linear-gradient(135deg, rgba(15,90,71,0.08) 0%, rgba(46,139,87,0.04) 100%)',
     aiExplanation: 'The backend separates concerns cleanly: models define the financial schema, serializers validate and shape data, and the authentication layer gates access before any financial flow executes. Because the app is publicly accessible, error handling and validation are treated as first-class concerns rather than an afterthought, and the PostgreSQL layer is designed for data integrity under concurrent use.',
+    liveUrl: 'https://shieldpayfinance.com',
   },
   {
     id: 2,
@@ -48,6 +49,7 @@ const projects = [
     accent: 'rgba(197,154,90,0.06)',
     gradient: 'linear-gradient(135deg, rgba(197,154,90,0.08) 0%, rgba(184,106,74,0.04) 100%)',
     aiExplanation: 'The admin dashboard, product catalog, and checkout flow all share the same underlying schema, so state stays consistent from browsing through to order confirmation instead of drifting between the storefront and back office. Cart and order logic handle edge cases like stock changes and failed payments explicitly rather than assuming the happy path.',
+    githubUrl: 'https://github.com/Zambagarrah/Full-Stack-E-Commerce-Platform',
   },
   {
     id: 3,
@@ -72,6 +74,8 @@ const projects = [
     accent: 'rgba(184,106,74,0.06)',
     gradient: 'linear-gradient(135deg, rgba(184,106,74,0.08) 0%, rgba(197,154,90,0.04) 100%)',
     aiExplanation: 'The pipeline standardizes messy inputs before any analysis happens, since garbage data produces garbage dashboards. Validation runs at ingestion so failures are caught early, and query and schema optimisation on PostgreSQL removed bottlenecks that were previously slowing dashboard load times.',
+    githubUrl: 'https://github.com/Zambagarrah/ETL-Pipeline-Analytics',
+    private: true,
   },
   {
     id: 4,
@@ -96,6 +100,8 @@ const projects = [
     accent: 'rgba(61,107,140,0.06)',
     gradient: 'linear-gradient(135deg, rgba(61,107,140,0.08) 0%, rgba(46,139,87,0.04) 100%)',
     aiExplanation: 'Data validation runs before any model sees the records, since predictions built on unvalidated patient data are worse than no predictions at all. Scikit-learn models turn cleaned records into risk and trend signals, and those signals are surfaced through real-time dashboards so KPI tracking reflects the current state of the data rather than a stale snapshot.',
+    githubUrl: 'https://github.com/Zambagarrah/Healthcare-Analytics-Platform',
+    private: true,
   },
 ]
 
@@ -210,6 +216,75 @@ export default function Projects() {
                   <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'var(--color-text-secondary)', maxWidth: '560px' }}>
                     {project.description}
                   </p>
+
+                  {(project.liveUrl || project.githubUrl) && (
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '20px' }}>
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            padding: '7px 16px',
+                            borderRadius: '100px',
+                            background: project.color,
+                            color: '#fff',
+                            fontSize: '0.76rem',
+                            fontWeight: 600,
+                            textDecoration: 'none',
+                            letterSpacing: '0.01em',
+                          }}
+                        >
+                          Live Demo ↗
+                        </a>
+                      )}
+                      {project.githubUrl && !project.private && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            padding: '7px 16px',
+                            borderRadius: '100px',
+                            background: 'transparent',
+                            color: project.color,
+                            border: `1.5px solid ${project.color}40`,
+                            fontSize: '0.76rem',
+                            fontWeight: 600,
+                            textDecoration: 'none',
+                            letterSpacing: '0.01em',
+                          }}
+                        >
+                          View Code ↗
+                        </a>
+                      )}
+                      {project.private && (
+                        <span
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            padding: '7px 16px',
+                            borderRadius: '100px',
+                            background: 'rgba(120,120,120,0.08)',
+                            color: 'var(--color-text-muted)',
+                            border: '1.5px solid rgba(120,120,120,0.15)',
+                            fontSize: '0.76rem',
+                            fontWeight: 600,
+                            letterSpacing: '0.01em',
+                          }}
+                        >
+                          Private repo · in progress
+                        </span>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 <div
