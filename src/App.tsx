@@ -7,6 +7,8 @@ import Experience from './components/Experience'
 import Skills from './components/Skills'
 import Research from './components/Research'
 import Contact from './components/Contact'
+import Testimonials from './components/Testimonials'
+import ScrollToTop from './components/ScrollToTop'
 import AIAssistant from './components/AIAssistant'
 import VoiceMode from './components/VoiceMode'
 import SelectionToolbar from './components/SelectionToolbar'
@@ -64,6 +66,7 @@ export default function App() {
         <Experience />
         <Research />
         <Skills />
+        <Testimonials />
         <Contact />
       </main>
 
@@ -145,6 +148,9 @@ export default function App() {
           onClose={() => setInlinePopover(null)}
         />
       )}
+
+      {/* Scroll to top */}
+      <ScrollToTop />
 
       {/* Floating AI Assistant button */}
       <button

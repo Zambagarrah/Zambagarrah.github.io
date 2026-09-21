@@ -1,4 +1,11 @@
 import zablonPhoto from '@/imports/zablon_photo.jpg'
+import { LinkedInIcon, GithubIcon, MailIcon, ChevronDownIcon } from './icons'
+
+const socialLinks = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/zambagarrah/', Icon: LinkedInIcon },
+  { label: 'GitHub', href: 'https://github.com/Zambagarrah', Icon: GithubIcon },
+  { label: 'Email', href: 'mailto:zablonombiri001@gmail.com', Icon: MailIcon },
+]
 
 const techBadges = [
   { label: 'Python', delay: '0s', x: '-160px', y: '60px' },
@@ -68,7 +75,30 @@ export default function Hero() {
           alignItems: 'center',
         }}
       >
-        {/* Left: Text content */}
+        {/* Left: Social rail + text content */}
+        <div className="hero-left-row" style={{ display: 'flex', gap: '28px', alignItems: 'flex-start' }}>
+          <div className="hero-social-rail" style={{ display: 'flex', flexDirection: 'column', gap: '18px', paddingTop: '8px' }}>
+            {socialLinks.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith('mailto') ? undefined : '_blank'}
+                rel={href.startsWith('mailto') ? undefined : 'noreferrer'}
+                aria-label={label}
+                style={{
+                  color: 'var(--color-text-secondary)',
+                  display: 'flex',
+                  transition: 'color 0.2s ease, transform 0.2s ease',
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#0F5A47'; e.currentTarget.style.transform = 'translateY(-2px)' }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--color-text-secondary)'; e.currentTarget.style.transform = 'none' }}
+              >
+                <Icon size={19} />
+              </a>
+            ))}
+            <span className="hero-social-line" style={{ width: '1px', flex: 1, minHeight: '32px', background: 'rgba(15,90,71,0.15)', margin: '4px auto 0' }} />
+          </div>
+
         <div className="hero-text-col" style={{ maxWidth: '620px' }}>
           {/* Eyebrow */}
           <div
@@ -268,6 +298,7 @@ export default function Hero() {
             ))}
           </div>
         </div>
+        </div>
 
         {/* Right: Portrait + floating badges */}
         <div
@@ -300,16 +331,17 @@ export default function Hero() {
             <img
               src={zablonPhoto}
               alt="Zablon Zambagarrah, Data Analyst & Software Developer"
+              className="hero-portrait-blob"
               style={{
                 width: '340px',
                 height: '440px',
                 objectFit: 'cover',
                 objectPosition: 'center top',
-                borderRadius: '20px',
                 display: 'block',
                 position: 'relative',
                 zIndex: 1,
-                boxShadow: '0 32px 80px rgba(15,90,71,0.18), 0 8px 24px rgba(0,0,0,0.08)',
+                border: '1px solid rgba(15,90,71,0.12)',
+                boxShadow: 'inset 0 0 0 10px rgba(255,255,255,0.35), 0 32px 80px rgba(15,90,71,0.18), 0 8px 24px rgba(0,0,0,0.08)',
               }}
             />
           </div>
@@ -359,22 +391,28 @@ export default function Hero() {
           left: '50%',
           transform: 'translateX(-50%)',
           display: 'flex',
-          flexDirection: 'column',
           alignItems: 'center',
-          gap: '8px',
+          gap: '10px',
         }}
       >
-        <span style={{ fontSize: '0.65rem', letterSpacing: '0.2em', color: 'var(--color-text-muted)', fontWeight: 500, textTransform: 'uppercase' }}>
-          Scroll
+        <span style={{ fontSize: '0.7rem', letterSpacing: '0.14em', color: 'var(--color-text-muted)', fontWeight: 500, textTransform: 'uppercase' }}>
+          Scroll Down
         </span>
         <div
+          className="animate-badge-float"
           style={{
-            width: '1.5px',
-            height: '40px',
-            background: 'linear-gradient(to bottom, rgba(15,90,71,0.4), transparent)',
-            borderRadius: '1px',
+            width: '30px',
+            height: '30px',
+            borderRadius: '50%',
+            border: '1px solid rgba(15,90,71,0.25)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#0F5A47',
           }}
-        />
+        >
+          <ChevronDownIcon size={14} />
+        </div>
       </div>
 
       <style>{`
@@ -383,7 +421,15 @@ export default function Hero() {
           70% { box-shadow: 0 0 0 8px rgba(15,90,71,0); }
           100% { box-shadow: 0 0 0 0 rgba(15,90,71,0); }
         }
-        
+
+        @keyframes blob-morph {
+          0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+          50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+        }
+        .hero-portrait-blob {
+          animation: blob-morph 8s ease-in-out infinite;
+        }
+
         @media (max-width: 1024px) {
           .hero-columns { grid-template-columns: 1fr !important; gap: 60px !important; }
           .hero-portrait-col {
@@ -416,6 +462,12 @@ export default function Hero() {
             width: 200px !important;
             height: 260px !important;
           }
+          .hero-left-row { flex-direction: column-reverse !important; gap: 16px !important; }
+          .hero-social-rail {
+            flex-direction: row !important;
+            padding-top: 0 !important;
+          }
+          .hero-social-rail .hero-social-line { display: none !important; }
           .hero-text-col { max-width: 100% !important; }
           #home h1 { font-size: clamp(1.8rem, 4vw, 2.8rem) !important; }
           .animate-fade-up { animation-delay: 0s !important; }

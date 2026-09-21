@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react'
 import { useTheme } from '../hooks/useTheme'
+import { HomeIcon, ExperienceIcon, ProjectsIcon, ResearchIcon, SkillsIcon, ContactIcon, CloseIcon } from './icons'
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Research', href: '#research' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '#home', Icon: HomeIcon },
+  { label: 'Experience', href: '#experience', Icon: ExperienceIcon },
+  { label: 'Projects', href: '#projects', Icon: ProjectsIcon },
+  { label: 'Research', href: '#research', Icon: ResearchIcon },
+  { label: 'Skills', href: '#skills', Icon: SkillsIcon },
+  { label: 'Contact', href: '#contact', Icon: ContactIcon },
 ]
 
 export default function Navigation({ onOpenAssistant }: { onOpenAssistant: () => void }) {
@@ -28,6 +29,7 @@ export default function Navigation({ onOpenAssistant }: { onOpenAssistant: () =>
   }
 
   return (
+    <>
     <header
       style={{
         position: 'fixed',
@@ -196,82 +198,107 @@ export default function Navigation({ onOpenAssistant }: { onOpenAssistant: () =>
           </button>
         </div>
       </nav>
+    </header>
 
-      {/* Mobile menu */}
-      {menuOpen && (
+      {/* Backdrop */}
+      <div
+        className="nav-overlay"
+        onClick={() => setMenuOpen(false)}
+        style={{
+          position: 'fixed',
+          inset: 0,
+          background: 'rgba(0,0,0,0.35)',
+          opacity: menuOpen ? 1 : 0,
+          pointerEvents: menuOpen ? 'auto' : 'none',
+          transition: 'opacity 0.3s ease',
+          zIndex: 98,
+        }}
+      />
+
+      {/* Mobile bottom-sheet menu */}
+      <div
+        className="nav-sheet"
+        style={{
+          position: 'fixed',
+          left: 0,
+          right: 0,
+          bottom: menuOpen ? 0 : '-100%',
+          background: 'var(--color-bg)',
+          borderRadius: '24px 24px 0 0',
+          boxShadow: '0 -4px 32px rgba(0,0,0,0.18)',
+          padding: '32px 24px 64px',
+          transition: 'bottom 0.35s ease',
+          zIndex: 99,
+        }}
+      >
         <div
           style={{
-            position: 'absolute',
-            top: '64px',
-            left: 0,
-            right: 0,
-            background: 'rgba(var(--color-bg-rgb),0.97)',
-            backdropFilter: 'blur(24px)',
-            borderBottom: '1px solid rgba(15,90,71,0.08)',
-            padding: '20px 32px 28px',
+            width: '40px',
+            height: '4px',
+            borderRadius: '2px',
+            background: 'rgba(15,90,71,0.15)',
+            margin: '0 auto 24px',
+          }}
+        />
+        <div
+          className="nav-sheet-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '28px 12px',
           }}
         >
-          {navLinks.map((link) => (
+          {navLinks.map(({ label, href, Icon }) => (
             <a
-              key={link.href}
-              href={link.href}
-              onClick={() => handleNav(link.href)}
+              key={href}
+              href={href}
+              onClick={() => handleNav(href)}
               style={{
-                display: 'block',
-                padding: '12px 0',
-                fontSize: '1rem',
-                fontWeight: 500,
-                color: active === link.href ? '#0F5A47' : 'var(--color-text-primary)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '8px',
                 textDecoration: 'none',
-                borderBottom: '1px solid rgba(15,90,71,0.06)',
+                color: active === href ? '#0F5A47' : 'var(--color-text-primary)',
+                fontSize: '0.78rem',
+                fontWeight: 500,
               }}
             >
-              {link.label}
+              <Icon size={22} />
+              {label}
             </a>
           ))}
-          <button
-            onClick={toggleTheme}
-            style={{
-              marginTop: '20px',
-              width: '100%',
-              padding: '12px',
-              borderRadius: '12px',
-              background: 'rgba(15,90,71,0.06)',
-              color: 'var(--color-text-primary)',
-              fontSize: '0.9rem',
-              fontWeight: 500,
-              border: '1px solid rgba(15,90,71,0.1)',
-              cursor: 'pointer',
-            }}
-          >
-            {theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-          </button>
-          <button
-            onClick={() => { onOpenAssistant(); setMenuOpen(false) }}
-            style={{
-              marginTop: '10px',
-              width: '100%',
-              padding: '12px',
-              borderRadius: '12px',
-              background: '#0F5A47',
-              color: '#fff',
-              fontSize: '0.9rem',
-              fontWeight: 500,
-              border: 'none',
-              cursor: 'pointer',
-            }}
-          >
-            Open AI Assistant
-          </button>
         </div>
-      )}
+        <button
+          onClick={() => setMenuOpen(false)}
+          aria-label="Close menu"
+          style={{
+            position: 'absolute',
+            bottom: '18px',
+            right: '22px',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            color: 'var(--color-text-secondary)',
+            display: 'flex',
+          }}
+        >
+          <CloseIcon size={20} />
+        </button>
+      </div>
 
       <style>{`
         @media (max-width: 768px) {
           .hidden-mobile { display: none !important; }
           .show-mobile { display: flex !important; }
         }
+        @media (min-width: 769px) {
+          .nav-overlay, .nav-sheet { display: none !important; }
+        }
+        @media (max-width: 350px) {
+          .nav-sheet-grid { gap: 24px 4px; }
+        }
       `}</style>
-    </header>
+    </>
   )
 }
