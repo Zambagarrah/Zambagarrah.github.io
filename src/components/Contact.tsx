@@ -1,17 +1,46 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
+
+// EmailJS public key + service/template IDs are safe to ship in client code by
+// design (EmailJS enforces sending limits via the dashboard, not secrecy).
+// For extra protection, restrict allowed domains in the EmailJS dashboard.
+const EMAILJS_SERVICE_ID = 'service_0pf52hx'
+const EMAILJS_TEMPLATE_ID = 'template_sy1q2pe'
+const EMAILJS_PUBLIC_KEY = 'vQWaTOGq2eAAftIE1'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', company: '', message: '' })
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-      setSent(true)
-    }, 1400)
+    setError('')
+
+    emailjs
+      .send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          name: form.name,
+          email: form.email,
+          company: form.company || 'Not specified',
+          message: form.message,
+          title: 'Portfolio Contact Form',
+          time: new Date().toLocaleString('en-KE', { dateStyle: 'medium', timeStyle: 'short' }),
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY },
+      )
+      .then(() => {
+        setLoading(false)
+        setSent(true)
+      })
+      .catch(() => {
+        setLoading(false)
+        setError("Something went wrong sending your message. Please try again or email me directly.")
+      })
   }
 
   const inputStyle = {
@@ -298,6 +327,10 @@ export default function Contact() {
                 >
                   {loading ? 'Sending...' : 'Send Message'}
                 </button>
+
+                {error && (
+                  <p style={{ fontSize: '0.82rem', color: '#B3261E', margin: 0 }}>{error}</p>
+                )}
               </form>
             )}
           </div>
