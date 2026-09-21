@@ -25,7 +25,7 @@ export default function App() {
     }
 
     document.title = 'Zablon Zambagarrah | Data Analyst & Software Developer'
-    setMeta('meta[name="description"]', 'Zablon Zambagarrah is a Data Analyst and Software Developer based in Mombasa, Kenya, turning raw data into insight and building secure, scalable web applications with Python, Django, and React.')
+    setMeta('meta[name="description"]', 'Zablon Zambagarrah is a Data Analyst and Software Developer based in Mombasa, Kenya, turning raw data into insight and building secure, scalable web applications with Python, Django, and Next.js.')
     setMeta('meta[property="og:title"]', 'Zablon Zambagarrah | Data Analyst & Software Developer')
     setMeta('meta[property="og:description"]', 'Data Analyst and Software Developer from Mombasa, Kenya building data-driven dashboards, Django backends, and full-stack web applications.')
     setMeta('meta[name="twitter:title"]', 'Zablon Zambagarrah | Data Analyst & Software Developer')

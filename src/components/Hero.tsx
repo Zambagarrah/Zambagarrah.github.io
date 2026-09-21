@@ -161,7 +161,7 @@ export default function Hero() {
           >
             Zablon Zambagarrah is a Data Analyst and Software Developer based in Mombasa,
             Kenya, turning messy datasets into clear insight and building secure, scalable
-            web applications with Python, Django, and React. He focuses on practical
+            web applications with Python, Django, and Next.js. He focuses on practical
             technology, from data dashboards to production-ready APIs, that actually
             solves problems for people and businesses.
           </p>

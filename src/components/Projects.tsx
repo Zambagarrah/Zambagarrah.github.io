@@ -27,6 +27,30 @@ const projects = [
   },
   {
     id: 2,
+    title: 'Full-Stack E-Commerce Platform',
+    category: 'E-Commerce · Full-Stack · Django',
+    year: '2024',
+    status: 'Completed',
+    description:
+      'A complete e-commerce platform built from scratch covering product listings, cart management, user authentication, order processing, and an admin dashboard.',
+    problem:
+      'An online store needs the catalog, cart, checkout, and admin tools to work together reliably, not just look good individually, otherwise carts get lost and orders break at the worst moment.',
+    architecture:
+      'Django REST backend and database schema handle products, orders, and auth, wired to a frontend built with real state management and error handling throughout so cart and checkout state stay consistent across the session.',
+    metrics: [
+      { label: 'Backend', value: 'Django' },
+      { label: 'Database', value: 'PostgreSQL' },
+      { label: 'Scope', value: 'Full-Stack' },
+      { label: 'Source', value: 'GitHub' },
+    ],
+    stack: ['Python', 'Django', 'PostgreSQL', 'JavaScript', 'HTML/CSS', 'REST APIs', 'Git'],
+    color: '#C59A5A',
+    accent: 'rgba(197,154,90,0.06)',
+    gradient: 'linear-gradient(135deg, rgba(197,154,90,0.08) 0%, rgba(184,106,74,0.04) 100%)',
+    aiExplanation: 'The admin dashboard, product catalog, and checkout flow all share the same underlying schema, so state stays consistent from browsing through to order confirmation instead of drifting between the storefront and back office. Cart and order logic handle edge cases like stock changes and failed payments explicitly rather than assuming the happy path.',
+  },
+  {
+    id: 3,
     title: 'ETL Pipeline Analytics',
     category: 'Data Engineering · Python · PostgreSQL',
     year: '2024',
@@ -48,6 +72,30 @@ const projects = [
     accent: 'rgba(184,106,74,0.06)',
     gradient: 'linear-gradient(135deg, rgba(184,106,74,0.08) 0%, rgba(197,154,90,0.04) 100%)',
     aiExplanation: 'The pipeline standardizes messy inputs before any analysis happens, since garbage data produces garbage dashboards. Validation runs at ingestion so failures are caught early, and query and schema optimisation on PostgreSQL removed bottlenecks that were previously slowing dashboard load times.',
+  },
+  {
+    id: 4,
+    title: 'Healthcare Analytics Platform',
+    category: 'Data Analysis · Python · Scikit-learn',
+    year: '2024',
+    status: 'Completed',
+    description:
+      'A Python-based data engineering workflow that processes patient records, applies data validation rules, and generates predictive insights for hospital administrators.',
+    problem:
+      'Hospital teams need to track KPIs and spot risk patterns in patient data quickly, but raw records are messy and manual review does not scale to real patient volumes.',
+    architecture:
+      'Python scripts clean and validate incoming patient records, Scikit-learn models generate predictive insights from the cleaned data, and the results feed real-time dashboards so administrators can track KPIs as they change rather than after the fact.',
+    metrics: [
+      { label: 'Language', value: 'Python' },
+      { label: 'ML', value: 'Scikit-learn' },
+      { label: 'Storage', value: 'PostgreSQL' },
+      { label: 'Output', value: 'Dashboards' },
+    ],
+    stack: ['Python', 'Pandas', 'Scikit-learn', 'PostgreSQL', 'Matplotlib'],
+    color: '#3D6B8C',
+    accent: 'rgba(61,107,140,0.06)',
+    gradient: 'linear-gradient(135deg, rgba(61,107,140,0.08) 0%, rgba(46,139,87,0.04) 100%)',
+    aiExplanation: 'Data validation runs before any model sees the records, since predictions built on unvalidated patient data are worse than no predictions at all. Scikit-learn models turn cleaned records into risk and trend signals, and those signals are surfaced through real-time dashboards so KPI tracking reflects the current state of the data rather than a stale snapshot.',
   },
 ]
 

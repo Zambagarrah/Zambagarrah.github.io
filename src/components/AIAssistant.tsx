@@ -16,11 +16,15 @@ const KNOWLEDGE: Record<string, string> = {
 
   about: "Zablon Zambagarrah is a Data Analyst and Software Developer based in Mombasa, Kenya. He specializes in Python, Django, React, and SQL-based data analysis, turning raw data into actionable insight and building secure, scalable, user-friendly applications.",
 
-  projects: "Zablon has built several real-world projects: ShieldPay Financials, a live fintech web application with a Django backend, authentication system, and PostgreSQL data layer, and an ETL Pipeline Analytics project processing 10,000+ records daily with Python and PostgreSQL.",
+  projects: "Zablon has built several real-world projects: ShieldPay Financials, a live fintech web application; a Full-Stack E-Commerce Platform with product listings, cart, and an admin dashboard; an ETL Pipeline Analytics project processing 10,000+ records daily; and a Healthcare Analytics Platform generating predictive insights for hospital administrators.",
 
   shieldpay: "ShieldPay Financials is a live fintech web application handling user-facing financial flows end to end, built and deployed to production. It features a Django REST backend, an authentication system, and a PostgreSQL data layer connected to a real frontend.",
 
+  ecommerce: "The Full-Stack E-Commerce Platform is a complete online store built from scratch, covering product listings, cart management, user authentication, order processing, and an admin dashboard, with a Django backend and PostgreSQL database.",
+
   etl: "The ETL Pipeline Analytics project processes 10,000+ records daily with Python data pipelines and validation scripts, owning data quality end to end from ingestion through to output, and improving downstream dashboard performance by 30% through PostgreSQL query and schema optimisation.",
+
+  healthcare: "The Healthcare Analytics Platform is a Python-based data engineering workflow that cleans and validates patient records, uses Scikit-learn to generate predictive insights, and feeds real-time dashboards so hospital administrators can track KPIs.",
 
   skills: "Zablon's technical stack: Python (strong), JavaScript (strong), TypeScript, SQL and PostgreSQL (advanced), Django, Flask, Node.js, React and Next.js, MySQL, Git/GitHub/GitLab, CI/CD, Docker, Kubernetes, AWS, and Azure Data Factory. He also integrates AI tools like GitHub Copilot and Claude into his daily engineering workflow.",
 
@@ -36,7 +40,9 @@ const KNOWLEDGE: Record<string, string> = {
 function getResponse(input: string): string {
   const lower = input.toLowerCase()
   if (lower.includes('shieldpay') || lower.includes('fintech') || lower.includes('financial')) return KNOWLEDGE.shieldpay
+  if (lower.includes('ecommerce') || lower.includes('e-commerce') || lower.includes('store') || lower.includes('cart')) return KNOWLEDGE.ecommerce
   if (lower.includes('etl') || lower.includes('pipeline') || lower.includes('data engineer')) return KNOWLEDGE.etl
+  if (lower.includes('healthcare') || lower.includes('hospital') || lower.includes('patient') || lower.includes('scikit')) return KNOWLEDGE.healthcare
   if (lower.includes('project') || lower.includes('build') || lower.includes('work') || lower.includes('portfolio')) return KNOWLEDGE.projects
   if (lower.includes('skill') || lower.includes('tech') || lower.includes('python') || lower.includes('django') || lower.includes('stack')) return KNOWLEDGE.skills
   if (lower.includes('experience') || lower.includes('designer') || lower.includes('byteforge') || lower.includes('swahilipot') || lower.includes('afgt')) return KNOWLEDGE.experience
