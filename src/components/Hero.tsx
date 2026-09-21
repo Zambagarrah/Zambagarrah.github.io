@@ -15,7 +15,7 @@ const socialLinks: SocialLink[] = [
   { label: 'GitHub', href: 'https://github.com/Zambagarrah', Icon: GithubIcon },
   { label: 'X', href: 'https://x.com/zambagarrah', Icon: XIcon },
   { label: 'WhatsApp', href: 'https://wa.me/254705959986', Icon: WhatsAppIcon },
-  { label: 'Discord', copyValue: 'z_abby.', Icon: DiscordIcon },
+  { label: 'Discord', href: 'https://discord.com/users/1371024006358241301', Icon: DiscordIcon },
   { label: 'Reddit', href: 'https://www.reddit.com/user/Killshot_360/', Icon: RedditIcon },
   { label: 'Email', href: 'mailto:zablonombiri001@gmail.com', Icon: MailIcon },
 ]
