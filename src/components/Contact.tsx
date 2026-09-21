@@ -69,11 +69,18 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      style={{ padding: '120px 0', background: 'var(--color-bg)', position: 'relative' }}
+      style={{
+        padding: '120px 0',
+        background: 'var(--color-bg)',
+        position: 'relative',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+      }}
     >
       <div className="bg-grid" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
 
-      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 32px' }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 32px', width: '100%' }}>
         <div
           className="contact-grid"
           style={{
