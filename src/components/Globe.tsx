@@ -73,6 +73,9 @@ export default function Globe({ className }: { className?: string }) {
     const DEG = Math.PI / 180
     const dpr = Math.min(window.devicePixelRatio || 1, 2)
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const tiltDeg = 30
+    const tiltCos = Math.cos(tiltDeg * DEG)
+    const tiltSin = Math.sin(tiltDeg * DEG)
 
     let width = 0
     let height = 0
@@ -98,11 +101,14 @@ export default function Globe({ className }: { className?: string }) {
     const project = (lon: number, lat: number, rotDeg: number) => {
       const lonRad = (lon + rotDeg) * DEG
       const latRad = lat * DEG
-      return {
-        x: Math.cos(latRad) * Math.sin(lonRad),
-        y: Math.sin(latRad),
-        z: Math.cos(latRad) * Math.cos(lonRad),
-      }
+      const x = Math.cos(latRad) * Math.sin(lonRad)
+      const y0 = Math.sin(latRad)
+      const z = Math.cos(latRad) * Math.cos(lonRad)
+      // Axial tilt: rotate around the X axis so the globe leans like a real
+      // planet on a tilted axis, while the silhouette stays a perfect circle.
+      const y = y0 * tiltCos - z * tiltSin
+      const zt = y0 * tiltSin + z * tiltCos
+      return { x, y, z: zt }
     }
 
     let rotation = 0
@@ -146,8 +152,9 @@ export default function Globe({ className }: { className?: string }) {
         const sin = Math.sin(rotRad)
         for (const pt of landPoints) {
           const x = pt.x * cos + pt.z * sin
-          const z = -pt.x * sin + pt.z * cos
-          const y = pt.y
+          const zSpun = -pt.x * sin + pt.z * cos
+          const y = pt.y * tiltCos - zSpun * tiltSin
+          const z = pt.y * tiltSin + zSpun * tiltCos
           if (z < -0.15) continue
           const sx = cx + x * radius
           const sy = cy - y * radius

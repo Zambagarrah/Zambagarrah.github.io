@@ -324,9 +324,9 @@ export default function Hero() {
         {/* Right: Portrait + floating badges */}
         <div
           className="animate-fade-in delay-200 hero-portrait-col"
-          style={{ position: 'relative', display: 'flex', justifyContent: 'center', perspective: '1200px' }}
+          style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}
         >
-          <div className="hero-globe-wrap" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%) rotateY(30deg)', zIndex: 0, pointerEvents: 'none' }}>
+          <div className="hero-globe-wrap" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 0, pointerEvents: 'none' }}>
             <Globe />
           </div>
 
