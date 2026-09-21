@@ -9,13 +9,22 @@ const EMAILJS_TEMPLATE_ID = 'template_sy1q2pe'
 const EMAILJS_PUBLIC_KEY = 'vQWaTOGq2eAAftIE1'
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', company: '', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', company: '', message: '', honeypot: '' })
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+
+    // Honeypot: real users never see or fill this field. If it has a value,
+    // the submission came from a bot, so fake a success without calling the
+    // EmailJS API (protects the public key from being scripted against).
+    if (form.honeypot) {
+      setSent(true)
+      return
+    }
+
     setLoading(true)
     setError('')
 
@@ -237,11 +246,34 @@ export default function Contact() {
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '20px',
+                  position: 'relative',
                 }}
               >
                 <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '4px' }}>
                   Send a message
                 </h3>
+
+                {/* Honeypot field: hidden from real users, catches bots that
+                    fill every field. Kept off-screen rather than display:none
+                    so unsophisticated scrapers still populate it. */}
+                <label
+                  htmlFor="company-website"
+                  aria-hidden="true"
+                  style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}
+                >
+                  Leave this field blank
+                </label>
+                <input
+                  type="text"
+                  id="company-website"
+                  name="company-website"
+                  value={form.honeypot}
+                  onChange={(e) => setForm({ ...form, honeypot: e.target.value })}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}
+                />
 
                 <div className="contact-name-email-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                   <div>
