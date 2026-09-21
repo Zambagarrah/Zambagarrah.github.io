@@ -1,0 +1,27 @@
+{
+  "name": "Zablon Zambagarrah | Data Analyst & Software Developer",
+  "short_name": "Zambagarrah",
+  "description": "Portfolio of Zablon Zambagarrah, a Data Analyst and Software Developer building secure APIs, data dashboards, and full-stack web applications.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1613",
+  "theme_color": "#0F5A47",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
