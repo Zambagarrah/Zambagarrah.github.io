@@ -324,9 +324,9 @@ export default function Hero() {
         {/* Right: Portrait + floating badges */}
         <div
           className="animate-fade-in delay-200 hero-portrait-col"
-          style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}
+          style={{ position: 'relative', display: 'flex', justifyContent: 'center', perspective: '1200px' }}
         >
-          <div className="hero-globe-wrap" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 0, pointerEvents: 'none' }}>
+          <div className="hero-globe-wrap" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%) rotateY(30deg)', zIndex: 0, pointerEvents: 'none' }}>
             <Globe />
           </div>
 
@@ -456,8 +456,8 @@ export default function Hero() {
         }
 
         .hero-globe-wrap {
-          width: 1120px;
-          height: 1120px;
+          width: 900px;
+          height: 900px;
         }
 
         @media (max-width: 1024px) {
@@ -475,8 +475,8 @@ export default function Hero() {
             display: none !important;
           }
           .hero-globe-wrap {
-            width: 920px;
-            height: 920px;
+            width: 740px;
+            height: 740px;
           }
         }
         
@@ -487,8 +487,8 @@ export default function Hero() {
           }
           #home { padding-top: 60px !important; }
           .hero-globe-wrap {
-            width: 760px;
-            height: 760px;
+            width: 610px;
+            height: 610px;
           }
         }
         
@@ -501,8 +501,8 @@ export default function Hero() {
             height: 260px !important;
           }
           .hero-globe-wrap {
-            width: 600px;
-            height: 600px;
+            width: 480px;
+            height: 480px;
           }
           .hero-left-row { flex-direction: column-reverse !important; gap: 16px !important; }
           .hero-social-rail {
