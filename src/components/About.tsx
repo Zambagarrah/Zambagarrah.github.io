@@ -39,6 +39,7 @@ export default function About() {
 
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 32px' }}>
         <div
+          className="about-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
@@ -85,7 +86,7 @@ export default function About() {
             </div>
 
             {/* Philosophy cards */}
-            <div style={{ marginTop: '44px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+            <div className="about-philosophy-grid" style={{ marginTop: '44px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
               {[
                 { icon: '⬡', label: 'Data-Driven', desc: 'Decisions backed by clean, well-structured data.' },
                 { icon: '◎', label: 'Full-Stack Builder', desc: 'From database schema to polished frontend.' },
@@ -127,7 +128,7 @@ export default function About() {
                 }}
               />
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+              <div className="about-timeline-list" style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
                 {timeline.map((item, i) => (
                   <div
                     key={i}
@@ -188,6 +189,7 @@ export default function About() {
 
             {/* Interests */}
             <div
+              className="about-interests-box"
               style={{
                 marginTop: '44px',
                 padding: '28px',
@@ -229,35 +231,30 @@ export default function About() {
 
       <style>{`
         @media (max-width: 1024px) {
-          #about > div > div { 
+          .about-grid { 
             grid-template-columns: 1fr !important; 
             gap: 50px !important; 
           }
         }
         
         @media (max-width: 768px) {
-          #about > div > div {
+          .about-grid {
             gap: 40px !important;
           }
-          #about > div > div > div:nth-child(1) > div:nth-child(3) {
+          .about-philosophy-grid {
             grid-template-columns: 1fr 1fr !important;
             gap: 12px !important;
           }
         }
         
         @media (max-width: 640px) {
-          #about > div > div > div:nth-child(1) > div:nth-child(3) {
+          .about-philosophy-grid {
             grid-template-columns: 1fr !important;
           }
-          #about > div > div > div:nth-child(2) > div:nth-child(2) {
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 20px !important;
-          }
-          #about > div > div > div:nth-child(2) > div:nth-child(2) > div {
+          .about-timeline-list > div {
             gap: 12px !important;
           }
-          #about > div > div > div:nth-child(2) > div:nth-child(4) {
+          .about-interests-box {
             padding: 20px !important;
           }
         }

@@ -37,6 +37,7 @@ export default function Contact() {
 
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 32px' }}>
         <div
+          className="contact-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
@@ -69,7 +70,7 @@ export default function Contact() {
               practical, well-crafted software, let's connect.
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div className="contact-methods-list" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {[
                 {
                   icon: '✉',
@@ -104,6 +105,7 @@ export default function Contact() {
               ].map((contact) => (
                 <div
                   key={contact.label}
+                  className="contact-method-item"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
@@ -131,6 +133,7 @@ export default function Contact() {
                   }}
                 >
                   <div
+                    className="contact-method-icon"
                     style={{
                       width: '36px',
                       height: '36px',
@@ -147,10 +150,10 @@ export default function Contact() {
                     {contact.icon}
                   </div>
                   <div>
-                    <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)', marginBottom: '2px' }}>
+                    <div className="contact-method-label" style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)', marginBottom: '2px' }}>
                       {contact.label}
                     </div>
-                    <div style={{ fontSize: '0.84rem', color: 'var(--color-text-primary)', fontWeight: 500 }}>{contact.value}</div>
+                    <div style={{ fontSize: '0.84rem', color: 'var(--color-text-primary)', fontWeight: 500 }} className="contact-method-value">{contact.value}</div>
                   </div>
                 </div>
               ))}
@@ -195,6 +198,7 @@ export default function Contact() {
             ) : (
               <form
                 onSubmit={handleSubmit}
+                className="contact-form"
                 style={{
                   padding: '40px',
                   borderRadius: '24px',
@@ -210,7 +214,7 @@ export default function Contact() {
                   Send a message
                 </h3>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                <div className="contact-name-email-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '0.72rem', fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: '6px', letterSpacing: '0.04em' }}>
                       Name
@@ -302,54 +306,54 @@ export default function Contact() {
 
       <style>{`
         @media (max-width: 1024px) {
-          #contact > div > div { 
+          .contact-grid { 
             grid-template-columns: 1fr !important; 
             gap: 48px !important; 
           }
         }
         
         @media (max-width: 768px) {
-          #contact > div > div > div:nth-child(1) > div:nth-child(4) {
+          .contact-methods-list {
             gap: 12px !important;
           }
-          #contact > div > div > div:nth-child(1) > div:nth-child(4) > div {
+          .contact-method-item {
             padding: 12px 16px !important;
           }
-          #contact > div > div > div:nth-child(2) form {
+          .contact-form {
             padding: 32px 24px !important;
           }
         }
         
         @media (max-width: 640px) {
           #contact { padding: 80px 0 !important; }
-          #contact > div > div > div:nth-child(1) {
-            gap: 24px !important;
+          .contact-methods-list {
+            margin-top: 24px !important;
           }
-          #contact > div > div > div:nth-child(1) > div:nth-child(4) > div {
+          .contact-method-item {
             gap: 12px !important;
             padding: 12px 12px !important;
           }
-          #contact > div > div > div:nth-child(1) > div:nth-child(4) > div > div:nth-child(1) {
+          .contact-method-icon {
             min-width: 32px !important;
           }
-          #contact > div > div > div:nth-child(1) > div:nth-child(4) > div > div:nth-child(2) > div:nth-child(1) {
+          .contact-method-label {
             font-size: 0.65rem !important;
           }
-          #contact > div > div > div:nth-child(1) > div:nth-child(4) > div > div:nth-child(2) > div:nth-child(2) {
+          .contact-method-value {
             font-size: 0.78rem !important;
           }
-          #contact > div > div > div:nth-child(2) h3 {
+          .contact-form h3 {
             font-size: 1.1rem !important;
           }
-          #contact > div > div > div:nth-child(2) form {
+          .contact-form {
             padding: 24px 20px !important;
             gap: 16px !important;
           }
-          #contact > div > div > div:nth-child(2) form > div:nth-child(3) {
+          .contact-name-email-grid {
             grid-template-columns: 1fr !important;
             gap: 12px !important;
           }
-          #contact > div > div > div:nth-child(2) form textarea {
+          .contact-form textarea {
             min-height: 100px !important;
           }
         }

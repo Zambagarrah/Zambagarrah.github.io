@@ -135,11 +135,11 @@ export default function Projects() {
         </div>
 
         {/* Project cards */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+        <div className="projects-cards" style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
           {projects.map((project, i) => (
             <div
               key={project.id}
-              className="card-hover"
+              className="card-hover project-card"
               style={{
                 borderRadius: '24px',
                 background: 'var(--color-surface)',
@@ -150,6 +150,7 @@ export default function Projects() {
             >
               {/* Header bar */}
               <div
+                className="project-header"
                 style={{
                   padding: '40px 48px 36px',
                   background: project.gradient,
@@ -212,6 +213,7 @@ export default function Projects() {
                 </div>
 
                 <div
+                  className="project-number"
                   style={{
                     fontFamily: 'var(--font-serif)',
                     fontSize: '4rem',
@@ -227,7 +229,7 @@ export default function Projects() {
               </div>
 
               {/* Body */}
-              <div style={{ padding: '36px 48px 40px', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '48px' }}>
+              <div className="project-body" style={{ padding: '36px 48px 40px', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '48px' }}>
                 <div>
                   <h4 style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-muted)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '12px' }}>
                     Problem
@@ -246,7 +248,7 @@ export default function Projects() {
                   <h4 style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-muted)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '12px' }}>
                     Key Details
                   </h4>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                  <div className="project-metrics" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                     {project.metrics.map((m) => (
                       <div
                         key={m.label}
@@ -269,6 +271,7 @@ export default function Projects() {
 
               {/* Stack + AI button */}
               <div
+                className="project-footer"
                 style={{
                   padding: '20px 48px 24px',
                   borderTop: '1px solid rgba(15,90,71,0.06)',
@@ -368,41 +371,50 @@ export default function Projects() {
 
       <style>{`
         @media (max-width: 1024px) {
-          #projects > div > div:nth-child(2) > div { grid-template-columns: 1fr !important; }
+          .project-body { grid-template-columns: 1fr !important; }
         }
         
         @media (max-width: 768px) {
-          #projects > div > div:nth-child(2) { gap: 24px !important; }
-          #projects > div > div:nth-child(2) > div {
+          .projects-cards { gap: 24px !important; }
+          .project-card {
             border-radius: 16px !important;
           }
-          #projects > div > div:nth-child(2) > div > div:nth-child(1) {
+          .project-header {
             padding: 32px 28px 28px !important;
           }
-          #projects > div > div:nth-child(2) > div > div:nth-child(2) {
+          .project-body {
             padding: 24px 28px 32px !important;
           }
         }
         
         @media (max-width: 640px) {
-          #projects > div > div:nth-child(2) > div > div:nth-child(1) {
+          .project-header {
             padding: 24px 20px 20px !important;
             gap: 24px !important;
           }
-          #projects > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) {
+          .project-number {
             display: none;
           }
-          #projects > div > div:nth-child(2) > div > div:nth-child(2) {
+          .project-body {
             padding: 20px 20px 24px !important;
             gap: 12px !important;
           }
-          #projects > div > div:nth-child(2) > div > div:nth-child(2) h3 {
+          .project-header h3 {
             font-size: 1.25rem !important;
           }
-          #projects > div > div:nth-child(2) > div > div:nth-child(3) {
+          .project-metrics {
+            grid-template-columns: 1fr 1fr !important;
+          }
+          .project-footer {
             padding: 12px 20px 16px !important;
             gap: 6px !important;
             flex-wrap: wrap !important;
+          }
+        }
+
+        @media (max-width: 420px) {
+          .project-metrics {
+            grid-template-columns: 1fr !important;
           }
         }
       `}</style>

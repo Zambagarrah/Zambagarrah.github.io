@@ -3,7 +3,7 @@ import zablonPhoto from '@/imports/zablon_photo.jpg'
 const techBadges = [
   { label: 'Python', delay: '0s', x: '-160px', y: '60px' },
   { label: 'Django', delay: '0.4s', x: '-155px', y: '200px' },
-  { label: 'React', delay: '0.8s', x: '-175px', y: '340px' },
+  { label: 'Next.js', delay: '0.8s', x: '-175px', y: '340px' },
   { label: 'Pandas', delay: '1.2s', x: '118px', y: '80px' },
   { label: 'PostgreSQL', delay: '0.6s', x: '108px', y: '220px' },
   { label: 'Power BI', delay: '1.0s', x: '98px', y: '360px' },
@@ -56,6 +56,7 @@ export default function Hero() {
       <div className="bg-diagonal" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
 
       <div
+        className="hero-columns"
         style={{
           maxWidth: '1280px',
           margin: '0 auto',
@@ -68,7 +69,7 @@ export default function Hero() {
         }}
       >
         {/* Left: Text content */}
-        <div style={{ maxWidth: '620px' }}>
+        <div className="hero-text-col" style={{ maxWidth: '620px' }}>
           {/* Eyebrow */}
           <div
             className="animate-fade-up"
@@ -270,7 +271,7 @@ export default function Hero() {
 
         {/* Right: Portrait + floating badges */}
         <div
-          className="animate-fade-in delay-200"
+          className="animate-fade-in delay-200 hero-portrait-col"
           style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}
         >
           <div style={{ position: 'relative', zIndex: 2 }}>
@@ -384,23 +385,23 @@ export default function Hero() {
         }
         
         @media (max-width: 1024px) {
-          #home > div > div { grid-template-columns: 1fr !important; gap: 60px !important; }
-          #home > div > div > div:last-child { 
+          .hero-columns { grid-template-columns: 1fr !important; gap: 60px !important; }
+          .hero-portrait-col {
             display: flex !important;
             justify-content: center;
             order: -1;
           }
-          #home > div > div > div:last-child img {
+          .hero-portrait-col img {
             width: 280px !important;
             height: 360px !important;
           }
-          #home > div > div > div:last-child .animate-badge-float {
+          .hero-portrait-col .animate-badge-float {
             display: none !important;
           }
         }
         
         @media (max-width: 768px) {
-          #home > div > div > div:last-child img {
+          .hero-portrait-col img {
             width: 240px !important;
             height: 310px !important;
           }
@@ -408,14 +409,14 @@ export default function Hero() {
         }
         
         @media (max-width: 640px) {
-          #home > div > div > div:last-child {
+          .hero-portrait-col {
             margin-top: 20px;
           }
-          #home > div > div > div:last-child img {
+          .hero-portrait-col img {
             width: 200px !important;
             height: 260px !important;
           }
-          #home > div > div:nth-child(1) { max-width: 100% !important; }
+          .hero-text-col { max-width: 100% !important; }
           #home h1 { font-size: clamp(1.8rem, 4vw, 2.8rem) !important; }
           .animate-fade-up { animation-delay: 0s !important; }
         }
