@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import zablonPhoto from '@/imports/zablon_photo.jpg'
+import zablonPhoto from '@/imports/zablon_photo.png'
 
 const VOICE_RESPONSES = [
   "Hello! I'm Zablon Zambagarrah's AI assistant. How can I help you today?",

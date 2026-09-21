@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import zablonPhoto from '@/imports/zablon_photo.jpg'
+import zablonPhoto from '@/imports/zablon_photo.png'
 
 type Message = { role: 'assistant' | 'user'; text: string }
 

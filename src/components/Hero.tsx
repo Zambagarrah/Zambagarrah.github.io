@@ -1,4 +1,4 @@
-import zablonPhoto from '@/imports/zablon_photo.jpg'
+import zablonPhoto from '@/imports/zablon_photo.png'
 import { LinkedInIcon, GithubIcon, MailIcon, ChevronDownIcon } from './icons'
 
 const socialLinks = [
