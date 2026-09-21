@@ -407,8 +407,8 @@ export default function Hero() {
         }
 
         .hero-globe-wrap {
-          width: 560px;
-          height: 560px;
+          width: 1120px;
+          height: 1120px;
         }
 
         @media (max-width: 1024px) {
@@ -426,8 +426,8 @@ export default function Hero() {
             display: none !important;
           }
           .hero-globe-wrap {
-            width: 460px;
-            height: 460px;
+            width: 920px;
+            height: 920px;
           }
         }
         
@@ -438,8 +438,8 @@ export default function Hero() {
           }
           #home { padding-top: 60px !important; }
           .hero-globe-wrap {
-            width: 380px;
-            height: 380px;
+            width: 760px;
+            height: 760px;
           }
         }
         
@@ -452,8 +452,8 @@ export default function Hero() {
             height: 260px !important;
           }
           .hero-globe-wrap {
-            width: 300px;
-            height: 300px;
+            width: 600px;
+            height: 600px;
           }
           .hero-left-row { flex-direction: column-reverse !important; gap: 16px !important; }
           .hero-social-rail {
