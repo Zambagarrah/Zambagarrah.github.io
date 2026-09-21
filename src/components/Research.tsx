@@ -1,14 +1,47 @@
 const techInterests = [
   {
-    title: 'Research details coming soon',
-    area: 'Placeholder · To Be Updated',
+    title: 'Open Source AI Models',
+    area: 'AI & Machine Learning',
     description:
-      'This section is reserved for Zablon\'s research interests and deep-dive write-ups. Details will be added once provided.',
-    tags: ['Coming Soon'],
-    icon: '◎',
+      "Exploring open-weight LLMs like Llama, Mistral, and DeepSeek, running them locally with Ollama and llama.cpp to compare performance, cost, and privacy against closed APIs, and fine-tuning smaller models with LoRA for focused tasks.",
+    tags: ['Llama', 'Mistral', 'DeepSeek', 'Ollama'],
+    icon: '◈',
     color: '#0F5A47',
     bg: 'rgba(15,90,71,0.05)',
-    status: 'Draft',
+    status: 'Active',
+  },
+  {
+    title: 'OpenClaw & AI Agent Automation',
+    area: 'Autonomous Agents',
+    description:
+      'Digging into OpenClaw, a self-hosted, fully open-source AI agent framework that automates real tasks across chat apps and calendars. Studying its plugin architecture as a blueprint for building my own agent-driven tools.',
+    tags: ['OpenClaw', 'Self-Hosted', 'Agents', 'Automation'],
+    icon: '⚙',
+    color: '#C59A5A',
+    bg: 'rgba(197,154,90,0.08)',
+    status: 'Exploring',
+  },
+  {
+    title: 'Retrieval-Augmented Generation',
+    area: 'AI & Data',
+    description:
+      'Building RAG pipelines with fully open tooling, LangChain or LlamaIndex paired with self-hosted vector stores like Qdrant and Chroma, to ground open-source LLMs in real, private datasets instead of relying on hosted APIs.',
+    tags: ['LangChain', 'Qdrant', 'Chroma', 'RAG'],
+    icon: '⟡',
+    color: '#0F5A47',
+    bg: 'rgba(15,90,71,0.05)',
+    status: 'Prototyping',
+  },
+  {
+    title: 'Open-Source Business Intelligence',
+    area: 'Data Engineering',
+    description:
+      'As a Data Analyst, exploring self-hosted alternatives to proprietary BI tools, Apache Superset, Metabase, and DuckDB, to build dashboards and analytics stacks that stay fully under a team\'s own infrastructure and budget.',
+    tags: ['Superset', 'Metabase', 'DuckDB'],
+    icon: '▦',
+    color: '#C59A5A',
+    bg: 'rgba(197,154,90,0.08)',
+    status: 'Learning',
   },
 ]
 
@@ -47,7 +80,7 @@ export default function Research() {
         </div>
 
         {/* Interest cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '24px', marginBottom: '64px' }}>
+        <div className="research-cards-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '64px' }}>
           {techInterests.map((item, i) => (
             <div
               key={i}
@@ -190,7 +223,7 @@ export default function Research() {
 
       <style>{`
         @media (max-width: 900px) {
-          #research > div > div:nth-child(3) { grid-template-columns: 1fr !important; }
+          .research-cards-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>
