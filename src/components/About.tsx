@@ -9,15 +9,9 @@ const timeline = [
   },
   {
     year: '2024–Present',
-    role: 'Backend Developer & Data Engineer',
+    role: 'Data Analyst & Engineer',
     org: 'ByteForge Devs, Kenya',
-    desc: 'Building production Django APIs and Python data pipelines, with a focus on real error handling and PostgreSQL performance.',
-  },
-  {
-    year: '2022–Present',
-    role: 'Product Designer',
-    org: 'AFGT, Kenya',
-    desc: 'Designing product experiences and interfaces, working closely with engineering to ship features that balance usability with business goals.',
+    desc: 'Building Python ETL pipelines and PostgreSQL-backed dashboards, with backend support via Django APIs.',
   },
   {
     year: '2022–Present',

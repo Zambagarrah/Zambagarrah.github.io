@@ -13,14 +13,7 @@ const testimonials = [
     name: 'Product Manager',
     org: 'ByteForge Devs',
     quote:
-      'He turns vague requirements into working APIs fast, and still takes the time to get error handling and performance right. A genuinely reliable backend developer.',
-  },
-  {
-    initials: 'AF',
-    name: 'Design Director',
-    org: 'AFGT',
-    quote:
-      'Working with Zablon on product design was smooth from day one. He balances usability with business goals and communicates trade-offs without any fuss.',
+      'He turns messy, raw data into clear, actionable dashboards fast, and still takes the time to get the pipeline and query performance right. A genuinely reliable data analyst.',
   },
   {
     initials: 'CL',
