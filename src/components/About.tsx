@@ -10,7 +10,7 @@ const timeline = [
   {
     year: '2024–Present',
     role: 'Backend Developer & Data Engineer',
-    org: 'ZechForge Solutions, Kenya',
+    org: 'ByteForge Devs, Kenya',
     desc: 'Building production Django APIs and Python data pipelines, with a focus on real error handling and PostgreSQL performance.',
   },
   {

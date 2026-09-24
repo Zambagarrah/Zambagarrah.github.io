@@ -28,7 +28,7 @@ const KNOWLEDGE: Record<string, string> = {
 
   skills: "Zablon's technical stack: Python (strong), JavaScript (strong), TypeScript, SQL and PostgreSQL (advanced), Django, Flask, Node.js, React and Next.js, MySQL, Git/GitHub/GitLab, CI/CD, Docker, Kubernetes, AWS, and Azure Data Factory. He also integrates AI tools like GitHub Copilot and Claude into his daily engineering workflow.",
 
-  experience: "Zablon is a Backend Developer & Data Engineer at ZechForge Solutions (Jan 2024–Present), a Software Engineer & Programming Educator at Swahilipot Hub Foundation (May 2025–May 2026), and a Product Designer at AFGT (2022–Present).",
+  experience: "Zablon is a Backend Developer & Data Engineer at ByteForge Devs (Jan 2024–Present), a Software Engineer & Programming Educator at Swahilipot Hub Foundation (May 2025–May 2026), and a Product Designer at AFGT (2022–Present).",
 
   contact: "You can reach Zablon at: Email, zablonombiri001@gmail.com. WhatsApp, +254 705 959 986. Location, Mombasa, Kenya (remote friendly). He's open to freelance projects, junior developer roles, and data analysis contracts.",
 
