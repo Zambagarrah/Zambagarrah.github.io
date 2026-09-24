@@ -37,6 +37,33 @@ const KNOWLEDGE: Record<string, string> = {
   opportunities: "Yes! Zablon is actively open to freelance projects, junior software/data roles, and collaborations. He's based in Mombasa but works remotely with clients worldwide. Contact him at zablonombiri001@gmail.com.",
 }
 
+// Public, unauthenticated AI backend for the chat widget (Abby). Falls back to
+// the local keyword-matched KNOWLEDGE base below on any network error, non-200
+// response, or 404 (endpoint not yet enabled server-side), so the widget never
+// looks broken to a visitor.
+const PORTFOLIO_AI_API_URL =
+  (import.meta.env.VITE_PORTFOLIO_AI_API_URL as string | undefined) ||
+  'https://pa.shieldpayfinance.com/api/public/portfolio-chat'
+
+async function fetchAIReply(message: string, history: Message[]): Promise<string> {
+  const controller = new AbortController()
+  const timeout = setTimeout(() => controller.abort(), 15000)
+  try {
+    const res = await fetch(PORTFOLIO_AI_API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message, history }),
+      signal: controller.signal,
+    })
+    if (!res.ok) throw new Error(`portfolio-chat responded ${res.status}`)
+    const data = await res.json()
+    if (typeof data?.reply !== 'string' || !data.reply.trim()) throw new Error('portfolio-chat returned no reply')
+    return data.reply
+  } finally {
+    clearTimeout(timeout)
+  }
+}
+
 function getResponse(input: string): string {
   const lower = input.toLowerCase()
   if (lower.includes('shieldpay') || lower.includes('fintech') || lower.includes('financial')) return KNOWLEDGE.shieldpay
@@ -89,14 +116,18 @@ export default function AIAssistant({
     const preview = context.length > 80 ? context.slice(0, 80) + '…' : context
     const userText = `"${preview}": ${question}`
     const userMsg: Message = { role: 'user', text: userText }
+    const history = messages.slice(-8)
+    const fullPrompt = `${question} (about: "${context}")`
     setMessages((m) => [...m, userMsg])
     setTyping(true)
-    setTimeout(() => {
-      setTyping(false)
-      const fullPrompt = `${question} (about: "${context}")`
-      setMessages((m) => [...m, { role: 'assistant', text: getResponse(fullPrompt) }])
-      onPendingMessageConsumed?.()
-    }, 900)
+    fetchAIReply(fullPrompt, history)
+      .then((reply) => setMessages((m) => [...m, { role: 'assistant', text: reply }]))
+      .catch(() => setMessages((m) => [...m, { role: 'assistant', text: getResponse(fullPrompt) }]))
+      .finally(() => {
+        setTyping(false)
+        onPendingMessageConsumed?.()
+      })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open, pendingMessage, onPendingMessageConsumed])
 
   // Reset consumed flag when a new pending message arrives
@@ -107,13 +138,14 @@ export default function AIAssistant({
   const send = (text: string) => {
     if (!text.trim()) return
     const userMsg: Message = { role: 'user', text }
+    const history = messages.slice(-8)
     setMessages((m) => [...m, userMsg])
     setInput('')
     setTyping(true)
-    setTimeout(() => {
-      setTyping(false)
-      setMessages((m) => [...m, { role: 'assistant', text: getResponse(text) }])
-    }, 900 + Math.random() * 500)
+    fetchAIReply(text, history)
+      .then((reply) => setMessages((m) => [...m, { role: 'assistant', text: reply }]))
+      .catch(() => setMessages((m) => [...m, { role: 'assistant', text: getResponse(text) }]))
+      .finally(() => setTyping(false))
   }
 
   if (!open) return null
