@@ -16,7 +16,7 @@ const experiences = [
   {
     period: 'Jan 2024 – Present',
     title: 'Backend Developer & Data Engineer',
-    company: 'ByteForge Devs',
+    company: 'ZechForge Solutions',
     location: 'Nakuru, Kenya',
     type: 'Hybrid',
     highlights: [

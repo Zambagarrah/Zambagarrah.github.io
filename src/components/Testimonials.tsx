@@ -11,7 +11,7 @@ const testimonials = [
   {
     initials: 'BF',
     name: 'Product Manager',
-    org: 'ByteForge Devs',
+    org: 'ZechForge Solutions',
     quote:
       'He turns vague requirements into working APIs fast, and still takes the time to get error handling and performance right. A genuinely reliable backend developer.',
   },
