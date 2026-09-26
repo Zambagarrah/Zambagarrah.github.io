@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react'
 
 const testimonials = [
   {
-    initials: 'SH',
-    name: 'Engineering Lead',
-    org: 'Swahilipot Hub Foundation',
+    initials: 'BW',
+    name: 'Bob Williams',
+    org: 'CEO, ShieldPay Financials',
     quote:
       'Zablon is a dependable collaborator who explains technical ideas clearly. His Django contributions and teaching sessions consistently raised the quality bar for the whole team.',
   },
   {
-    initials: 'BF',
-    name: 'Product Manager',
+    initials: 'AD',
+    name: 'Andrew Davidson',
     org: 'ByteForge Devs',
     quote:
       'He turns messy, raw data into clear, actionable dashboards fast, and still takes the time to get the pipeline and query performance right. A genuinely reliable data analyst.',
@@ -22,6 +22,11 @@ const testimonials = [
     quote:
       'The dashboard he built turned our raw spreadsheets into something the whole team actually uses daily. Clear communication and delivered on time.',
   },
+  {
+    initials: 'LA',
+    name: 'Lenah Asher',
+    org: 'Belle Rift Consultancy',
+    quote: 'Great Guy indeed.',
 ]
 
 function useIsMobile(breakpoint = 768) {
