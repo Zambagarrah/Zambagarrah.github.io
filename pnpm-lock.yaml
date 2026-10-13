@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@emailjs/browser':
-        specifier: ^4.4.1
-        version: 4.4.1
+        specifier: ^5.0.3
+        version: 5.0.3
       react:
         specifier: ^19.0.0
         version: 19.2.4
@@ -48,8 +48,8 @@ importers:
 
 packages:
 
-  '@emailjs/browser@4.4.1':
-    resolution: {integrity: sha512-DGSlP9sPvyFba3to2A50kDtZ+pXVp/0rhmqs2LmbMS3I5J8FSOgLwzY2Xb4qfKlOVHh29EAutLYwe5yuEZmEFg==}
+  '@emailjs/browser@5.0.3':
+    resolution: {integrity: sha512-4HGAkWdzql7mrG34ZFFj7IDJNRgtbl1+yVgHdQJ6XSfhq9gxGUHtttr4UKNi7Fk++1hMXRHy1lTeGZrkioOtsw==}
     engines: {node: '>=14.0.0'}
 
   '@emnapi/core@1.9.1':
@@ -549,7 +549,7 @@ packages:
 
 snapshots:
 
-  '@emailjs/browser@4.4.1': {}
+  '@emailjs/browser@5.0.3': {}
 
   '@emnapi/core@1.9.1':
     dependencies:
